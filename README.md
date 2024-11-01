@@ -51,16 +51,21 @@ Our API supports Role-Based Access Control (RBAC) to manage permissions effectiv
 2. **Navigate to the project directory**:
    `cd AuthSphere`
 3. **Set up a virtual environment**:
+   
    `python3 -m venv env` # For Windows(replace python3 as python)
+   
    `source env/bin/activate`  # For Windows: env\Scripts\activate
-4. **Install dependencies**:
+5. **Install dependencies**:
   `pip install -r requirements.txt`
-5. **Configure environment variables**:
-   - Create a .env file:
-     `SECRET_KEY=your_secret_key
-      ALGORITHM=<any encryption algorithm of your choice, ex: HS256
-      ACCESS_TOKEN_EXPIRE_MINUTES=30`
-6. **Set up the database**:
+6. **Configure environment variables**:
+   - Create a .env file and insert following:
+     
+     `SECRET_KEY=your_secret_key`,
+     
+      `ALGORITHM=<any encryption algorithm of your choice ex: HS256>`,
+     
+      `ACCESS_TOKEN_EXPIRE_MINUTES=<time duration in minutes ex: 30>`
+7. **Set up the database**:
    Run the provided SQL scripts to create the necessary tables.
    - Navigate into the `auth_app` directory:
    - Run the schema.sql script to create the database and necessary tables.
