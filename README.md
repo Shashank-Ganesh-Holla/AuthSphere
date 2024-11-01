@@ -23,7 +23,7 @@ Our API supports Role-Based Access Control (RBAC) to manage permissions effectiv
 
 ## 📖 Table of Contents
 - [Features](#features)
-- [Tech Stack](#tech-stack)
+- [Tech Stack](#%EF%B8%8Ftech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
