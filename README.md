@@ -77,7 +77,7 @@ Our API supports Role-Based Access Control (RBAC) to manage permissions effectiv
    - Explore API docs:
      - FastAPI provides interactive API docs at http://127.0.0.1:8000/docs 🌐
 
-## 🔗API Endpoints##:
+## 🔗API Endpoints:
 Here’s a list of the main endpoints for this project:
 
 - POST /register - Register a new user
