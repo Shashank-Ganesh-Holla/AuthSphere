@@ -1,4 +1,4 @@
-<h1 align="center">AuthSphere🚀</h1>
+<h1 align="center">🔒 AuthSphere 🌐 </h1>
 <h3 align="center">Authentication & Authorization API with FastAPI, JWT, and MariaDB, featuring Role-Based Access Control and Two-Factor Authentication</h3>
 <br>
 
