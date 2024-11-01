@@ -49,7 +49,7 @@ Our API supports Role-Based Access Control (RBAC) to manage permissions effectiv
 1. **Clone the repository**:
     `git clone https://github.com/Shashank-Ganesh-Holla/AuthSphere.git`
 2. **Navigate to the project directory**:
-   `cd yourprojectname`
+   `cd AuthSphere`
 3. **Set up a virtual environment**:
    `python3 -m venv env` # For Windows(replace python3 as python)
    `source env/bin/activate`  # For Windows: env\Scripts\activate
