@@ -66,22 +66,13 @@ def execute_read_query(connection, query, params=None):
             
 
 def fetch_all_users(connection):
-    cursor = connection.cursor(dictionary=True)
+    try:
+        cursor = connection.cursor(dictionary=True)
 
-    cursor.execute("SELECT * FROM  users")
-    return cursor.fetchall()
+        cursor.execute("SELECT * FROM  users")
+        return cursor.fetchall()
+    finally:
+        if connection:
+            if cursor: cursor.close()
+            connection.close()
 
-
-
-
-
-
-# def get_db_connection():
-    
-#     connection = pymysql.connect(host='localhost',
-#                                  user="fastapi_user",
-#                                  password="authAppOctauthAppOct",
-#                                  database="auth_app",
-#                                  cursorclass=pymysql.cursors.DictCursor)
-    
-#     return connection

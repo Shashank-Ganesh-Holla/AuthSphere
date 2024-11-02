@@ -8,6 +8,7 @@ class User(BaseModel):
 class UserCreate(User):
     password: str
     role_id    : int
+    twoFA_enabled: bool = False
 
 
 class ClientResponse(BaseModel):
