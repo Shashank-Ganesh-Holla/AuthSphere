@@ -21,11 +21,11 @@ def create_connection():
         return connection
     
     except Error as e:
-        print(f'The error {repr(e)} occured')
-        raise ConnectionError(f"Failed to connect to the database: {e}")  # Raise custom exception 
+        print(str(e))
+        raise ConnectionError(f"Failed to connect to the database: {str(e)}")  # Raise custom exception 
 
     except Exception as error:
-        print(f'The error {repr(error)} occured')
+        print(str(error))
         raise HTTPException(500, detail="Error in server")
 
 

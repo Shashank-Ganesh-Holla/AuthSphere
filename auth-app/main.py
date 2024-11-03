@@ -422,7 +422,7 @@ def test_db():
 
 
     except Exception as e:
-        raise HTTPException(500, detail=repr(e))
+        raise HTTPException(500, detail=str(e))
 
 
 if __name__ == "__main__":

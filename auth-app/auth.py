@@ -1,6 +1,7 @@
 from fastapi import HTTPException, status, Depends, Request
 from datetime import timedelta, datetime
 from jose import jwt, JWTError
+import jwt as jt
 from core.config import Config
 from database import create_connection, execute_read_query, execute_write_query
 from abc import ABC, abstractmethod
@@ -96,8 +97,20 @@ class TokenFactory:
             payload = jwt.decode(token, Config.SECRET_KEY, Config.ALGORITHM)
             return payload
         
-        except JWTError:
-            return None
+        except jt.ExpiredSignatureError:
+            raise HTTPException(status_code=401, detail="Token has expired", 
+                                headers={"WWW-Authenticate":"Bearer"})
+        
+        except jt.InvalidTokenError:
+            raise HTTPException(status_code=401, detail="Invalid token",
+                                 headers={"WWW-Authenticate":"Bearer"})
+        
+        except JWTError as e:
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=f"{str(e)}",
+                                headers={"WWW-Authenticate":"Bearer"})
+    
+        except Exception as err:
+            raise HTTPException(status_code=401, detail=f"{str(err)}", headers={"WWW-Authenticate":"Bearer"})
         
     @staticmethod
     def validate_token(token:str = Depends(Config.oauth2_scheme))->Optional[tuple[str, str]]:
@@ -113,9 +126,6 @@ class TokenFactory:
             
             # verify the token
             payload = TokenFactory.verify_token(token)
-
-            if not payload:
-                raise Config.CREDENTIALS_EXCEPTION
             
             return payload.get('sub', ''), payload.get('role', '')
         
