@@ -4,12 +4,23 @@ from schemas import User, UserCreate, ClientResponse
 from database import create_connection
 from typing import Union
 from fastapi.responses import JSONResponse
-from fastapi import Request
 from mysql.connector import Error
 import pyotp
 from auth import TokenFactory, TokenManager, UserManager, RoleManager, PasswordManager, DatabaseManager
+import logging
+from core.config import Logger
+
+logging.getLogger("uvicorn").setLevel(logging.WARNING)
 
 app = FastAPI()
+
+
+@app.on_event("startup")
+async def startup_event():
+    # Perform startup actions
+    Logger.setup_logging()
+    logging.info("AuthSphere started successfully!")
+    pass
 
 
 @app.exception_handler(HTTPException)
@@ -28,7 +39,6 @@ async def http_exception_handler(request: Request, exc: HTTPException):
     
     This approach provides a user-friendly and professional error response for clients.
     """
-    
     return JSONResponse(
         status_code=exc.status_code,
         content={"stat": "Not_Ok", "Reason": exc.detail},
@@ -87,9 +97,9 @@ def register(user:UserCreate):
                 cursor.close()
                 
             except Error as err:
-                print(f"Database error occured: {str(err)}")
+                logging.error(str(err))
                 connection.rollback()
-                print("Transaction rolled back")
+                logging.error("Transaction rolled back")
                 raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR,detail='Error while writing into database')
             
             
@@ -103,7 +113,7 @@ def register(user:UserCreate):
     
     except Exception as err:
         if not isinstance(err, HTTPException):
-            print(f"An error occured {str(err)}")
+            logging.error(str(err))
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
         else:
             raise
@@ -179,7 +189,7 @@ def login(form_data:OAuth2PasswordRequestForm = Depends()):
         
     except Exception as err:
         if not isinstance(err, HTTPException):
-            print(f"An error occured {str(err)}")
+            logging.error(str(err))
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
         else:
             raise
@@ -208,19 +218,21 @@ def verify_otp(username: str = Form(...), otp:str = Form(...)):
             access_token = TokenFactory.create_access_token(data)
 
             return {"access_token": access_token, "token_type": "bearer"}
-
+        
+        logging.error(f"username:{username}, Error: Invalid OTP")
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="Invalid OTP")
     
     except Exception as err:
         if not isinstance(err, HTTPException):
-            print(f"An error occured {str(err)}")
+            logging.error(f"username:{username}, Error:{str(err)}")
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
         else:
             raise
 
 
 @app.put('/update-twofa')
-async def update_twofa(user : str = Depends(TokenFactory.validate_token), twoFA_enabled:bool= Form(False)):
+async def update_twofa(user : str = Depends(TokenFactory.validate_token), 
+                       twoFA_enabled:bool= Form(False)):
     try:
         username = user[0]   
 
@@ -264,14 +276,15 @@ async def update_twofa(user : str = Depends(TokenFactory.validate_token), twoFA_
 
     except Exception as err:
         if not isinstance(err, HTTPException):
-            print(f"An error occured {str(err)}")
+            logging.error(str(err))
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')    
         else:
             raise
 
 
 @app.put('/assign-role/', dependencies=[Depends(RoleManager.role_required('admin'))])
-async def assign_role(request:Request, username:str = Form(...), role_name:str = Form(...)):
+async def assign_role(request:Request, username:str = Form(...), 
+                      role_name:str = Form(...)):
 
     try:        
         # first check if the user exists 
@@ -316,7 +329,7 @@ async def assign_role(request:Request, username:str = Form(...), role_name:str =
         
     except Exception as err:
         if not isinstance(err, HTTPException):
-            print(f"An error occured {str(err)}")
+            logging.error(str(err))
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
         else:
             raise
@@ -324,7 +337,8 @@ async def assign_role(request:Request, username:str = Form(...), role_name:str =
 
 
 @app.get('/get-user-details/')
-def get_user_details(username:str, current_user:None = Depends(TokenFactory.validate_token)):
+def get_user_details(username:str, 
+                     current_user:None = Depends(TokenFactory.validate_token)):
 
     try:
         with DatabaseManager() as db:
@@ -357,7 +371,7 @@ def get_user_details(username:str, current_user:None = Depends(TokenFactory.vali
     
     except Exception as err:
         if not isinstance(err, HTTPException):
-            print(f"An error occured {str(err)}")
+            logging.error(str(err))
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
         else:
             raise
@@ -372,7 +386,7 @@ def read_users_me(user:User=Depends(UserManager.get_current_user)):
     
     except Exception as err:
         if not isinstance(err, HTTPException):
-            print(f"An error occured {str(err)}")
+            logging.error(str(err))
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
         else:
             raise
@@ -386,7 +400,7 @@ async def delete_user_me(request: Request, username:str = Form(...),
     
     except Exception as err:
         if not isinstance(err, HTTPException):
-            print(f"An error occured {str(err)}")
+            logging.error(str(err))
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
         else:
             raise
@@ -402,7 +416,7 @@ async def logout_me(request:Request,
 
     except Exception as err:
         if not isinstance(err, HTTPException):
-            print(f"An error occured {str(err)}")
+            logging.error(str(err))
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
         else:
             raise
@@ -430,5 +444,5 @@ if __name__ == "__main__":
 
     # For Debugging purpose only(Running application using IDE debugger)
 
-    uvicorn.run(app)
+    uvicorn.run(app,log_level="info")
 

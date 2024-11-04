@@ -6,6 +6,7 @@ from core.config import Config
 from database import create_connection, execute_read_query, execute_write_query
 from abc import ABC, abstractmethod
 from typing import Dict, Optional
+import logging
 
 # ! Context manager pattern !
 class DatabaseManager:
@@ -64,7 +65,7 @@ class TokenFactory:
             return encoded_jwt
 
         except Exception as err:
-            print(f"An error occured {err}")
+            logging.error(str(err))
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(err))
         
     @staticmethod
@@ -84,7 +85,7 @@ class TokenFactory:
             return encoded_jwt
 
         except Exception as err:
-            print(f"An error occured {err}")
+            logging.error(str(err))
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(err))
     
 
@@ -98,18 +99,22 @@ class TokenFactory:
             return payload
         
         except jt.ExpiredSignatureError:
+            logging.error('Token has expired')
             raise HTTPException(status_code=401, detail="Token has expired", 
                                 headers={"WWW-Authenticate":"Bearer"})
         
         except jt.InvalidTokenError:
+            logging.error('Invalid token')
             raise HTTPException(status_code=401, detail="Invalid token",
                                  headers={"WWW-Authenticate":"Bearer"})
         
         except JWTError as e:
+            logging.error(str(e))
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=f"{str(e)}",
                                 headers={"WWW-Authenticate":"Bearer"})
     
         except Exception as err:
+            logging.error(str(err))
             raise HTTPException(status_code=401, detail=f"{str(err)}", headers={"WWW-Authenticate":"Bearer"})
         
     @staticmethod
@@ -122,6 +127,7 @@ class TokenFactory:
             result = TokenManager.is_token_blacklisted(token)
 
             if result and token == result.get('token'):
+                logging.error("User already logged out. Please re-login")
                 raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="User already logged out. Please re-login")
             
             # verify the token
@@ -132,7 +138,7 @@ class TokenFactory:
         except Exception as err:
 
             if not isinstance(err ,HTTPException):
-                print(f"An error occured {str(err)}")
+                logging.error(f"An error occured {str(err)}")
                 raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal server error")
             else:
                 raise
@@ -353,7 +359,7 @@ class DeleteUserAction(UserAction):
         except Exception as err:
 
             if not isinstance(err, HTTPException):
-                print(f"An error occured {err}")
+                logging.error(str(err))
                 raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail = "Internal server error")
             else:
                 raise
@@ -388,7 +394,7 @@ class LogoutUserAction(UserAction):
         
         except Exception as err:
             if not isinstance(err, HTTPException):
-                print(f"An error occured {err}")
+                logging.error(str(err))
                 raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail = "Internal server error")
             else:
                 raise

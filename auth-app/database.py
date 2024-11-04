@@ -3,10 +3,12 @@ from mysql.connector import Error
 from fastapi import HTTPException
 import os
 from dotenv import load_dotenv
+import logging
 
+load_dotenv()
 
 def create_connection():
-    load_dotenv()
+    
     connection = None
 
     try:
@@ -20,12 +22,12 @@ def create_connection():
         
         return connection
     
-    except Error as e:
-        print(str(e))
-        raise ConnectionError(f"Failed to connect to the database: {str(e)}")  # Raise custom exception 
+    except Error as err:
+        logging.error(str(err))
+        raise ConnectionError(f"Failed to connect to the database: {str(err)}")  # Raise custom exception 
 
     except Exception as error:
-        print(str(error))
+        logging.error(str(error))
         raise HTTPException(500, detail="Error in server")
 
 
@@ -39,8 +41,8 @@ def execute_write_query(connection, query, params=None):
         affected_rows = cursor.rowcount  # Number of rows affected by the query
         connection.commit()
         
-    except Error as e:
-        print(f"Error {e} occured!")
+    except Error as er:
+        logging.error(str(er))
         raise HTTPException(500, detail="Error in server")
     
     finally:
@@ -48,7 +50,8 @@ def execute_write_query(connection, query, params=None):
     
     return affected_rows
 
-def execute_read_query(connection, query, params=None):
+def execute_read_query(connection, query, 
+                       params=None):
     
     try:
         cursor = connection.cursor(dictionary=True)
@@ -57,7 +60,7 @@ def execute_read_query(connection, query, params=None):
         return result
 
     except Error as e:
-        print(f"Error {e} occured!")
+        logging.error(str(e))
         raise ConnectionError(f"Database operation failure: {e}")
     
     finally:
@@ -68,9 +71,9 @@ def execute_read_query(connection, query, params=None):
 def fetch_all_users(connection):
     try:
         cursor = connection.cursor(dictionary=True)
-
         cursor.execute("SELECT * FROM  users")
         return cursor.fetchall()
+    
     finally:
         if connection:
             if cursor: cursor.close()
