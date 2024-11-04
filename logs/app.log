@@ -1,0 +1,18 @@
+
+2024-11-04 23:32:27,100 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-04 23:32:43,021 - ERROR - main.py:223 - Details: username:testuser, Error: Invalid OTP 
+
+2024-11-04 23:33:01,118 - ERROR - auth.py:112 - Details: Signature verification failed. 
+
+2024-11-04 23:34:42,931 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-04 23:34:51,363 - ERROR - auth.py:130 - Details: User already logged out. Please re-login 
+
+2024-11-04 23:35:14,869 - ERROR - auth.py:130 - Details: User already logged out. Please re-login 
+
+2024-11-04 23:35:23,508 - ERROR - auth.py:130 - Details: User already logged out. Please re-login 
+
+2024-11-04 23:35:32,170 - ERROR - auth.py:112 - Details: Signature has expired. 
+
+2024-11-04 23:35:44,969 - ERROR - auth.py:130 - Details: User already logged out. Please re-login 
