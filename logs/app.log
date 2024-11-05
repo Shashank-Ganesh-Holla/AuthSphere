@@ -16,3 +16,27 @@
 2024-11-04 23:35:32,170 - ERROR - auth.py:112 - Details: Signature has expired. 
 
 2024-11-04 23:35:44,969 - ERROR - auth.py:130 - Details: User already logged out. Please re-login 
+
+2024-11-05 20:12:50,640 - INFO - main.py:22 - Details: AuthSphere started successfully! 
+
+2024-11-06 01:04:16,720 - INFO - main.py:27 - Details: AuthSphere started successfully! 
+
+2024-11-06 01:48:29,550 - INFO - main.py:25 - Details: AuthSphere started successfully! 
+
+2024-11-06 02:13:00,756 - INFO - main.py:22 - Details: AuthSphere started successfully! 
+
+2024-11-06 02:13:22,075 - ERROR - auth_routes.py:196 - Details: username:testuser, Error: Invalid OTP 
+
+2024-11-06 02:15:16,387 - INFO - main.py:22 - Details: AuthSphere started successfully! 
+
+2024-11-06 02:15:41,875 - ERROR - auth.py:112 - Details: Signature verification failed. 
+
+2024-11-06 02:16:23,853 - ERROR - auth.py:130 - Details: User already logged out. Please re-login 
+
+2024-11-06 02:17:02,122 - ERROR - auth.py:130 - Details: User already logged out. Please re-login 
+
+2024-11-06 02:17:51,527 - ERROR - auth.py:130 - Details: User already logged out. Please re-login 
+
+2024-11-06 02:18:05,821 - ERROR - auth.py:112 - Details: Signature has expired. 
+
+2024-11-06 02:19:55,044 - ERROR - auth.py:130 - Details: User already logged out. Please re-login 

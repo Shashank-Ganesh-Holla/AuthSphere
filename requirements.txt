@@ -30,3 +30,4 @@ starlette
 typing_extensions
 tzdata
 uvicorn
+aiosmtplib
