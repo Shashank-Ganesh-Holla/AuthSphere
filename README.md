@@ -1,3 +1,10 @@
+
+
+
+
+![AuthSphere_resize](https://github.com/user-attachments/assets/6d336e68-1c39-45f0-b4b8-06e38befa613)
+
+
 <h1 align="center">🔒 AuthSphere 🌐 </h1>
 <h3 align="center">Authentication & Authorization API with FastAPI, JWT, and MariaDB, featuring Role-Based Access Control and Two-Factor Authentication</h3>
 <br>
