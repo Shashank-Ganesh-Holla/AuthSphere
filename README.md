@@ -1,7 +1,5 @@
 
-
-![Uploading AuthSphere_resize.jpg…]()
-
+![AuthSphere_resize](https://github.com/user-attachments/assets/561999f8-aca5-478b-9b21-be95fb0e87dc)
 
 <br>
 
