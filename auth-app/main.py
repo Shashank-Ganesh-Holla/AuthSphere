@@ -25,13 +25,12 @@ async def startup_event():
 
 
 @app.exception_handler(HTTPException)  # Catch any exception
-async def general_exception_handler(request: Request, exc: Union[Exception, HTTPException]):
+async def custom_exception_handler(request: Request, exc: Union[Exception, HTTPException]):
     """
     Custom exception handler that catches HTTPException.
     It returns a structured JSON response for the client and logs the error.
     """
-    # if isinstance(exc, HTTPException):
-    #     # If it's an HTTPException, we handle it as usual
+
     return JSONResponse(
         status_code=exc.status_code,
         content={"stat": "Not_Ok", "Reason": exc.detail},
