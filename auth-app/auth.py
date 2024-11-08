@@ -2,7 +2,7 @@ from fastapi import HTTPException, status, Depends, Request
 from datetime import timedelta, datetime, timezone
 from jose import jwt, JWTError
 import jwt as jt
-from core.config import config
+from core import config
 from database import create_connection, execute_read_query, execute_write_query
 from abc import ABC, abstractmethod
 from typing import Dict, Optional, AsyncGenerator
@@ -258,7 +258,8 @@ class UserManager:
             
             logout_action = LogoutUserAction(username, token)
 
-            return logout_action.action()
+            result = await logout_action.action()
+            return result
         
         except Exception as er:
             if not isinstance(er, HTTPException):
@@ -281,7 +282,8 @@ class UserManager:
 
             delete_action = DeleteUserAction(username, token)
 
-            return delete_action.action()
+            result =  await delete_action.action()
+            return result
 
         except Exception as er:
             if not isinstance(er, HTTPException):
@@ -491,7 +493,7 @@ class LogoutUserAction(UserAction):
             await UserManager.user_query(self.user)
 
             if self.token and isinstance(self.token, str) and self.token is not None:
-                TokenManager.blacklist_token(self.user, self.token)
+                await TokenManager.blacklist_token(self.user, self.token)
 
                 user = {'stat': 'Ok',
                         'Result': "User logged out successfully!"}

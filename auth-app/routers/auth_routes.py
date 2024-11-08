@@ -33,11 +33,12 @@ async def get_auth_service(db = Depends(get_db_connection)):
 # The response_model parameter is used in FastAPI to specify the format of the data that the endpoint should return to the client.
 @router.post('/register', response_model= Union[ClientResponse, None])
 async def register(user:UserCreate, 
-                   auth_service:AuthService = Depends(get_auth_service)): 
+                   auth_service:AuthService = Depends(get_auth_service),
+                   db = Depends(get_db_connection_batch_process)): 
     
 
     try:
-        
+
         '''user existance check before entering the auth service enhances the performance and reduces the latency'''
 
         user_exists = await UserManager.user_query(user.username)
@@ -53,9 +54,10 @@ async def register(user:UserCreate,
             '''we will create user when this condition satisfies'''
 
             try:
-                db = await get_db_connection_batch_process()
+                # db =  get_db_connection_batch_process()
+                # print(dir(db))
                 result = await auth_service.register_user(username=user.username, email=user.email,password=user.password,
-                                                          db=db,role_id=user.role_id, two_fa=user.twoFA_enabled)
+                                                        db=db,role_id=user.role_id, two_fa=user.twoFA_enabled)
 
                 return result
             
@@ -115,31 +117,13 @@ def request_password_reset(user:User, background_task:BackgroundTasks):
 
 
 @router.post('/verify_otp/')
-def verify_otp(username: str = Form(...), otp:str = Form(...)):
+async def verify_otp(username: str = Form(...), otp:str = Form(...), auth_service : AuthService = Depends(get_auth_service)):
 
     try:
 
-        with DatabaseManager() as db:
-            otp_query = "SELECT * FROM otp_table WHERE username = %s"
-            otp_params = (username,)
+        result = await auth_service.otp_verify(username=username, otp=otp)
 
-            otp_details = db.execute_read(otp_query, otp_params)
-
-        if pyotp.TOTP(otp_details.get('otp_secret')).verify(otp):
-
-            user_query = "SELECT * FROM users WHERE username = %s"
-
-            with DatabaseManager() as db:
-                user = db.execute_read(user_query, otp_params)
-            
-            data = {'sub': otp_details.get('username'), 'role': user.get('role_id')}
-
-            access_token = TokenFactory.create_access_token(data)
-
-            return {"access_token": access_token, "token_type": "bearer"}
-        
-        logging.error(f"username:{username}, Error: Invalid OTP")
-        raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="Invalid OTP")
+        return result
     
     except Exception as err:
         if not isinstance(err, HTTPException):
@@ -155,14 +139,11 @@ async def logout_me(request:Request,
                       current_user: None = Depends(TokenFactory.validate_token),
                       auth_service: AuthService = Depends(get_auth_service)):
     
-    auth_service.logout(request=request, username=username)
 
-        
     try:
+        result = await auth_service.logout(request=request, username=username)
+        return result
     
-        user = await UserManager.logout_user(username, request)
-        return user
-
     except Exception as err:
         if not isinstance(err, HTTPException):
             logging.error(str(err))

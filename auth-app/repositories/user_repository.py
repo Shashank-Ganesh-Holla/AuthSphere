@@ -5,6 +5,7 @@ from auth import PasswordManager, TokenFactory
 import logging
 from typing import Any
 import aiomysql
+import pyotp
 
 class UserRepository:
     
@@ -128,7 +129,8 @@ class UserRepository:
                         '''Ensuring 'otp_secret' column from otp_table is not Null'''
 
                         secret = user_otp_details.get('otp_secret')
-                        return login_user_twoFA(secret)
+                        result =  await login_user_twoFA(secret)
+                        return result
                     
                     else:
                         '''Reset the twofa as disabled and ask to relogin as the otp_secrt data for the user not found in database.
@@ -158,3 +160,35 @@ class UserRepository:
             else:
                 raise 
 
+
+    async def verify_otp_user(self, username, otp):
+
+        try:
+
+            user_exists = await self.get_user_users_table(username)
+
+            otp_details = await self.get_user_otp_table(username)
+
+            if user_exists and otp_details :
+                is_valid = pyotp.TOTP(otp_details.get('otp_secret')).verify(otp)
+
+                if is_valid:
+                
+                    data = {'sub': otp_details.get('username'), 'role': user_exists.get('role_id')}
+
+                    access_token = TokenFactory.create_access_token(data)
+
+                    return {"access_token": access_token, "token_type": "bearer"}
+                
+                else:
+                    raise HTTPException(status.HTTP_401_UNAUTHORIZED,detail="Invalid OTP")
+                
+            raise HTTPException(status.HTTP_400_BAD_REQUEST,detail=" Invalid user details")
+            
+        except Exception as er:
+            if not isinstance(er, HTTPException):
+                logging.error(f"Error occured : {str(er)}")
+                raise  HTTPException(500, detail="Internal Server Error")
+            
+            else:
+                raise 

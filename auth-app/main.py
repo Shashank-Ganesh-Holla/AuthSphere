@@ -28,7 +28,7 @@ async def startup_event():
 async def custom_exception_handler(request: Request, exc: Union[Exception, HTTPException]):
     """
     Custom exception handler that catches HTTPException.
-    It returns a structured JSON response for the client and logs the error.
+    It returns a structured JSON response for the client.
     """
 
     return JSONResponse(

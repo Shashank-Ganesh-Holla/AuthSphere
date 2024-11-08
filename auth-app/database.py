@@ -41,8 +41,8 @@ async def execute_write_query(connection:Connection, query, params=None):
     try:
         async with connection.cursor(DictCursor) as cursor:
             await cursor.execute(query, params)
-            affected_rows = await cursor.rowcount  # Number of rows affected by the query
-            connection.commit()
+            affected_rows = cursor.rowcount  # Number of rows affected by the query
+            await connection.commit()
             return affected_rows
         
     except Error as er:

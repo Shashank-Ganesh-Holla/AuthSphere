@@ -758,3 +758,137 @@
 2024-11-08 22:05:29,862 - INFO - main.py:23 - Details: AuthSphere started successfully! 
 
 2024-11-08 22:05:35,240 - ERROR - auth_routes.py:44 - Details: Username already registered! 
+
+2024-11-09 00:58:29,943 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:06:45,473 - ERROR - auth_routes.py:64 - Details: Error occured : object async_generator can't be used in 'await' expression 
+
+2024-11-09 01:06:47,374 - ERROR - auth_routes.py:64 - Details: Error occured : object async_generator can't be used in 'await' expression 
+
+2024-11-09 01:07:14,512 - ERROR - auth_routes.py:64 - Details: Error occured : object async_generator can't be used in 'await' expression 
+
+2024-11-09 01:07:24,373 - ERROR - auth_routes.py:64 - Details: Error occured : object async_generator can't be used in 'await' expression 
+
+2024-11-09 01:07:27,705 - ERROR - auth_routes.py:64 - Details: Error occured : object async_generator can't be used in 'await' expression 
+
+2024-11-09 01:13:45,146 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:14:30,886 - ERROR - auth_manager.py:42 - Details: Error occured : 'async_generator' object has no attribute 'cursor' 
+
+2024-11-09 01:19:52,443 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:21:52,163 - ERROR - auth_manager.py:42 - Details: Error occured : 'async_generator' object has no attribute 'cursor' 
+
+2024-11-09 01:25:09,982 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:28:11,944 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:28:38,665 - ERROR - auth_routes.py:66 - Details: Error occured : object async_generator can't be used in 'await' expression 
+
+2024-11-09 01:30:50,538 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:32:17,554 - ERROR - auth_manager.py:42 - Details: Error occured : '_AsyncGeneratorContextManager' object has no attribute 'cursor' 
+
+2024-11-09 01:32:54,394 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:35:00,558 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:36:09,992 - ERROR - auth_manager.py:42 - Details: Error occured : '_AsyncGeneratorContextManager' object has no attribute 'cursor' 
+
+2024-11-09 01:43:54,467 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:45:07,847 - ERROR - auth_manager.py:44 - Details: Error occured : 'async_generator' object does not support the asynchronous context manager protocol 
+
+2024-11-09 01:47:27,023 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:48:05,551 - ERROR - auth_manager.py:44 - Details: Error occured : 'function' object does not support the asynchronous context manager protocol 
+
+2024-11-09 01:48:18,582 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:48:55,752 - ERROR - auth_manager.py:44 - Details: Error occured : 'function' object does not support the asynchronous context manager protocol 
+
+2024-11-09 01:52:43,354 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:53:36,281 - ERROR - auth_manager.py:44 - Details: Error occured : 'function' object does not support the asynchronous context manager protocol 
+
+2024-11-09 01:55:00,709 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:55:09,969 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:56:45,201 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:57:14,890 - ERROR - auth_manager.py:43 - Details: Error occured : '_AsyncGeneratorContextManager' object has no attribute 'cursor' 
+
+2024-11-09 01:57:33,365 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 01:59:38,886 - ERROR - db_connection.py:85 - Details: Error in database connection context: [TypeError("'coroutine' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')] 
+
+2024-11-09 02:00:41,527 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:02:31,941 - ERROR - db_connection.py:85 - Details: Error in database connection context: [TypeError("'coroutine' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')] 
+
+2024-11-09 02:04:09,098 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:06:31,463 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:09:43,807 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:12:34,638 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:18:11,222 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:18:45,129 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:24:41,876 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:25:51,561 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:30:40,783 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:32:02,173 - ERROR - auth.py:92 - Details: Signature verification failed. 
+
+2024-11-09 02:32:52,378 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-09 02:34:27,646 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:34:46,772 - ERROR - database.py:58 - Details:  Error occured: object int can't be used in 'await' expression 
+
+2024-11-09 02:34:46,772 - ERROR - db_connection.py:85 - Details: Error in database connection context:  
+
+2024-11-09 02:34:48,593 - ERROR - database.py:58 - Details:  Error occured: object int can't be used in 'await' expression 
+
+2024-11-09 02:34:48,593 - ERROR - db_connection.py:85 - Details: Error in database connection context:  
+
+2024-11-09 02:34:59,298 - ERROR - database.py:58 - Details:  Error occured: object int can't be used in 'await' expression 
+
+2024-11-09 02:34:59,298 - ERROR - db_connection.py:85 - Details: Error in database connection context:  
+
+2024-11-09 02:35:00,432 - ERROR - database.py:58 - Details:  Error occured: object int can't be used in 'await' expression 
+
+2024-11-09 02:35:00,435 - ERROR - db_connection.py:85 - Details: Error in database connection context:  
+
+2024-11-09 02:35:55,971 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:42:01,824 - ERROR - auth.py:92 - Details: Signature has expired. 
+
+2024-11-09 02:42:10,665 - ERROR - auth.py:92 - Details: Signature has expired. 
+
+2024-11-09 02:47:31,143 - ERROR - auth.py:92 - Details: Signature has expired. 
+
+2024-11-09 02:49:48,649 - ERROR - db_connection.py:85 - Details: Error in database connection context: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.9/v/missing'}] 
+
+2024-11-09 02:52:53,861 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:56:07,898 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-09 02:56:25,121 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-09 02:57:34,501 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-09 02:57:42,671 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-09 02:57:48,737 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-09 02:57:52,147 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-09 03:01:25,655 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 

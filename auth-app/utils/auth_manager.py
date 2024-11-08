@@ -1,5 +1,5 @@
 from contextlib import asynccontextmanager
-from .db_connection import DatabaseManager
+from .db_connection import DatabaseManager, get_db_connection_batch_process
 from fastapi import HTTPException
 import aiomysql
 import logging
@@ -11,6 +11,7 @@ async def create_user_table_batch(username:str, email:str, hashed_password:str,
                              database: aiomysql.Connection, role_id :str, two_fa:bool = False):
     
     try:
+
         async with database.cursor() as cursor:
 
             add_otpSecret = pyotp.random_base32()
