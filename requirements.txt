@@ -31,3 +31,5 @@ typing_extensions
 tzdata
 uvicorn
 aiosmtplib
+pydantic-settings
+aiomysql

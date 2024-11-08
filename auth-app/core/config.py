@@ -1,11 +1,8 @@
-import os
-from dotenv import load_dotenv 
+from pydantic_settings import BaseSettings
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordBearer
+from typing import ClassVar
 import logging
-from fastapi import Request, Depends
-
-load_dotenv()
 
 class Logger:
 
@@ -19,24 +16,24 @@ class Logger:
         )
 
 
-class Config:
-    
-    SECRET_KEY = os.getenv('SECRET_KEY')
-    ALGORITHM = os.getenv('ALGORITHM')
-    ACCESS_TOKEN_EXPIRE = int(os.getenv('ACCESS_TOKEN_EXPIRE'))
-    REFRESH_TOKEN_EXPIRE = int(os.getenv('REFRESH_TOKEN_EXPIRE'))
+class Config(BaseSettings):
+    """Configuration class that loads environment variables automatically."""
+
+    SECRET_KEY: str
+    ALGORITHM: str
+    ACCESS_TOKEN_EXPIRE: int
+    REFRESH_TOKEN_EXPIRE: int
     
     # Set up password hashing context
-    context = CryptContext(schemes=['sha256_crypt'], deprecated = "auto")
-
-    oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
-
-
-        
-
-
-
-
-
+    context: ClassVar[CryptContext] =CryptContext(schemes=['sha256_crypt'], deprecated="auto")
     
 
+    oauth2_scheme : ClassVar[OAuth2PasswordBearer] = OAuth2PasswordBearer(tokenUrl="/login")
+
+    # Inner `Config` class to configure how settings are loaded (e.g., from a `.env` file)
+    class Config:
+        env_file = "/auth-app/.env"  # Specify the location of your environment file
+
+
+config = Config()
+# print(config.SECRET_KEY)

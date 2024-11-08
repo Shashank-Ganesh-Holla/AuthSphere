@@ -40,3 +40,721 @@
 2024-11-06 02:18:05,821 - ERROR - auth.py:112 - Details: Signature has expired. 
 
 2024-11-06 02:19:55,044 - ERROR - auth.py:130 - Details: User already logged out. Please re-login 
+
+2024-11-07 00:03:04,978 - INFO - main.py:22 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:03:21,393 - INFO - main.py:22 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:05:15,871 - INFO - main.py:22 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:08:33,793 - ERROR - auth_routes.py:82 - Details: 'property' object has no attribute 'hash' 
+
+2024-11-07 00:09:12,453 - ERROR - auth.py:117 - Details: SECRET_KEY 
+
+2024-11-07 00:10:01,917 - ERROR - auth_routes.py:82 - Details: 'property' object has no attribute 'hash' 
+
+2024-11-07 00:12:17,173 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:12:27,392 - ERROR - auth_routes.py:82 - Details: 'property' object has no attribute 'hash' 
+
+2024-11-07 00:17:34,509 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:17:49,659 - ERROR - auth_routes.py:82 - Details: 'property' object has no attribute 'hash' 
+
+2024-11-07 00:17:52,064 - ERROR - main.py:41 - Details: Unexpected error: cannot access local variable 'connection' where it is not associated with a value 
+
+2024-11-07 00:22:52,884 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:22:59,717 - ERROR - auth_routes.py:82 - Details: 'property' object has no attribute 'hash' 
+
+2024-11-07 00:22:59,717 - ERROR - main.py:41 - Details: Unexpected error: cannot access local variable 'connection' where it is not associated with a value 
+
+2024-11-07 00:23:50,771 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:24:00,926 - ERROR - auth_routes.py:82 - Details: 'property' object has no attribute 'hash' 
+
+2024-11-07 00:26:29,606 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:27:06,831 - ERROR - database.py:45 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 00:41:01,900 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:41:53,420 - ERROR - database.py:45 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 00:43:28,714 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:44:23,590 - ERROR - database.py:45 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 00:45:20,988 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:47:52,422 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:48:14,922 - ERROR - database.py:45 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 00:48:58,243 - ERROR - auth_routes.py:82 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 00:50:42,261 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:51:17,345 - ERROR - database.py:45 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 00:51:47,258 - ERROR - auth_routes.py:82 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 00:54:26,133 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:54:47,886 - ERROR - database.py:45 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 00:54:57,991 - ERROR - auth_routes.py:82 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 00:58:43,851 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 00:59:02,955 - ERROR - database.py:45 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 00:59:29,340 - ERROR - auth_routes.py:82 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 01:02:24,246 - ERROR - database.py:45 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 01:03:49,811 - ERROR - auth_routes.py:82 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 01:05:28,846 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 01:05:44,554 - ERROR - database.py:45 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 01:05:50,965 - ERROR - auth_routes.py:82 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 01:17:15,486 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 01:17:26,442 - ERROR - database.py:45 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 01:17:37,398 - ERROR - auth_routes.py:82 - Details: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`)) 
+
+2024-11-07 09:33:06,526 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:24:53,226 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:25:27,392 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:26:10,327 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:39:28,272 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:40:16,197 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:44:42,688 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:45:02,744 - ERROR - auth_routes.py:26 - Details: __init__() should return None, not 'coroutine' 
+
+2024-11-07 23:45:53,023 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:46:20,323 - ERROR - auth_routes.py:26 - Details: __init__() should return None, not 'coroutine' 
+
+2024-11-07 23:49:13,742 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:50:04,012 - ERROR - auth_routes.py:26 - Details: __init__() should return None, not 'coroutine' 
+
+2024-11-07 23:51:28,159 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:51:42,924 - ERROR - auth_routes.py:26 - Details: object UserRepository can't be used in 'await' expression 
+
+2024-11-07 23:52:15,424 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:54:32,111 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-07 23:58:29,926 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:02:05,156 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:02:21,221 - ERROR - user_repository.py:106 - Details: Error occured at login_user : '_AsyncGeneratorContextManager' object has no attribute 'execute_read' 
+
+2024-11-08 00:06:35,690 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:08:14,301 - ERROR - user_repository.py:106 - Details: Error occured at login_user : '_AsyncGeneratorContextManager' object has no attribute 'execute_read' 
+
+2024-11-08 00:15:40,785 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:15:59,323 - ERROR - user_repository.py:106 - Details: Error occured at login_user : '_AsyncGeneratorContextManager' object has no attribute 'execute_read' 
+
+2024-11-08 00:29:39,504 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:29:57,148 - ERROR - user_repository.py:106 - Details: Error occured at login_user : '_AsyncGeneratorContextManager' object has no attribute 'execute_read' 
+
+2024-11-08 00:31:05,754 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:31:19,882 - ERROR - user_repository.py:106 - Details: Error occured at login_user : '_AsyncGeneratorContextManager' object has no attribute 'execute_read' 
+
+2024-11-08 00:32:48,124 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:33:04,055 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:33:36,884 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:34:32,955 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:38:06,349 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:38:41,434 - ERROR - user_repository.py:106 - Details: Error occured at login_user : '_AsyncGeneratorContextManager' object has no attribute 'execute_read' 
+
+2024-11-08 00:41:09,385 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:50:14,167 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 00:51:16,245 - ERROR - user_repository.py:106 - Details: Error occured at login_user : '_AsyncGeneratorContextManager' object has no attribute 'execute_read' 
+
+2024-11-08 00:56:13,777 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:03:04,169 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:03:51,383 - ERROR - user_repository.py:106 - Details: Error occured at login_user : '_AsyncGeneratorContextManager' object has no attribute 'execute_read' 
+
+2024-11-08 01:10:18,777 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:10:53,542 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:11:28,537 - ERROR - user_repository.py:106 - Details: Error occured at login_user : '_AsyncGeneratorContextManager' object has no attribute 'execute_read' 
+
+2024-11-08 01:15:53,429 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:15:56,462 - ERROR - database.py:32 - Details: connect() got an unexpected keyword argument 'database' 
+
+2024-11-08 01:16:40,213 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:16:43,600 - ERROR - database.py:32 - Details: connect() got an unexpected keyword argument 'database' 
+
+2024-11-08 01:19:27,460 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:19:39,791 - ERROR - database.py:33 - Details: connect() got an unexpected keyword argument 'collation' 
+
+2024-11-08 01:26:19,406 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:27:19,913 - ERROR - user_repository.py:106 - Details: Error occured at login_user : cannot access local variable 'cursor' where it is not associated with a value 
+
+2024-11-08 01:31:05,884 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:32:16,166 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:34:05,698 - ERROR - user_repository.py:106 - Details: Error occured at login_user : 'Connection' object has no attribute 'execute_read' 
+
+2024-11-08 01:35:20,017 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:35:41,532 - ERROR - user_repository.py:106 - Details: Error occured at login_user : 'Connection' object has no attribute 'execute_read' 
+
+2024-11-08 01:36:19,226 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:37:17,653 - ERROR - user_repository.py:106 - Details: Error occured at login_user : cannot access local variable 'cursor' where it is not associated with a value 
+
+2024-11-08 01:37:49,936 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:38:25,834 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:40:05,910 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:41:03,920 - ERROR - user_repository.py:106 - Details: Error occured at login_user : cannot access local variable 'cursor' where it is not associated with a value 
+
+2024-11-08 01:41:23,970 - ERROR - user_repository.py:106 - Details: Error occured at login_user : cannot access local variable 'cursor' where it is not associated with a value 
+
+2024-11-08 01:41:58,819 - ERROR - user_repository.py:106 - Details: Error occured at login_user : cannot access local variable 'cursor' where it is not associated with a value 
+
+2024-11-08 01:45:15,572 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:46:14,008 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:46:25,589 - ERROR - database.py:75 - Details: '_ContextManager' object does not support the context manager protocol 
+
+2024-11-08 01:46:42,591 - ERROR - user_repository.py:106 - Details: Error occured at login_user : cannot access local variable 'cursor' where it is not associated with a value 
+
+2024-11-08 01:47:11,623 - ERROR - database.py:75 - Details: '_ContextManager' object does not support the context manager protocol 
+
+2024-11-08 01:47:49,560 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:48:00,440 - ERROR - database.py:75 - Details: '_ContextManager' object does not support the context manager protocol 
+
+2024-11-08 01:48:01,477 - ERROR - user_repository.py:106 - Details: Error occured at login_user : Database operation failure: '_ContextManager' object does not support the context manager protocol 
+
+2024-11-08 01:48:18,130 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:48:32,729 - ERROR - database.py:75 - Details: '_ContextManager' object does not support the context manager protocol 
+
+2024-11-08 01:48:34,141 - ERROR - user_repository.py:106 - Details: Error occured at login_user : Database operation failure: '_ContextManager' object does not support the context manager protocol 
+
+2024-11-08 01:49:13,445 - ERROR - database.py:75 - Details: '_ContextManager' object does not support the context manager protocol 
+
+2024-11-08 01:49:15,872 - ERROR - user_repository.py:106 - Details: Error occured at login_user : Database operation failure: '_ContextManager' object does not support the context manager protocol 
+
+2024-11-08 01:53:04,967 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:53:21,027 - ERROR - database.py:75 - Details: '_ContextManager' object does not support the context manager protocol 
+
+2024-11-08 01:53:21,811 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'ConnectionError' object has no attribute 'get' 
+
+2024-11-08 01:54:23,737 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:54:34,186 - ERROR - database.py:75 - Details: '_ContextManager' object does not support the context manager protocol 
+
+2024-11-08 01:54:34,863 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'TypeError' object has no attribute 'get' 
+
+2024-11-08 01:56:58,557 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 01:57:12,034 - ERROR - database.py:75 - Details: '_ContextManager' object does not support the context manager protocol 
+
+2024-11-08 01:57:12,712 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'HTTPException' object has no attribute 'get' 
+
+2024-11-08 02:04:04,102 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:04:34,097 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'tuple' object has no attribute 'get' 
+
+2024-11-08 02:05:46,535 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:07:04,032 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'tuple' object has no attribute 'get' 
+
+2024-11-08 02:07:05,453 - ERROR - auth.py:68 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:09:39,780 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:10:01,178 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'tuple' object has no attribute 'get' 
+
+2024-11-08 02:10:02,505 - ERROR - auth.py:68 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:12:47,272 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'tuple' object has no attribute 'get' 
+
+2024-11-08 02:12:53,811 - ERROR - auth.py:68 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:15:08,168 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:15:29,732 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:15:48,020 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'tuple' object has no attribute 'get' 
+
+2024-11-08 02:15:48,674 - ERROR - auth.py:68 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:17:54,579 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:18:18,023 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'tuple' object has no attribute 'get' 
+
+2024-11-08 02:18:18,449 - ERROR - auth.py:68 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:25:17,999 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:25:30,684 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:25:46,394 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'tuple' object has no attribute 'get' 
+
+2024-11-08 02:25:46,813 - ERROR - auth.py:68 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:33:30,862 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:34:12,113 - ERROR - auth.py:103 - Details: ACCESS_TOKEN_EXPIRE 
+
+2024-11-08 02:34:20,231 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 500 
+
+2024-11-08 02:34:21,634 - ERROR - auth.py:72 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:39:39,970 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:40:02,751 - ERROR - auth.py:108 - Details: ACCESS_TOKEN_EXPIRE 
+
+2024-11-08 02:40:11,967 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 500 
+
+2024-11-08 02:40:13,271 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:40:13,271 - ERROR - auth.py:77 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:56:07,719 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:57:20,677 - ERROR - auth.py:108 - Details: ACCESS_TOKEN_EXPIRE 
+
+2024-11-08 02:58:00,810 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 500 
+
+2024-11-08 02:58:06,714 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:58:06,714 - ERROR - auth.py:77 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:59:24,077 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 02:59:28,107 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:59:28,107 - ERROR - auth.py:77 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 02:59:46,592 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 03:00:53,193 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 03:01:39,762 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 03:01:40,665 - ERROR - auth.py:77 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 03:02:23,132 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 03:04:02,715 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'Connection' object has no attribute 'execute_read' 
+
+2024-11-08 03:04:11,213 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 03:04:13,066 - ERROR - auth.py:77 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 12:37:23,695 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 12:37:59,326 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'Connection' object has no attribute 'execute_read' 
+
+2024-11-08 12:37:59,327 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 12:37:59,327 - ERROR - auth.py:77 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 12:40:22,179 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 12:40:43,466 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 'Connection' object has no attribute 'execute_read' 
+
+2024-11-08 12:40:43,470 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 12:40:43,470 - ERROR - auth.py:77 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 12:42:40,354 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 12:42:56,254 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 500 
+
+2024-11-08 12:42:56,258 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 12:42:56,258 - ERROR - auth.py:77 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 12:43:27,678 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 12:43:54,429 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 500 
+
+2024-11-08 12:43:54,434 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 12:43:54,434 - ERROR - auth.py:77 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 12:46:16,876 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 12:47:30,312 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 12:55:29,496 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 12:56:59,108 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:19:26,278 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:19:32,520 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:21:07,171 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:21:08,307 - ERROR - auth.py:77 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:23:57,937 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:24:44,317 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:24:44,956 - ERROR - auth.py:77 - Details: Error in database connection context: 500 
+
+2024-11-08 13:25:25,358 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:26:12,869 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:26:41,449 - ERROR - auth.py:45 - Details: Failed to close database connection: 'DatabaseManager' object has no attribute 'close' 
+
+2024-11-08 13:26:48,897 - ERROR - auth.py:77 - Details: Error in database connection context: 500 
+
+2024-11-08 13:27:14,953 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:29:31,849 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:30:32,421 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:30:46,702 - ERROR - auth.py:77 - Details: Error in database connection context: 500 
+
+2024-11-08 13:31:43,325 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:32:34,161 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:35:13,727 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:38:43,849 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:38:51,913 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:39:38,259 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:39:39,742 - ERROR - auth.py:77 - Details: Error in database connection context: 500 
+
+2024-11-08 13:39:52,375 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:40:28,414 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:40:29,100 - ERROR - auth.py:77 - Details: Error in database connection context: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:40:54,413 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:41:56,735 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:42:42,849 - ERROR - auth.py:77 - Details: Error in database connection context: 500 
+
+2024-11-08 13:51:58,867 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:52:30,352 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:53:05,195 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:54:15,988 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:54:35,248 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:55:44,950 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:55:59,963 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:55:59,963 - ERROR - auth.py:77 - Details: Error in database connection context: 'UserRepository' object has no attribute 'login_users' 
+
+2024-11-08 13:56:39,886 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:57:15,811 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:58:38,876 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 13:59:10,401 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 13:59:53,058 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:00:04,793 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 14:00:04,794 - ERROR - auth.py:77 - Details: Error in database connection context: 500 
+
+2024-11-08 14:02:00,149 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:02:05,034 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:02:21,193 - ERROR - auth_service.py:29 - Details: Error occured: 'UserRepository' object has no attribute 'login_users' 
+
+2024-11-08 14:02:40,907 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 14:02:40,907 - ERROR - auth.py:77 - Details: Error in database connection context: 500 
+
+2024-11-08 14:06:25,378 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:06:42,057 - ERROR - auth_service.py:29 - Details: Error occured: 'UserRepository' object has no attribute 'login_users' 
+
+2024-11-08 14:06:42,696 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 14:06:42,697 - ERROR - auth.py:77 - Details: Error in database connection context: 500 
+
+2024-11-08 14:06:55,170 - ERROR - auth_service.py:29 - Details: Error occured: 'UserRepository' object has no attribute 'login_users' 
+
+2024-11-08 14:06:55,891 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 14:06:55,891 - ERROR - auth.py:77 - Details: Error in database connection context: 500 
+
+2024-11-08 14:10:02,026 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:10:28,524 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:10:50,274 - ERROR - auth_service.py:30 - Details: Error occured: 'UserRepository' object has no attribute 'login_users' 
+
+2024-11-08 14:10:51,335 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 14:10:51,335 - ERROR - auth.py:77 - Details: Error in database connection context: 500 
+
+2024-11-08 14:11:03,865 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:11:20,813 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:13:49,951 - ERROR - user_repository.py:113 - Details: Error occured at login_user : 401 
+
+2024-11-08 14:14:15,760 - ERROR - auth.py:45 - Details: Failed to close database connection: object NoneType can't be used in 'await' expression 
+
+2024-11-08 14:14:15,760 - ERROR - auth.py:77 - Details: Error in database connection context: 401 
+
+2024-11-08 14:15:18,815 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:17:24,019 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:20:06,500 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:20:37,812 - ERROR - user_repository.py:22 - Details: Error occured: 'DatabaseManager' object has no attribute 'execute_reads' 
+
+2024-11-08 14:20:49,953 - ERROR - user_repository.py:117 - Details: Error occured at login_user : 500 
+
+2024-11-08 14:20:49,958 - ERROR - auth.py:76 - Details: Error in database connection context: 500 
+
+2024-11-08 14:22:04,504 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:22:19,130 - ERROR - user_repository.py:21 - Details: Error occured: 'DatabaseManager' object has no attribute 'execute_reads' 
+
+2024-11-08 14:22:21,370 - ERROR - user_repository.py:116 - Details: Error occured at login_user : 500 
+
+2024-11-08 14:22:21,374 - ERROR - auth.py:76 - Details: Error in database connection context: 500 
+
+2024-11-08 14:22:37,480 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:23:04,004 - ERROR - user_repository.py:21 - Details: Error occured: 'DatabaseManager' object has no attribute 'execute_reads' 
+
+2024-11-08 14:23:09,708 - ERROR - user_repository.py:116 - Details: Error occured at login_user : 500 
+
+2024-11-08 14:23:09,711 - ERROR - auth.py:76 - Details: Error in database connection context: 500 
+
+2024-11-08 14:49:53,872 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:50:27,017 - ERROR - auth.py:57 - Details: Error occured: name 'execute_read_querys' is not defined 
+
+2024-11-08 14:50:28,051 - ERROR - user_repository.py:116 - Details: Error occured at login_user : 500 
+
+2024-11-08 14:50:28,056 - ERROR - auth.py:80 - Details: Error in database connection context: 500 
+
+2024-11-08 14:52:37,933 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:53:01,834 - ERROR - database.py:125 - Details:  Error occured: 'Connection' object has no attribute 'cursors' 
+
+2024-11-08 14:53:03,455 - ERROR - user_repository.py:116 - Details: Error occured at login_user : 500 
+
+2024-11-08 14:53:03,458 - ERROR - auth.py:80 - Details: Error in database connection context: 500 
+
+2024-11-08 14:53:55,190 - ERROR - database.py:125 - Details:  Error occured: 'Connection' object has no attribute 'cursors' 
+
+2024-11-08 14:54:35,886 - ERROR - user_repository.py:116 - Details: Error occured at login_user : 500 
+
+2024-11-08 14:54:35,890 - ERROR - auth.py:80 - Details: Error in database connection context: 500 
+
+2024-11-08 14:56:49,474 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 14:57:12,964 - ERROR - database.py:125 - Details:  Error occured: 'Connection' object has no attribute 'cursors' 
+
+2024-11-08 14:57:13,726 - ERROR - auth.py:80 - Details: Error in database connection context: 500 
+
+2024-11-08 15:07:41,011 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 15:09:21,295 - ERROR - database.py:125 - Details:  Error occured: 'Connection' object has no attribute 'cursors' 
+
+2024-11-08 15:13:19,587 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 16:04:20,705 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 16:06:00,384 - ERROR - auth_service.py:25 - Details: Error occured : UserRepository.create_user() missing 1 required positional argument: 'email' 
+
+2024-11-08 16:08:03,044 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 16:15:28,062 - ERROR - auth_manager.py:70 - Details: Error occured : 'Depends' object has no attribute 'cursor' 
+
+2024-11-08 16:22:50,451 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 16:24:07,913 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 16:24:47,319 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 19:11:07,136 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 19:12:06,521 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 19:14:24,691 - ERROR - auth_service.py:30 - Details: Error occured : UserRepository.create_user() got an unexpected keyword argument 'db' 
+
+2024-11-08 19:14:25,349 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 19:24:12,468 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 19:27:03,872 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 19:29:07,286 - ERROR - auth_manager.py:44 - Details: Error occured : (1452, 'Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`))') 
+
+2024-11-08 19:29:15,994 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 19:30:01,402 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 19:35:56,198 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 19:36:48,466 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 19:38:31,944 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 19:38:36,329 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 19:38:38,944 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 19:38:41,811 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 19:38:43,422 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 19:38:44,663 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 19:59:55,287 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 19:59:59,396 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 20:00:03,823 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 20:00:14,976 - ERROR - auth_manager.py:42 - Details: Error occured : (1062, "Duplicate entry 'bestuser@example.com' for key 'email'") 
+
+2024-11-08 20:00:14,977 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:09:53,079 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:10:35,011 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:13:18,114 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:21:51,727 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:22:22,360 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:22:36,101 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:22:37,126 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:22:38,082 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:22:39,079 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:22:39,895 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:22:40,748 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:22:41,470 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:22:42,156 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:22:42,852 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:24:58,278 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:25:40,595 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:26:13,660 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:26:37,603 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:27:21,953 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:29:12,996 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:30:06,780 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:33:09,783 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:33:45,052 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:45:32,489 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:46:29,687 - ERROR - auth_routes.py:61 - Details: Error occured : AuthService.register_user() missing 4 required positional arguments: 'username', 'email', 'password', and 'db' 
+
+2024-11-08 21:46:31,561 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:52:38,704 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:55:11,148 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:55:57,329 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:56:07,817 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:56:10,282 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:56:11,441 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:58:16,161 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 21:58:44,283 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 21:59:44,379 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 22:01:01,648 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 22:01:13,990 - ERROR - db_connection.py:100 - Details: Transaction rolled back 
+
+2024-11-08 22:03:29,107 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 22:05:29,862 - INFO - main.py:23 - Details: AuthSphere started successfully! 
+
+2024-11-08 22:05:35,240 - ERROR - auth_routes.py:44 - Details: Username already registered! 

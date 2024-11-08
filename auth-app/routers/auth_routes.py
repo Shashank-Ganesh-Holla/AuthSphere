@@ -1,7 +1,6 @@
 from fastapi import APIRouter, HTTPException, status, Depends, Form, BackgroundTasks, Request
 from schemas import User, UserCreate, ClientResponse
-from auth import DatabaseManager, PasswordManager, TokenFactory, UserManager
-from database import create_connection
+from auth import TokenFactory, UserManager
 import logging
 from mysql.connector import Error
 import pyotp
@@ -11,163 +10,109 @@ from datetime import timedelta, timezone, datetime
 from typing import Union
 from aiosmtplib import send
 from email.message import EmailMessage
-
+from repositories import UserRepository
+from services import AuthService
+from utils import get_db_connection, get_db_connection_batch_process, DatabaseManager
+import aiomysql
 
 router = APIRouter()
 fake_db = {}
 
-# The response_model parameter is used in FastAPI to specify the format of the data that the endpoint should return to the client.
-@router.post('/register', response_model=User)
-def register(user:UserCreate):
 
+
+async def get_auth_service(db = Depends(get_db_connection)):
     try:
-        # lets check if the user already exsists within table
-        query_user = "SELECT * FROM users where username = %s"
-        params_user = (user.username,)
-
-        with DatabaseManager() as db:
-            result = db.execute_read(query_user, params_user)
-
-        if result:
-            raise HTTPException(status_code=200, detail="Username already registered!")
-
-        hashed_password = PasswordManager.hash_password(user.password)
-
-        if user.twoFA_enabled:
-
-            try:
-                connection = create_connection()
-                cursor = connection.cursor()
-                # start a transaction batch
-                connection.start_transaction()
-
-                # query params for pushing into users
-                query_Users = "INSERT INTO users (username, email, password, role_id, enabled) VALUES (%s, %s, %s, %s, %s)"
-                params_Users = (user.username, user.email, hashed_password, user.role_id, True)
-
-                cursor.execute(query_Users, params_Users)
-
-                # get a secretotp for the user(which is used later to generate unique otp everytime later)
-                add_otpSecret = pyotp.random_base32()
-
-                # query params for pushing into otp_table
-                query_Otp ='''INSERT INTO otp_table (username, otp_secret) VALUES (%s, %s)
-                    ON DUPLICATE KEY
-                    UPDATE otp_secret = IF(otp_secret IS NULL, VALUES(otp_secret), otp_Secret)
-                    '''
-                
-                params_Otp = (user.username, add_otpSecret)
-                cursor.execute(query_Otp, params_Otp)
-
-                connection.commit()
-                cursor.close()
-                
-            except Error as err:
-                logging.error(str(err))
-                connection.rollback()
-                logging.error("Transaction rolled back")
-                raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR,detail='Error while writing into database')
-            
-            
-        query = "INSERT INTO users (username, email, password, role_id) VALUES (%s, %s, %s, %s)"
-        params = (user.username, user.email, hashed_password, user.role_id)
-
-        with DatabaseManager() as db:
-            db.execute_manipulation(query, params)
-
-        return user
+        user_repository = UserRepository(db)
+        return AuthService(user_repo=user_repository)
     
     except Exception as err:
-        if not isinstance(err, HTTPException):
-            logging.error(str(err))
-            raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
-        else:
-            raise
+        logging.error(str(err))
+        raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, "Internal Server Error")
 
-    finally:
-        if connection:
-            connection.close()
+
+# The response_model parameter is used in FastAPI to specify the format of the data that the endpoint should return to the client.
+@router.post('/register', response_model= Union[ClientResponse, None])
+async def register(user:UserCreate, 
+                   auth_service:AuthService = Depends(get_auth_service)): 
+    
+
+    try:
+        
+        '''user existance check before entering the auth service enhances the performance and reduces the latency'''
+
+        user_exists = await UserManager.user_query(user.username)
+
+        if user_exists: # if the user already in db
+            logging.error("Username already registered!")
+            raise HTTPException(status_code=400, detail="Username already registered!")
+    
+    except Exception as err:
+
+        if isinstance(err, HTTPException) and err.detail == "User not found":
+            
+            '''we will create user when this condition satisfies'''
+
+            try:
+                db = await get_db_connection_batch_process()
+                result = await auth_service.register_user(username=user.username, email=user.email,password=user.password,
+                                                          db=db,role_id=user.role_id, two_fa=user.twoFA_enabled)
+
+                return result
+            
+            except Exception as err:
+                if not isinstance(err, HTTPException):
+                    logging.error(f"Error occured : {str(err)}")
+                    raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal Server Error")
+            
+                raise 
+        else:
+            if not isinstance(err, HTTPException):
+                logging.error(f"Error occured : {str(err)}")
+                raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal Server Error")
+            
+            raise 
+
+
+
+@router.post("/login")
+async def login(form_data:OAuth2PasswordRequestForm = Depends(), auth_service:AuthService = Depends(get_auth_service)):
+
+    try:
+
+        '''user existance check doesnt seem benefitial here as we have to query users table for checking user and getting the stored password
+        so the one time db query seems more logical'''
+
+        result = await auth_service.login(username=form_data.username,
+                        password=form_data.password) 
+        return result 
+
+    except Exception as err:
+        if not isinstance(err, HTTPException):
+            logging.error(f"Error occured : {str(err)}")
+            raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal Server Error")
+    
+        raise 
+
 
 
 @router.post('/request-password-reset/')
 def request_password_reset(user:User, background_task:BackgroundTasks):
-    token = secrets.token_urlsafe(32)
-    email = 'testuser@example.com'
-    expiration = datetime.now(timezone.utc) + timedelta(minutes=10)
-    
-    fake_db[email] = {"reset_token": token, "expires_at": expiration}
-
-
-@router.post("/login")
-def login(form_data:OAuth2PasswordRequestForm = Depends()):
 
     try:
-        user = form_data.username
-        plain_pwd = form_data.password
-
-        param_user = (user,)
-        with DatabaseManager() as db:
-            query_user = "SELECT * FROM users WHERE username = %s"
-            user_db = db.execute_read(query_user, param_user)
-
-        if user_db:
-            resp_pwd = user_db.get('password')
-            resp_role = user_db.get('role_id')
-
-            if resp_pwd and PasswordManager.verify_password(plain_pwd, resp_pwd):
-
-                if user_db.get('enabled') == 1 or user_db.get('enabled') == True:
-
-                    '''For user who have enabled twofa(password and otp)'''
-
-                    with DatabaseManager() as db:
-                        query_otp = "SELECT * FROM otp_table WHERE username = %s"
-                        otp_details = db.execute_read(query_otp, param_user)
-
-                    if otp_details.get('otp_secret'):
-                        otp = pyotp.TOTP(otp_details.get('otp_secret'))
-                        otp_gen = otp.now()
-                        
-                        '''Send this otp  to the user chosen medium of communication(otp sent as email or sms or both)
-                        but now, will include otp within the login reponse for testing purpose
-                        will change it later when notification feature is added.'''
-
-                        return {'stat': 'Ok', 'otp': otp_gen,"Result": "OTP sent to the registered mobile number/email"}
-
-                    else:
-
-                        '''Reset the twofa as disabled and ask to relogin as the otp_secrt data for the user not found in database.
-                        Can be set /update_twofa endpoint once the user login with password'''
-
-                        with DatabaseManager() as db:
-                            false_query = "UPDATE users SET enabled = %s WHERE username = %s AND enabled = %s"
-                            false_params = (False, user, True)
-                            db.execute_manipulation(false_query, false_params)
-                        
-                        raise HTTPException(status.HTTP_404_NOT_FOUND, detail=f"OTP data not found for user: {user}, Please try login again!")
-
-                '''For users with only password authentication'''
-
-                data ={"sub":user, 'role': resp_role}
-
-                access_token = TokenFactory.create_access_token(data=data)
-
-                return {"access_token": access_token, "token_type":"bearer"}
-
-            else:
-                '''When wrong password entered'''
-                raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="Invalid Password")
-                
-        else:
-            '''When username entered not valid'''
-            raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="User not found")
+        token = secrets.token_urlsafe(32)
+        email = 'testuser@example.com'
+        expiration = datetime.now(timezone.utc) + timedelta(minutes=10)
         
-    except Exception as err:
-        if not isinstance(err, HTTPException):
-            logging.error(str(err))
-            raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
+        fake_db[email] = {"reset_token": token, "expires_at": expiration}
+
+    except Exception as er:
+        if not isinstance(er, HTTPException):
+            logging.error(f"Error occured : {str(er)}")
+            raise  HTTPException(500, detail="Internal Server Error")   
         else:
-            raise
+            raise 
+
+
 
 @router.post('/verify_otp/')
 def verify_otp(username: str = Form(...), otp:str = Form(...)):
@@ -207,7 +152,12 @@ def verify_otp(username: str = Form(...), otp:str = Form(...)):
 @router.post('/logout/', response_model=Union[ClientResponse])
 async def logout_me(request:Request, 
                       username:str = Form(...),
-                      current_user: None = Depends(TokenFactory.validate_token)):    
+                      current_user: None = Depends(TokenFactory.validate_token),
+                      auth_service: AuthService = Depends(get_auth_service)):
+    
+    auth_service.logout(request=request, username=username)
+
+        
     try:
     
         user = await UserManager.logout_user(username, request)
