@@ -9,20 +9,20 @@ router = APIRouter()
 
 
 @router.get('/get-user-details/')
-def get_user_details(username:str, 
+async def get_user_details(username:str, 
                      current_user:None = Depends(TokenFactory.validate_token)):
 
     try:
-        with DatabaseManager() as db:
+        async with DatabaseManager() as db:
             user_query = "SELECT * FROM users WHERE username = %s"
             user_param = (username,)
 
-            is_user = db.execute_read(user_query, user_param)
+            is_user = await db.execute_read(user_query, user_param)
 
         if not is_user:
             raise HTTPException(status.HTTP_404_NOT_FOUND, detail="User not found")
 
-        with DatabaseManager() as db:
+        async with DatabaseManager() as db:
             details_query = '''
             SELECT u.username, u.email, r.role_name 
             FROM users u
@@ -33,7 +33,7 @@ def get_user_details(username:str,
 
             details_params = (username,)
 
-            result = db.execute_read(details_query, details_params)
+            result = await db.execute_read(details_query, details_params)
 
         if not result:
             raise HTTPException(status.HTTP_404_NOT_FOUND, detail="User not found or role not assigned")
@@ -50,7 +50,7 @@ def get_user_details(username:str,
 
 
 @router.get('/read/users', response_model=Union[User])
-def read_users_me(user:User=Depends(UserManager.get_current_user)):
+async def read_users_me(user:User=Depends(UserManager.get_current_user)):
 
     try:
         return user
@@ -62,28 +62,28 @@ def read_users_me(user:User=Depends(UserManager.get_current_user)):
         else:
             raise
 
-
+# 
 @router.put('/assign-role/', dependencies=[Depends(RoleManager.role_required('admin'))])
 async def assign_role(request:Request, username:str = Form(...), 
                       role_name:str = Form(...)):
 
     try:        
         # first check if the user exists 
-        with DatabaseManager() as db:
+        async with DatabaseManager() as db:
             query_user = "SELECT * FROM users WHERE username = %s"
             params_user = (username,)
 
-            result = db.execute_read(query_user, params_user)
+            result = await db.execute_read(query_user, params_user)
 
         # if user not found
         if not result:
             raise HTTPException(status.HTTP_404_NOT_FOUND, detail="User not found")
         
         # Now check if the role_name in roles table and get the role_id
-        with DatabaseManager() as db:
+        async with DatabaseManager() as db:
             query_role = "SELECT role_id FROM roles WHERE role_name = %s"
             params_role = (role_name,)
-            role_id = db.execute_read(query_role, params_role)
+            role_id : dict = await db.execute_read(query_role, params_role)
 
         if not role_id:
             raise HTTPException(status.HTTP_404_NOT_FOUND, detail="role_name not found")
@@ -92,15 +92,19 @@ async def assign_role(request:Request, username:str = Form(...),
         
         # now update the role id to the users table role_id column
 
-        with DatabaseManager() as db:
+        async with DatabaseManager() as db:
             update_query_role = "UPDATE users SET role_id = %s WHERE username = %s"
             update_params_role = (role_id, username)
-            update_result = db.execute_manipulation(update_query_role, update_params_role)
+            update_result = await db.execute_manipulation(update_query_role, update_params_role)
 
 
         if update_result == 1 :
-            token = await TokenFactory.get_token_from_request(request)
-            TokenManager.blacklist_token(username, token)
+            token : str = await TokenFactory.get_token_from_request(request)
+
+            if token is None:
+                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Token is required")
+            
+            await TokenManager.blacklist_token(username, token)
 
             return {"stat": "Ok",
                     "Result": f"'{role_name}' role_name for '{username}' updated successfully! "}

@@ -1,8 +1,9 @@
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 import logging
-from core.config import Logger
+from core import Logger
 from routers import auth_router, user_router, test_router
+from typing import Union
 
 logging.getLogger("uvicorn").setLevel(logging.WARNING)
 
@@ -23,27 +24,18 @@ async def startup_event():
     pass
 
 
-@app.exception_handler(HTTPException)
-async def http_exception_handler(request: Request, exc: HTTPException):
-
+@app.exception_handler(HTTPException)  # Catch any exception
+async def general_exception_handler(request: Request, exc: Union[Exception, HTTPException]):
     """
-    Custom exception handler for HTTP exceptions, returning a structured JSON response.
-    
-    This handler intercepts HTTPException responses and formats them in a standardized JSON structure, 
-    enhancing readability and consistency across API responses. The output format is:
-    
-    {
-        "stat": "Not_Ok",
-        "Reason": "..."
-    }
-    
-    This approach provides a user-friendly and professional error response for clients.
+    Custom exception handler that catches HTTPException.
+    It returns a structured JSON response for the client and logs the error.
     """
+    # if isinstance(exc, HTTPException):
+    #     # If it's an HTTPException, we handle it as usual
     return JSONResponse(
         status_code=exc.status_code,
         content={"stat": "Not_Ok", "Reason": exc.detail},
     )
-
 
 @app.get('/')
 def read_root():

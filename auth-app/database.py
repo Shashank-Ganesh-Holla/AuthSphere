@@ -1,23 +1,25 @@
-import mysql.connector 
-from mysql.connector import Error
+# import mysql.connector 
+# from mysql.connector import Error
 from fastapi import HTTPException
 import os
 from dotenv import load_dotenv
 import logging
+from aiomysql import connect, Error, Connection, DictCursor
+from typing import Optional
 
 load_dotenv()
 
-def create_connection():
+async def create_connection() -> Connection:
     
     connection = None
 
     try:
-        connection = mysql.connector.connect(
+        connection = await connect(
             user=os.getenv('DB_USER'),
             password=os.getenv('DB_PASSWORD'),
             host=os.getenv('DB_HOST'),
-            database=os.getenv('DB_NAME'),
-            collation=os.getenv('DB_COLLATION')  # Specify a compatible collation
+            # for aiomysql, db is a keyword argument for database
+            db=os.getenv('DB_NAME')
         )
         
         return connection
@@ -32,47 +34,58 @@ def create_connection():
 
 
 
-def execute_write_query(connection, query, params=None):
+async def execute_write_query(connection:Connection, query, params=None):
+    
     affected_rows = None
+
     try:
-        
-        cursor = connection.cursor(dictionary=True)
-        cursor.execute(query, params)
-        affected_rows = cursor.rowcount  # Number of rows affected by the query
-        connection.commit()
+        async with connection.cursor(DictCursor) as cursor:
+            await cursor.execute(query, params)
+            affected_rows = await cursor.rowcount  # Number of rows affected by the query
+            connection.commit()
+            return affected_rows
         
     except Error as er:
-        logging.error(str(er))
-        raise HTTPException(500, detail="Error in server")
+        if not isinstance(er, HTTPException):
+            logging.error(f" Error occured: {str(er)}")
+            raise  HTTPException(500, detail="Internal Server Error")
+        else:
+            raise
     
-    finally:
-        cursor.close()
+    except Exception as err:
     
-    return affected_rows
+        if not isinstance(err, HTTPException):
+            logging.error(f" Error occured: {str(err)}")
+            raise  HTTPException(500, detail="Internal Server Error")
+        else:
+            raise
 
-def execute_read_query(connection, query, 
+
+async def execute_read_query(connection:Connection, query, 
                        params=None):
     
     try:
-        cursor = connection.cursor(dictionary=True)
-        cursor.execute(query, params)
-        result = cursor.fetchone()
-        return result
+        async with connection.cursor(DictCursor) as cursor:
+            await cursor.execute(query, params)
+            result = await cursor.fetchone()
+            return result
 
-    except Error as e:
-        logging.error(str(e))
-        raise ConnectionError(f"Database operation failure: {e}")
+    except Exception as e:
+        if not isinstance(e, HTTPException):
+            logging.error(f" Error occured: {str(e)}")
+            raise  HTTPException(500, detail="Internal Server Error")
+        else:
+            raise
     
-    finally:
-        cursor.close()
 
             
 
-def fetch_all_users(connection):
+async def fetch_all_users(connection:Connection):
     try:
-        cursor = connection.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM  users")
-        return cursor.fetchall()
+        async with connection.cursor(DictCursor) as cursor:
+            await cursor.execute("SELECT * FROM  users")
+            result = await cursor.fetchall()
+            return result
     
     finally:
         if connection:
