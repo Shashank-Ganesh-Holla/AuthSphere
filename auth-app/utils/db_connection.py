@@ -3,6 +3,7 @@ from fastapi import HTTPException, status
 from database import create_connection, execute_read_query, execute_write_query
 import logging
 import aiomysql
+from contextlib import asynccontextmanager
 
 # ! Context manager pattern !
 class DatabaseManager:
@@ -91,9 +92,9 @@ async def get_db_connection()-> AsyncGenerator[DatabaseManager, None]:
 async def get_db_connection_batch_process()-> AsyncGenerator[aiomysql.Connection, None]:
    
     try:
-        db : aiomysql.Connection = await create_connection()
+        db  = await create_connection()
         await db.begin()  # Begin the transaction
-        yield db          # Yield the connection to be used in the function
+        yield db        # Yield the connection to be used in the function
 
     except Exception as ex:
         await db.rollback() # Rollback in case of an error

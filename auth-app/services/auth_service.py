@@ -1,8 +1,6 @@
 from repositories import UserRepository
-from fastapi import HTTPException, Request, Form, Depends
-from contextlib import asynccontextmanager
-from auth import DatabaseManager, PasswordManager, TokenFactory, UserManager
-from typing import AsyncGenerator
+from fastapi import HTTPException, Request
+from auth import PasswordManager, UserManager
 import logging
 import aiomysql
 
@@ -44,7 +42,22 @@ class AuthService:
                 logging.error(f"Error occured: {str(er)}")
 
             raise 
+
     
+    async def otp_verify(self, username:str, otp:str):
+
+        try:
+            result = await self.user_repo.verify_otp_user(username=username, otp=otp)
+            return result
+        
+        except Exception as er:
+            if not isinstance(er, HTTPException):
+                logging.error(f"Error occured: {str(er)}")
+
+            raise 
+        
+
+
 
     async def logout(self, request:Request, 
                       username:str):
