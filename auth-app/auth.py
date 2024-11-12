@@ -9,6 +9,7 @@ from typing import Dict, Optional, AsyncGenerator
 import logging
 from contextlib import asynccontextmanager
 from utils import DatabaseManager
+from core import websocket_manager
 
 
 # ! Factory pattern implemented !
@@ -259,6 +260,10 @@ class UserManager:
             logout_action = LogoutUserAction(username, token)
 
             result = await logout_action.action()
+            
+            #Websocket broadcast
+            await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: Logout Success!")
+            
             return result
         
         except Exception as er:
