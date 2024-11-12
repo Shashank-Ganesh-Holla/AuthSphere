@@ -36,8 +36,11 @@ class WebsocketManager:
 
     
     async def disconnect(self, websocket:WebSocket):
-        await websocket.close()
-        self.connections.remove(websocket)
+        try:
+            await websocket.close()
+            self.connections.remove(websocket)
+        except RuntimeError as e:
+            return
         
 
 

@@ -172,14 +172,13 @@ async def verify_otp(username: str = Form(...), otp:str = Form(...), auth_servic
 
 
 @router.post('/logout/', response_model=Union[ClientResponse])
-async def logout_me(request:Request, 
-                      username:str = Form(...),
-                      current_user: None = Depends(TokenFactory.validate_token),
+async def logout_me(request:Request,
+                      current_user = Depends(TokenFactory.validate_token),
                       auth_service: AuthService = Depends(get_auth_service)):
     
 
     try:
-        result = await auth_service.logout(request=request, username=username)
+        result = await auth_service.logout(request=request, username=current_user[0])
         return result
     
     except Exception as err:
@@ -187,12 +186,12 @@ async def logout_me(request:Request,
             logging.error(str(err))
 
             #Websocket broadcast
-            await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: {str(err)}")
+            await websocket_manager.broadcast(f"{datetime.now()} : User: {current_user}, Result: {str(err)}")
 
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
         else:
             #Websocket broadcast
-            await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: {err.detail}")
+            await websocket_manager.broadcast(f"{datetime.now()} : User: {current_user}, Result: {err.detail}")
 
             raise
 
