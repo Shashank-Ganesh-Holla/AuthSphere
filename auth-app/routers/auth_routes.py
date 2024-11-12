@@ -70,14 +70,30 @@ async def register(user:UserCreate,
             except Exception as err:
                 if not isinstance(err, HTTPException):
                     logging.error(f"Error occured : {str(err)}")
+
+                    #Websocket broadcast
+                    await websocket_manager.broadcast(f"{datetime.now()} : User: {user.username}, Result: {str(err)}")
+
                     raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal Server Error")
-            
+                
+                #Websocket broadcast
+                await websocket_manager.broadcast(f"{datetime.now()} : User: {user.username}, Result: {err.detail}")
+
                 raise 
+
         else:
+
             if not isinstance(err, HTTPException):
                 logging.error(f"Error occured : {str(err)}")
+
+                #Websocket broadcast
+                await websocket_manager.broadcast(f"{datetime.now()} : User: {user.username}, Result: {str(err)}")
+
                 raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal Server Error")
             
+            #Websocket broadcast
+            await websocket_manager.broadcast(f"{datetime.now()} : User: {user.username}, Result: {err.detail}")
+
             raise 
 
 
@@ -99,13 +115,16 @@ async def login(form_data:OAuth2PasswordRequestForm = Depends(),
     except Exception as err:
         if not isinstance(err, HTTPException):
             logging.error(f"Error occured : {repr(err)}")
+
+            #Websocket broadcast
             await websocket_manager.broadcast(f"{datetime.now()} : User: {form_data.username}, Result: {str(err)}")
+
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal Server Error")
         
+        #Websocket broadcast
         await websocket_manager.broadcast(f"{datetime.now()} : User: {form_data.username}, Result: {err.detail}")
+
         raise 
-
-
 
 
 
@@ -135,14 +154,20 @@ async def verify_otp(username: str = Form(...), otp:str = Form(...), auth_servic
     try:
 
         result = await auth_service.otp_verify(username=username, otp=otp)
-
         return result
     
     except Exception as err:
         if not isinstance(err, HTTPException):
             logging.error(f"username:{username}, Error:{str(err)}")
+
+            #Websocket broadcast
+            await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: {str(err)}")
+
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
         else:
+            #Websocket broadcast
+            await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: {err.detail}")
+
             raise
 
 
@@ -160,8 +185,15 @@ async def logout_me(request:Request,
     except Exception as err:
         if not isinstance(err, HTTPException):
             logging.error(str(err))
+
+            #Websocket broadcast
+            await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: {str(err)}")
+
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
         else:
+            #Websocket broadcast
+            await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: {err.detail}")
+
             raise
 
 
