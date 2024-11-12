@@ -89,6 +89,10 @@ class UserRepository:
                                         hashed_password=password,
                                         role_id=role_id, two_fa=two_fa,
                                         db=self.db)
+                
+
+                #Websocket broadcast
+                await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: {username} successfully created!")
                 return result
             
             else:
@@ -105,6 +109,9 @@ class UserRepository:
                                         hashed_password=password,
                                         role_id=role_id, two_fa=two_fa, database=database)
 
+
+                #Websocket broadcast
+                await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: {username} successfully created!")
                 return result 
         
         except Exception as er:
@@ -132,6 +139,10 @@ class UserRepository:
 
                         secret = user_otp_details.get('otp_secret')
                         result =  await login_user_twoFA(secret)
+
+                        #Websocket broadcast
+                        await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: OTP sent to the registered email/mobile number")
+
                         return result
                     
                     else:
@@ -149,7 +160,10 @@ class UserRepository:
                     data = {"sub":username, 'role': user_exists.get('role_id')}
                     access_token = TokenFactory.create_access_token(data=data)
                     refresh_token = TokenFactory.create_refresh_token(data=data)
+
+                    #Websocket broadcast
                     await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: Login Success!")
+
                     return {"access_token": access_token, "refresh_token": refresh_token ,"token_type":"bearer"}
                     
 
@@ -182,6 +196,10 @@ class UserRepository:
 
                     access_token = TokenFactory.create_access_token(data)
                     refresh_token = TokenFactory.create_refresh_token(data=data)
+
+                    #Websocket broadcast
+                    await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: OTP verification successful")
+
                     return {"access_token": access_token, "refresh_token": refresh_token ,"token_type":"bearer"}
                 
                 else:
