@@ -3,6 +3,7 @@ from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordBearer
 from typing import ClassVar
 import logging
+from managers import WebsocketManager
 
 class Logger:
 
@@ -23,6 +24,8 @@ class Config(BaseSettings):
     ALGORITHM: str
     ACCESS_TOKEN_EXPIRE: int
     REFRESH_TOKEN_EXPIRE: int
+
+
     
     # Set up password hashing context
     context: ClassVar[CryptContext] =CryptContext(schemes=['sha256_crypt'], deprecated="auto")
@@ -36,4 +39,5 @@ class Config(BaseSettings):
 
 
 config = Config()
+websocket_manager = WebsocketManager()
 # print(config.SECRET_KEY)

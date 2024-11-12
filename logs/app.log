@@ -892,3 +892,573 @@
 2024-11-09 02:57:52,147 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
 
 2024-11-09 03:01:25,655 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-09 19:17:03,661 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-09 19:18:57,299 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-09 19:19:47,906 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-09 19:20:08,475 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-09 19:28:03,921 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-09 19:29:00,931 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-09 19:29:03,631 - ERROR - websocket_utility.py:24 - Details: No token provided, connection refused. 
+
+2024-11-09 19:29:12,044 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-09 19:29:16,897 - ERROR - websocket_utility.py:24 - Details: No token provided, connection refused. 
+
+2024-11-09 19:30:42,729 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-09 19:30:44,987 - ERROR - websocket_utility.py:24 - Details: No token provided, connection refused. 
+
+2024-11-09 19:30:52,735 - ERROR - websocket_utility.py:24 - Details: No token provided, connection refused. 
+
+2024-11-09 19:34:55,916 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-09 19:36:14,332 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-09 19:36:56,031 - INFO - ws_routes.py:22 - Details: Client Disconnected! 
+
+2024-11-10 15:55:30,196 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 15:55:53,898 - ERROR - token_helper.py:144 - Details: Signature has expired. 
+
+2024-11-10 15:57:29,921 - ERROR - token_helper.py:144 - Details: Signature has expired. 
+
+2024-11-10 15:59:03,876 - ERROR - token_helper.py:144 - Details: Signature has expired. 
+
+2024-11-10 16:00:00,669 - ERROR - token_helper.py:144 - Details: Signature has expired. 
+
+2024-11-10 16:00:52,671 - ERROR - token_helper.py:144 - Details: Signature has expired. 
+
+2024-11-10 16:01:45,593 - ERROR - token_helper.py:144 - Details: Signature has expired. 
+
+2024-11-10 16:05:04,133 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:05:40,392 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-10 16:06:26,007 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-10 16:06:26,946 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-10 16:09:15,717 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:09:18,244 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:09:19,884 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:09:41,051 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:10:37,493 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:10:39,000 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:11:52,038 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:11:57,387 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:12:34,722 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:12:52,672 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:13:38,393 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:13:40,326 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:14:12,816 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:14:19,947 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:14:23,027 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:15:49,767 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:15:51,657 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:16:52,282 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:18:23,963 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:22:53,112 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:23:28,077 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:23:59,029 - ERROR - websocket_utility.py:40 - Details: Signature has expired. 
+
+2024-11-10 16:25:12,234 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:25:26,689 - ERROR - websocket_utility.py:40 - Details: Signature has expired. 
+
+2024-11-10 16:26:04,406 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:26:15,594 - ERROR - websocket_utility.py:40 - Details: Signature has expired. 
+
+2024-11-10 16:26:43,169 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:27:02,403 - ERROR - websocket_utility.py:40 - Details: Signature has expired. 
+
+2024-11-10 16:28:36,794 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:29:43,865 - ERROR - websocket_utility.py:40 - Details: Signature has expired. 
+
+2024-11-10 16:30:16,336 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:30:28,505 - ERROR - websocket_utility.py:40 - Details: Signature has expired. 
+
+2024-11-10 16:31:04,246 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:31:15,370 - ERROR - websocket_utility.py:40 - Details: Signature has expired. 
+
+2024-11-10 16:32:09,549 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:32:24,228 - ERROR - websocket_utility.py:40 - Details: Signature has expired. 
+
+2024-11-10 16:33:56,327 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:34:12,543 - ERROR - websocket_utility.py:40 - Details: Signature has expired. 
+
+2024-11-10 16:39:29,579 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:39:50,948 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:39:59,425 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:40:42,540 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:40:53,899 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:41:35,658 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:41:45,948 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:42:25,633 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:42:43,941 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:45:48,720 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:45:56,827 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 16:46:01,199 - ERROR - ws_routes.py:23 - Details: Error occured: Signature has expired., connection refuesd. 
+
+2024-11-10 16:48:14,589 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:48:40,887 - ERROR - websocket_utility.py:35 - Details: Signature has expired. 
+
+2024-11-10 16:48:45,737 - ERROR - ws_routes.py:23 - Details: Error occured: cannot access local variable 'e' where it is not associated with a value 
+
+2024-11-10 16:49:35,437 - ERROR - websocket_utility.py:35 - Details: Signature has expired. 
+
+2024-11-10 16:50:00,734 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:50:02,992 - ERROR - websocket_utility.py:35 - Details: Signature has expired. 
+
+2024-11-10 16:50:23,861 - ERROR - ws_routes.py:23 - Details: Error occured: Signature has expired. 
+
+2024-11-10 16:51:15,224 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:51:20,397 - ERROR - websocket_utility.py:41 - Details: Signature has expired. 
+
+2024-11-10 16:53:14,062 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:53:23,496 - ERROR - websocket_utility.py:35 - Details: Signature has expired. 
+
+2024-11-10 16:53:38,074 - ERROR - ws_routes.py:23 - Details: Error occured: Signature has expired. 
+
+2024-11-10 16:55:59,577 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 16:56:04,517 - ERROR - websocket_utility.py:35 - Details: Signature has expired. 
+
+2024-11-10 16:56:07,453 - ERROR - ws_routes.py:23 - Details: Error occured: Signature has expired. 
+
+2024-11-10 16:59:52,013 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:00:00,923 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 17:00:05,914 - ERROR - ws_routes.py:23 - Details: Error occured: Signature has expired., connection refuesd. 
+
+2024-11-10 17:01:44,362 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:01:57,670 - ERROR - websocket_utility.py:24 - Details: No token provided, connection refused. 
+
+2024-11-10 17:02:18,720 - ERROR - ws_routes.py:23 - Details: Error occured: No token provided, connection refused. 
+
+2024-11-10 17:05:46,016 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:05:54,333 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 17:07:52,327 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:07:57,032 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 17:08:01,114 - ERROR - ws_routes.py:17 - Details: Error occured: WebSocket.close() missing 1 required positional argument: 'self' 
+
+2024-11-10 17:08:50,710 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:09:08,922 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:10:10,777 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:12:20,457 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:12:22,052 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:13:04,658 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:13:06,288 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:13:47,306 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:13:51,032 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:14:03,942 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:14:06,730 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:14:35,575 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:14:38,376 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:15:21,722 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:15:23,117 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:15:55,332 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:15:56,963 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:17:15,686 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:17:20,535 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:18:22,986 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:18:30,398 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:35:39,308 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:36:24,326 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:37:15,415 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:37:48,536 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:37:59,229 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:38:14,026 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:38:52,782 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:38:59,844 - ERROR - ws_routes.py:17 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:43:37,736 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:44:01,480 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:44:07,604 - ERROR - ws_routes.py:17 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:54:32,388 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:54:37,742 - ERROR - ws_routes.py:17 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:56:07,497 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:56:15,449 - ERROR - ws_routes.py:18 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:56:16,848 - ERROR - ws_routes.py:20 - Details: Error occurred before WebSocket was accepted. 
+
+2024-11-10 17:56:54,772 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:57:00,145 - ERROR - ws_routes.py:18 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:57:02,090 - ERROR - ws_routes.py:20 - Details: Error occurred before WebSocket was accepted. 
+
+2024-11-10 17:57:48,037 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:57:51,883 - ERROR - ws_routes.py:18 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:58:09,944 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:58:16,540 - ERROR - ws_routes.py:18 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:58:27,244 - ERROR - ws_routes.py:21 - Details: Error occurred before WebSocket was accepted. 
+
+2024-11-10 17:59:15,056 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 17:59:19,493 - ERROR - ws_routes.py:18 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 17:59:20,589 - ERROR - ws_routes.py:21 - Details: Error occurred before WebSocket was accepted. 
+
+2024-11-10 18:00:06,634 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:00:10,967 - ERROR - ws_routes.py:18 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 18:00:11,887 - ERROR - ws_routes.py:21 - Details: Error occurred before WebSocket was accepted. 
+
+2024-11-10 18:00:52,485 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:00:56,648 - ERROR - ws_routes.py:18 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 18:00:57,672 - ERROR - ws_routes.py:21 - Details: Error occurred before WebSocket was accepted. 
+
+2024-11-10 18:01:39,817 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:01:50,873 - ERROR - ws_routes.py:18 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 18:01:51,914 - ERROR - ws_routes.py:21 - Details: Error occurred before WebSocket was accepted. 
+
+2024-11-10 18:02:35,920 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:02:49,892 - ERROR - ws_routes.py:18 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 18:02:51,100 - ERROR - ws_routes.py:21 - Details: Error occurred before WebSocket was accepted. 
+
+2024-11-10 18:05:13,360 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:05:25,536 - ERROR - ws_routes.py:32 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 18:07:16,242 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:07:18,683 - ERROR - ws_routes.py:18 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 18:07:18,683 - ERROR - ws_routes.py:21 - Details: Error occurred before WebSocket was accepted. 
+
+2024-11-10 18:07:38,758 - ERROR - ws_routes.py:18 - Details: Error occurred: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 18:07:38,758 - ERROR - ws_routes.py:21 - Details: Error occurred before WebSocket was accepted. 
+
+2024-11-10 18:07:44,832 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:07:57,556 - ERROR - ws_routes.py:32 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 18:24:13,134 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:24:15,468 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 18:24:20,399 - ERROR - ws_routes.py:24 - Details: Error occured: __init__() should return None, not 'coroutine' 
+
+2024-11-10 18:25:59,461 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:26:05,090 - ERROR - ws_routes.py:19 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 18:26:24,813 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:26:28,227 - ERROR - ws_routes.py:19 - Details: Error occured: name 'utility_websocketAuths' is not defined 
+
+2024-11-10 18:26:35,588 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:26:41,500 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:26:43,059 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 18:26:43,062 - ERROR - ws_routes.py:24 - Details: Error occured: __init__() should return None, not 'coroutine' 
+
+2024-11-10 18:27:43,578 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 18:27:47,483 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 18:27:47,488 - ERROR - ws_routes.py:24 - Details: Error occured: __init__() should return None, not 'coroutine' 
+
+2024-11-10 21:45:38,116 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 21:45:40,694 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 21:45:40,698 - ERROR - ws_routes.py:24 - Details: Error occured: __init__() should return None, not 'coroutine' 
+
+2024-11-10 21:46:26,985 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 21:46:29,348 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 21:46:29,352 - ERROR - ws_routes.py:24 - Details: Error occured: __init__() should return None, not 'coroutine' 
+
+2024-11-10 21:46:38,452 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 21:47:04,630 - ERROR - ws_routes.py:24 - Details: Error occured: __init__() should return None, not 'coroutine' 
+
+2024-11-10 21:47:15,818 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 21:47:22,565 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 21:47:38,633 - ERROR - ws_routes.py:24 - Details: Error occured: __init__() should return None, not 'coroutine' 
+
+2024-11-10 21:47:48,788 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 21:47:51,710 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 21:47:56,155 - ERROR - ws_routes.py:24 - Details: Error occured: __init__() should return None, not 'coroutine' 
+
+2024-11-10 21:48:06,776 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 21:48:23,645 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 21:48:29,404 - ERROR - ws_routes.py:24 - Details: Error occured: __init__() should return None, not 'coroutine' 
+
+2024-11-10 21:49:03,382 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 21:49:19,665 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 21:49:21,672 - ERROR - ws_routes.py:24 - Details: Error occured: __init__() should return None, not 'coroutine' 
+
+2024-11-10 21:58:51,707 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 21:59:15,630 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 21:59:21,443 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 21:59:26,767 - ERROR - ws_routes.py:18 - Details: No token provided, connection refused. 
+
+2024-11-10 21:59:48,666 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 21:59:49,318 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 21:59:54,340 - ERROR - ws_routes.py:18 - Details: No token provided, connection refused. 
+
+2024-11-10 22:00:08,025 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 22:00:10,884 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 22:00:10,886 - ERROR - ws_routes.py:18 - Details: No token provided, connection refused. 
+
+2024-11-10 22:01:54,540 - ERROR - ws_routes.py:28 - Details: Error occured: name 'ajwt' is not defined 
+
+2024-11-10 22:02:36,812 - ERROR - ws_routes.py:28 - Details: Error occured: name 'ajwt' is not defined 
+
+2024-11-10 22:03:45,523 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 22:03:47,799 - ERROR - websocket_utility.py:36 - Details: name 'ajwt' is not defined 
+
+2024-11-10 22:03:59,043 - ERROR - ws_routes.py:28 - Details: Error occured: name 'ajwt' is not defined 
+
+2024-11-10 22:05:53,152 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 22:06:02,350 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 22:06:24,999 - ERROR - ws_routes.py:18 - Details: No token provided, connection refused. 
+
+2024-11-10 22:06:42,305 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 22:06:51,567 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 22:07:48,099 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 22:07:53,683 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 22:07:59,016 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 22:08:01,041 - ERROR - websocket_utility.py:19 - Details: No token provided, connection refused. 
+
+2024-11-10 22:08:06,531 - ERROR - websocket_utility.py:31 - Details: Signature has expired. 
+
+2024-11-10 22:26:48,968 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 22:26:55,169 - ERROR - websocket_utility.py:36 - Details: Signature has expired. 
+
+2024-11-10 22:27:32,587 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-10 22:29:13,706 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-11 00:38:54,311 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-11 00:42:36,260 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-11 00:52:44,302 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-11 00:57:13,730 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-11 00:57:40,951 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-11 00:57:49,557 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-11 00:58:03,550 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-11 00:58:13,608 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-11 00:58:14,212 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-11 00:58:14,970 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-11 00:58:20,351 - ERROR - websocket_utility.py:25 - Details: No token provided, connection refused. 
+
+2024-11-11 00:58:31,612 - ERROR - auth_routes.py:103 - Details: Error occured : Cannot call "send" once a close message has been sent. 
+
+2024-11-11 00:58:31,614 - ERROR - db_connection.py:85 - Details: Error in database connection context: Cannot call "send" once a close message has been sent. 
+
+2024-11-11 00:58:35,648 - ERROR - auth_routes.py:103 - Details: Error occured : Cannot call "send" once a close message has been sent. 
+
+2024-11-11 00:58:35,648 - ERROR - db_connection.py:85 - Details: Error in database connection context: Cannot call "send" once a close message has been sent. 
+
+2024-11-11 00:58:55,766 - ERROR - auth_routes.py:103 - Details: Error occured : Cannot call "send" once a close message has been sent. 
+
+2024-11-11 00:58:55,766 - ERROR - db_connection.py:85 - Details: Error in database connection context: Cannot call "send" once a close message has been sent. 
+
+2024-11-11 00:59:15,473 - ERROR - auth_routes.py:103 - Details: Error occured : Cannot call "send" once a close message has been sent. 
+
+2024-11-11 00:59:15,473 - ERROR - db_connection.py:85 - Details: Error in database connection context: Cannot call "send" once a close message has been sent. 
+
+2024-11-11 01:04:53,935 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-11 01:05:36,776 - ERROR - auth.py:92 - Details: Signature has expired. 
+
+2024-11-11 01:07:00,160 - ERROR - websocket_utility.py:25 - Details: No token provided, connection refused. 
+
+2024-11-11 01:07:05,853 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-11 01:08:32,447 - ERROR - auth_routes.py:103 - Details: Error occured : Cannot call "send" once a close message has been sent. 
+
+2024-11-12 20:03:02,151 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 20:03:49,425 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-12 20:07:43,486 - ERROR - auth_routes.py:103 - Details: Error occured : Cannot call "send" once a close message has been sent. 
+
+2024-11-12 20:12:44,843 - ERROR - auth_routes.py:103 - Details: Error occured : Cannot call "send" once a close message has been sent. 
+
+2024-11-12 20:16:06,978 - ERROR - auth_routes.py:103 - Details: Error occured : Cannot call "send" once a close message has been sent. 
+
+2024-11-12 20:18:13,861 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 20:18:45,701 - ERROR - websocket_utility.py:37 - Details: Signature has expired. 
+
+2024-11-12 20:19:25,390 - ERROR - websocket_utility.py:37 - Details: Invalid crypto padding 
+
+2024-11-12 20:19:26,846 - ERROR - websocket_utility.py:37 - Details: Invalid crypto padding 
+
+2024-11-12 20:19:27,540 - ERROR - websocket_utility.py:37 - Details: Invalid crypto padding 
+
+2024-11-12 20:19:28,142 - ERROR - websocket_utility.py:37 - Details: Invalid crypto padding 
+
+2024-11-12 20:21:41,015 - ERROR - auth_routes.py:103 - Details: Error occured : RuntimeError('Cannot call "send" once a close message has been sent.') 
+
+2024-11-12 20:24:34,260 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 20:39:59,147 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 20:41:58,119 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 20:59:21,791 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 21:01:23,474 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 21:04:01,928 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 21:05:21,720 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 21:05:28,519 - ERROR - auth_routes.py:101 - Details: Error occured : AttributeError("'AuthService' object has no attribute 'logins'") 
+
+2024-11-12 21:06:16,042 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 21:07:19,047 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 21:08:46,763 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 21:11:11,371 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 21:13:35,341 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 21:14:00,598 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 21:15:53,104 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
