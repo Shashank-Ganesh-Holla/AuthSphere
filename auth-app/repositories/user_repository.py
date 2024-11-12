@@ -6,6 +6,8 @@ import logging
 from typing import Any
 import aiomysql
 import pyotp
+from core import websocket_manager
+from datetime import datetime
 
 class UserRepository:
     
@@ -146,7 +148,10 @@ class UserRepository:
                     '''For users with only password authentication'''
                     data = {"sub":username, 'role': user_exists.get('role_id')}
                     access_token = TokenFactory.create_access_token(data=data)
-                    return {"access_token": access_token, "token_type":"bearer"}
+                    refresh_token = TokenFactory.create_refresh_token(data=data)
+                    await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: Login Success!")
+                    return {"access_token": access_token, "refresh_token": refresh_token ,"token_type":"bearer"}
+                    
 
 
             else:
@@ -155,8 +160,7 @@ class UserRepository:
         except Exception as er:
             if not isinstance(er, HTTPException):
                 logging.error(f"Error occured : {str(er)}")
-                raise  HTTPException(500, detail="Internal Server Error")
-            
+                raise  HTTPException(500, detail="Internal Server Error")    
             else:
                 raise 
 
@@ -177,8 +181,8 @@ class UserRepository:
                     data = {'sub': otp_details.get('username'), 'role': user_exists.get('role_id')}
 
                     access_token = TokenFactory.create_access_token(data)
-
-                    return {"access_token": access_token, "token_type": "bearer"}
+                    refresh_token = TokenFactory.create_refresh_token(data=data)
+                    return {"access_token": access_token, "refresh_token": refresh_token ,"token_type":"bearer"}
                 
                 else:
                     raise HTTPException(status.HTTP_401_UNAUTHORIZED,detail="Invalid OTP")

@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 import logging
 from core import Logger
-from routers import auth_router, user_router, test_router
+from routers import auth_router, user_router, test_router, ws_router
 from typing import Union
 
 logging.getLogger("uvicorn").setLevel(logging.WARNING)
@@ -13,6 +13,7 @@ app = FastAPI()
 app.include_router(router=auth_router, prefix='/auth', tags=["auth"])
 app.include_router(router=user_router, prefix='/user', tags=["user"])
 app.include_router(router=test_router, prefix='/test', tags=["test"])
+app.include_router(router=ws_router, prefix="/ws", tags=["websocket"])
 
 
 

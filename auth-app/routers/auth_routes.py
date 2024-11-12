@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, status, Depends, Form, BackgroundTasks, Request
+from fastapi import APIRouter, HTTPException, status, Depends, Form, BackgroundTasks, Request, WebSocket
 from schemas import User, UserCreate, ClientResponse
 from auth import TokenFactory, UserManager
 import logging
@@ -12,12 +12,19 @@ from aiosmtplib import send
 from email.message import EmailMessage
 from repositories import UserRepository
 from services import AuthService
-from utils import get_db_connection, get_db_connection_batch_process, DatabaseManager
+from utils import get_db_connection, get_db_connection_batch_process, DatabaseManager, utility_websocketAuth
 import aiomysql
+from core import websocket_manager
 
 router = APIRouter()
 fake_db = {}
 
+# Email client for development stage
+
+# reset password
+
+# add another column in users table for token_store(admin only accessed, in case of account take over or ban, the active jwt token
+# can be disregarded by admin)
 
 
 async def get_auth_service(db = Depends(get_db_connection)):
@@ -28,6 +35,7 @@ async def get_auth_service(db = Depends(get_db_connection)):
     except Exception as err:
         logging.error(str(err))
         raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, "Internal Server Error")
+    
 
 
 # The response_model parameter is used in FastAPI to specify the format of the data that the endpoint should return to the client.
@@ -54,8 +62,6 @@ async def register(user:UserCreate,
             '''we will create user when this condition satisfies'''
 
             try:
-                # db =  get_db_connection_batch_process()
-                # print(dir(db))
                 result = await auth_service.register_user(username=user.username, email=user.email,password=user.password,
                                                         db=db,role_id=user.role_id, two_fa=user.twoFA_enabled)
 
@@ -77,7 +83,8 @@ async def register(user:UserCreate,
 
 
 @router.post("/login")
-async def login(form_data:OAuth2PasswordRequestForm = Depends(), auth_service:AuthService = Depends(get_auth_service)):
+async def login(form_data:OAuth2PasswordRequestForm = Depends(), 
+                auth_service:AuthService = Depends(get_auth_service)):
 
     try:
 
@@ -85,15 +92,21 @@ async def login(form_data:OAuth2PasswordRequestForm = Depends(), auth_service:Au
         so the one time db query seems more logical'''
 
         result = await auth_service.login(username=form_data.username,
-                        password=form_data.password) 
+                        password=form_data.password)
+
         return result 
 
     except Exception as err:
         if not isinstance(err, HTTPException):
-            logging.error(f"Error occured : {str(err)}")
+            logging.error(f"Error occured : {repr(err)}")
+            await websocket_manager.broadcast(f"{datetime.now()} : User: {form_data.username}, Result: {str(err)}")
             raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal Server Error")
-    
+        
+        await websocket_manager.broadcast(f"{datetime.now()} : User: {form_data.username}, Result: {err.detail}")
         raise 
+
+
+
 
 
 

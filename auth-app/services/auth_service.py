@@ -40,7 +40,7 @@ class AuthService:
         except Exception as er:
             if not isinstance(er, HTTPException):
                 logging.error(f"Error occured: {str(er)}")
-
+                raise  HTTPException(500, detail="Internal Server Error")
             raise 
 
     
@@ -53,7 +53,7 @@ class AuthService:
         except Exception as er:
             if not isinstance(er, HTTPException):
                 logging.error(f"Error occured: {str(er)}")
-
+                raise  HTTPException(500, detail="Internal Server Error")
             raise 
         
 
@@ -64,6 +64,9 @@ class AuthService:
         try:
             user = await UserManager.logout_user(username, request)
             return user 
-        except Exception as err:
-            pass
+        except Exception as er:
+            if not isinstance(er, HTTPException):
+                logging.error(f"Error occured: {str(er)}")
+                raise  HTTPException(500, detail="Internal Server Error")
+            raise 
         
