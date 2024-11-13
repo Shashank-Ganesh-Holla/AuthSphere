@@ -1,5 +1,5 @@
 from fastapi import File, UploadFile, APIRouter, HTTPException
-from utils import upload_file_to_s3
+from utils import upload_file_to_s3, download_from_s3
 import logging
 import tempfile
 from core import websocket_manager
@@ -41,17 +41,39 @@ async def upload_file(file:UploadFile = File(...)):
             logging.info(f"Temporary file {file_path} deleted")
 
             #Websocket broadcast message
-            websocket_manager.broadcast( f"File {file.filename} uploaded successfully into AWS s3 bucket")
+            await websocket_manager.broadcast( f"File {file.filename} uploaded successfully into AWS s3 bucket")
             return {"stat": "Ok", "message": "File uploaded successfully", "filename": file.filename}
         
         #Websocket broadcast message
-        websocket_manager.broadcast( f"File {file.filename} upload failed!")
+        await websocket_manager.broadcast( f"File {file.filename} upload failed!")
         return HTTPException(500, "File upload failed")
     
     except Exception as e:
         if not isinstance(e, HTTPException):
             logging.error(f"Error occured : {str(e)}")
 
+            await websocket_manager.broadcast(f"{datetime.now()} :Result: {str(e)}")
+            raise HTTPException(500, "Internal Server Error")
+        
+        await websocket_manager.broadcast(f"{datetime.now()} :Result: {e.detail}")
+        raise
+
+
+@router.get("/download-file/{file_name}")
+async def download_file(file_name:str):
+
+    # This generate a Pre-signed URL or directly stream the file from S3,
+    # valid for a limited period of time which is specified when the URL is generated
+
+    try:
+        file_url = await download_from_s3(filename=file_name, bucket=BUCKET_NAME)
+
+        await websocket_manager.broadcast( f"File {file_name} downloaded successfully")
+        return {"url":file_url}
+    
+    except Exception as e:
+        if not isinstance(e, HTTPException):
+            logging.error(f"Error occured : {str(e)}")
             await websocket_manager.broadcast(f"{datetime.now()} :Result: {str(e)}")
             raise HTTPException(500, "Internal Server Error")
         

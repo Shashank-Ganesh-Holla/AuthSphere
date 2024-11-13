@@ -1558,3 +1558,32 @@
 2024-11-13 19:23:59,943 - INFO - s3_routes.py:29 - Details: File saved at C:\Users\suyog\AppData\Local\Temp\tmpp9_nw79c 
 
 2024-11-13 19:29:53,245 - INFO - main.py:32 - Details: AuthSphere started successfully!
+2024-11-13 20:59:51,114 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-13 21:36:23,280 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-13 21:37:24,438 - INFO - s3_routes.py:31 - Details: File saved at C:\Users\suyog\AppData\Local\Temp\tmp4sgm1e4f 
+
+2024-11-13 21:37:28,477 - INFO - s3_routes.py:41 - Details: Temporary file C:\Users\suyog\AppData\Local\Temp\tmp4sgm1e4f deleted 
+
+2024-11-13 21:41:00,388 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-13 21:42:53,904 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-13 21:45:21,348 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-13 21:45:51,082 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-13 21:46:40,301 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-13 21:48:20,785 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-13 21:52:50,266 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-13 21:57:32,683 - INFO - s3_routes.py:32 - Details: File saved at C:\Users\suyog\AppData\Local\Temp\tmpr8zv5tkv 
+
+2024-11-13 21:58:12,972 - INFO - s3_routes.py:42 - Details: Temporary file C:\Users\suyog\AppData\Local\Temp\tmpr8zv5tkv deleted 
+
+2024-11-13 22:08:46,634 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-13 22:10:26,341 - INFO - main.py:29 - Details: AuthSphere started successfully! 
