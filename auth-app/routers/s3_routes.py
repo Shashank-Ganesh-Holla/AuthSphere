@@ -1,5 +1,5 @@
-from fastapi import File, UploadFile, APIRouter, HTTPException
-from utils import upload_file_to_s3, download_from_s3
+from fastapi import File, UploadFile, APIRouter, HTTPException, Depends
+from utils import upload_file_to_s3, download_from_s3, validate_token
 import logging
 import tempfile
 from core import websocket_manager
@@ -13,7 +13,7 @@ BUCKET_NAME = "authsphere-user-files"
 
 
 @router.post("/upload-file/")
-async def upload_file(file:UploadFile = File(...)):
+async def upload_file(file:UploadFile = File(...), current_user:None = Depends(validate_token)):
 
     try:
     
@@ -60,7 +60,7 @@ async def upload_file(file:UploadFile = File(...)):
 
 
 @router.get("/download-file/{file_name}")
-async def download_file(file_name:str):
+async def download_file(file_name:str, current_user:None = Depends(validate_token)):
 
     # This generate a Pre-signed URL or directly stream the file from S3,
     # valid for a limited period of time which is specified when the URL is generated
