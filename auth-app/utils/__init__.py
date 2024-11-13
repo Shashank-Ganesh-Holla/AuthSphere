@@ -11,3 +11,4 @@ validate_token = TokenFactory.validate_token
 __all__ = ["create_user_table_batch", "create_user_standalone", "login_user_twoFA", "get_db_connection", 
            "DatabaseManager", "get_db_connection_batch_process", "utility_websocketAuth", "TokenFactory", "TokenManager",
            "WebSocketConnectionError", "CustomExceptionHandler", "validate_token", "upload_file_to_s3"]
+           "WebSocketConnectionError", "CustomExceptionHandler", "validate_token"]
