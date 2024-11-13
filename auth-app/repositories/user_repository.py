@@ -1,7 +1,7 @@
 from auth import DatabaseManager
 from fastapi import HTTPException, status, Depends
-from utils import create_user_table_batch, create_user_standalone, login_user_twoFA
-from auth import PasswordManager, TokenFactory
+from utils import create_user_table_batch, create_user_standalone, login_user_twoFA, TokenFactory
+from auth import PasswordManager
 import logging
 from typing import Any
 import aiomysql

@@ -1,6 +1,6 @@
-from fastapi import APIRouter, HTTPException, status, Depends, Form, BackgroundTasks, Request, WebSocket
+from fastapi import APIRouter, HTTPException, status, Depends, Form, BackgroundTasks, Request
 from schemas import User, UserCreate, ClientResponse
-from auth import TokenFactory, UserManager
+from auth import UserManager
 import logging
 from mysql.connector import Error
 import pyotp
@@ -12,7 +12,7 @@ from aiosmtplib import send
 from email.message import EmailMessage
 from repositories import UserRepository
 from services import AuthService
-from utils import get_db_connection, get_db_connection_batch_process, DatabaseManager, utility_websocketAuth
+from utils import get_db_connection, get_db_connection_batch_process, DatabaseManager, TokenFactory
 import aiomysql
 from core import websocket_manager
 
