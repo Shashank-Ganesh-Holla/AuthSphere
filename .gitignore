@@ -2,3 +2,4 @@
 *.vscode/
 *__pycache__/
 *.bak
+authsphere-s3-access_accessKeys*
