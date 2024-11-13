@@ -1,9 +1,8 @@
-from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, HTTPException
 import logging
-from core import Logger
+from core import setup_logging
 from routers import auth_router, user_router, test_router, ws_router
-from typing import Union
+from utils import CustomExceptionHandler
 
 logging.getLogger("uvicorn").setLevel(logging.WARNING)
 
@@ -17,25 +16,19 @@ app.include_router(router=ws_router, prefix="/ws", tags=["websocket"])
 
 
 
+# Include exception handler
+app.add_exception_handler(HTTPException, CustomExceptionHandler.http_exception_handler)
+
+
+
 @app.on_event("startup")
 async def startup_event():
     # Perform startup actions
-    Logger.setup_logging()
+    setup_logging()
     logging.info("AuthSphere started successfully!")
     pass
 
 
-@app.exception_handler(HTTPException)  # Catch any exception
-async def custom_exception_handler(request: Request, exc: Union[Exception, HTTPException]):
-    """
-    Custom exception handler that catches HTTPException.
-    It returns a structured JSON response for the client.
-    """
-
-    return JSONResponse(
-        status_code=exc.status_code,
-        content={"stat": "Not_Ok", "Reason": exc.detail},
-    )
 
 @app.get('/')
 def read_root():

@@ -12,9 +12,10 @@ from aiosmtplib import send
 from email.message import EmailMessage
 from repositories import UserRepository
 from services import AuthService
-from utils import get_db_connection, get_db_connection_batch_process, DatabaseManager, TokenFactory
+from utils import get_db_connection, get_db_connection_batch_process, DatabaseManager, validate_token
 import aiomysql
 from core import websocket_manager
+from services import get_auth_service
 
 router = APIRouter()
 fake_db = {}
@@ -25,17 +26,6 @@ fake_db = {}
 
 # add another column in users table for token_store(admin only accessed, in case of account take over or ban, the active jwt token
 # can be disregarded by admin)
-
-
-async def get_auth_service(db = Depends(get_db_connection)):
-    try:
-        user_repository = UserRepository(db)
-        return AuthService(user_repo=user_repository)
-    
-    except Exception as err:
-        logging.error(str(err))
-        raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, "Internal Server Error")
-    
 
 
 # The response_model parameter is used in FastAPI to specify the format of the data that the endpoint should return to the client.
@@ -173,7 +163,7 @@ async def verify_otp(username: str = Form(...), otp:str = Form(...), auth_servic
 
 @router.post('/logout/', response_model=Union[ClientResponse])
 async def logout_me(request:Request,
-                      current_user = Depends(TokenFactory.validate_token),
+                      current_user = Depends(validate_token),
                       auth_service: AuthService = Depends(get_auth_service)):
     
 
@@ -197,7 +187,7 @@ async def logout_me(request:Request,
 
 
 @router.put('/update-twofa')
-async def update_twofa(user : str = Depends(TokenFactory.validate_token), 
+async def update_twofa(user : str = Depends(validate_token), 
                        twoFA_enabled:bool= Form(False)):
     try:
         username = user[0]   
