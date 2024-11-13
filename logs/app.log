@@ -1462,3 +1462,67 @@
 2024-11-12 21:14:00,598 - INFO - main.py:24 - Details: AuthSphere started successfully! 
 
 2024-11-12 21:15:53,104 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-12 22:26:59,535 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 22:28:08,702 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-12 22:28:28,177 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-12 22:28:31,866 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-12 22:28:59,542 - ERROR - auth.py:114 - Details: User already logged out. Please re-login 
+
+2024-11-12 22:32:42,969 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 22:33:47,574 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 22:34:59,221 - ERROR - auth.py:115 - Details: User already logged out. Please re-login 
+
+2024-11-12 22:38:18,214 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 22:39:27,600 - ERROR - database.py:75 - Details:  Error occured: (4078, "Illegal parameter data types varchar and row for operation '='") 
+
+2024-11-12 22:40:06,582 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 22:43:05,317 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 22:44:14,658 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 22:46:28,029 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-12 22:50:39,778 - INFO - main.py:24 - Details: AuthSphere started successfully! 
+
+2024-11-13 13:16:32,790 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-13 13:17:30,873 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-13 13:18:05,094 - INFO - main.py:28 - Details: AuthSphere started successfully! 
+
+2024-11-13 13:32:28,259 - INFO - main.py:28 - Details: AuthSphere started successfully! 
+
+2024-11-13 13:34:05,261 - INFO - main.py:28 - Details: AuthSphere started successfully! 
+
+2024-11-13 13:45:42,211 - INFO - main.py:28 - Details: AuthSphere started successfully! 
+
+2024-11-13 13:45:51,845 - ERROR - user_repository.py:206 - Details: Invalid OTP 
+
+2024-11-13 13:45:56,118 - ERROR - user_repository.py:206 - Details: Invalid OTP 
+
+2024-11-13 13:46:10,274 - INFO - main.py:28 - Details: AuthSphere started successfully! 
+
+2024-11-13 13:46:17,591 - ERROR - user_repository.py:206 - Details: Invalid OTP 
+
+2024-11-13 14:09:46,667 - INFO - main.py:28 - Details: AuthSphere started successfully! 
+
+2024-11-13 14:09:53,150 - ERROR - user_repository.py:206 - Details: Invalid OTP 
+
+2024-11-13 14:10:37,969 - ERROR - user_repository.py:206 - Details: Invalid OTP 
+
+2024-11-13 14:11:03,637 - ERROR - auth.py:115 - Details: User already logged out. Please re-login 
+
+2024-11-13 14:11:16,800 - ERROR - token_helper.py:166 - Details: User already logged out. Please re-login 
+
+2024-11-13 14:12:37,069 - INFO - main.py:28 - Details: AuthSphere started successfully! 
+
+2024-11-13 14:12:43,881 - ERROR - token_helper.py:166 - Details: User already logged out. Please re-login 

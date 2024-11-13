@@ -203,9 +203,11 @@ class UserRepository:
                     return {"access_token": access_token, "refresh_token": refresh_token ,"token_type":"bearer"}
                 
                 else:
+                    logging.error("Invalid OTP")
                     raise HTTPException(status.HTTP_401_UNAUTHORIZED,detail="Invalid OTP")
-                
-            raise HTTPException(status.HTTP_400_BAD_REQUEST,detail=" Invalid user details")
+
+            logging.error("Invalid user details")    
+            raise HTTPException(status.HTTP_400_BAD_REQUEST,detail="Invalid user details")
             
         except Exception as er:
             if not isinstance(er, HTTPException):

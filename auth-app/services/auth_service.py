@@ -3,7 +3,21 @@ from fastapi import HTTPException, Request
 from auth import PasswordManager, UserManager
 import logging
 import aiomysql
+from fastapi import Depends, status
+from utils import get_db_connection
 
+
+async def get_auth_service(db = Depends(get_db_connection)):
+    try:
+        user_repository = UserRepository(db)
+        return AuthService(user_repo=user_repository)
+    
+    except Exception as err:
+        logging.error(str(err))
+        raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, "Internal Server Error")
+    
+
+    
 
 class AuthService:
     
