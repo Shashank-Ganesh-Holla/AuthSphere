@@ -1526,3 +1526,35 @@
 2024-11-13 14:12:37,069 - INFO - main.py:28 - Details: AuthSphere started successfully! 
 
 2024-11-13 14:12:43,881 - ERROR - token_helper.py:166 - Details: User already logged out. Please re-login 
+
+2024-11-13 17:56:31,703 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-13 18:18:31,014 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-13 18:19:15,910 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-13 18:24:24,931 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-13 18:28:31,813 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-13 18:28:47,888 - ERROR - s3_routes.py:36 - Details: Error occured : [Errno 2] No such file or directory: '/tmp/AuthSphere.PNG' 
+
+2024-11-13 18:35:54,089 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-13 18:37:06,328 - INFO - s3_routes.py:28 - Details: File saved at C:\Users\suyog\AppData\Local\Temp\tmpt_z6d5w8 
+
+2024-11-13 18:39:21,314 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-13 18:39:35,441 - INFO - s3_routes.py:28 - Details: File saved at C:\Users\suyog\AppData\Local\Temp\tmpvqi8l_mi 
+
+2024-11-13 18:41:27,534 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-13 18:41:42,907 - INFO - s3_routes.py:28 - Details: File saved at C:\Users\suyog\AppData\Local\Temp\tmpk7dmh5ai 
+
+2024-11-13 19:22:54,169 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-13 19:23:31,382 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-13 19:23:59,943 - INFO - s3_routes.py:29 - Details: File saved at C:\Users\suyog\AppData\Local\Temp\tmpp9_nw79c 
+
+2024-11-13 19:29:53,245 - INFO - main.py:32 - Details: AuthSphere started successfully!
