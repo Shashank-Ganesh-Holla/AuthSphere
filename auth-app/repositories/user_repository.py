@@ -1,13 +1,12 @@
-from auth import DatabaseManager
-from fastapi import HTTPException, status, Depends
-from utils import create_user_table_batch, create_user_standalone, login_user_twoFA, TokenFactory
-from auth import PasswordManager
+from fastapi import HTTPException, status
+from utils import create_user_table_batch, create_user_standalone, login_user_twoFA, TokenFactory, DatabaseManager
+from managers import PasswordManager
 import logging
-from typing import Any
 import aiomysql
 import pyotp
 from core import websocket_manager
 from datetime import datetime
+import pyotp
 
 class UserRepository:
     
@@ -53,14 +52,30 @@ class UserRepository:
         """
         try:
 
-            if operation.lower() == 'update':
-                params = (kwargs.get('new_state', False), kwargs.get('username', ''), kwargs.get('new_state', True))
+            if operation in ['update_from_login', "update_twoFa"]:
 
-                await self.db.execute_manipulation(query=query, params=params)
+                new_state = kwargs.get('new_state', False)
+                current_state = kwargs.get('current_state', True)
+                username = kwargs.get('username', '')
+
+                params = (new_state, username, current_state)
+
+                result = await self.db.execute_manipulation(query=query, params=params)
 
 
-                raise HTTPException(status.HTTP_404_NOT_FOUND, 
+                if operation == "update_from_login":
+                    raise HTTPException(status.HTTP_404_NOT_FOUND, 
                                     detail=f'''OTP data not found for user: {kwargs.get('username', '')}, Please try login again!''')
+                
+                return result
+                
+            elif operation == 'update_otpTable_twoFa':
+                params = (kwargs.get('otpSecret'), kwargs.get('username', ''))
+
+                result = await self.db.execute_manipulation(query=query, params=params)
+            
+
+                
 
         except Exception as er:
             if not isinstance(er, HTTPException):
@@ -121,7 +136,7 @@ class UserRepository:
             else:
                 raise        
     
-    async def login_user(self, username, password):
+    async def login_user(self, username, password, backgroudtasks):
 
         try:
             user_exists = await self.get_user_users_table(username)
@@ -138,7 +153,7 @@ class UserRepository:
                         '''Ensuring 'otp_secret' column from otp_table is not Null'''
 
                         secret = user_otp_details.get('otp_secret')
-                        result =  await login_user_twoFA(secret)
+                        result =  await login_user_twoFA(username=username, secret=secret, backgroudtasks=backgroudtasks)
 
                         #Websocket broadcast
                         await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: OTP sent to the registered email/mobile number")
@@ -153,7 +168,7 @@ class UserRepository:
                         current_state = True 
                         new_state = False
                         
-                        await self.manipulate_users_table("update",update_false, username = username ,current_state = current_state, new_state = new_state)
+                        await self.manipulate_users_table("update_from_login",update_false, username = username ,current_state = current_state, new_state = new_state)
 
                 else:
                     '''For users with only password authentication'''
@@ -188,7 +203,7 @@ class UserRepository:
             otp_details = await self.get_user_otp_table(username)
 
             if user_exists and otp_details :
-                is_valid = pyotp.TOTP(otp_details.get('otp_secret')).verify(otp)
+                is_valid = pyotp.TOTP(otp_details.get('otp_secret')).verify(otp, valid_window=1)
 
                 if is_valid:
                 
@@ -214,5 +229,61 @@ class UserRepository:
                 logging.error(f"Error occured : {str(er)}")
                 raise  HTTPException(500, detail="Internal Server Error")
             
+            else:
+                raise 
+
+    async def update_twoFa(self, username, twoFA_enabled):
+
+        try:
+            if not twoFA_enabled:
+                '''when twoFA_enabled param is False'''
+                # here we just need to update the enabled column of users table as False
+
+                false_query = "UPDATE users SET enabled = %s WHERE username = %s AND enabled = %s"
+                current_state = True
+                new_state = False
+                result = await self.manipulate_users_table("update_twoFa",false_query, username = username ,current_state = current_state, new_state = new_state)
+                
+                if result == 1:
+                    return {"stat": "Ok", "Result": f"twoFA disabled successfully for {username}"}
+                
+                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="twoFA already disabled")
+            
+            else:
+                '''when twoFA_enabled param is True'''
+
+                '''There are two things to do in this condition:
+
+                    1. check if the otp_secret in otp_table for the username is not None,
+                        if None then create a otpsecret and update, if not None then as is'''
+                
+                otp_scrt_query = "UPDATE otp_table SET otp_secret = %s WHERE username = %s AND otp_secret IS NULL"
+                add_otpSecret = pyotp.random_base32()
+        
+                result = await self.manipulate_users_table("update_otpTable_twoFa",otp_scrt_query, username = username ,otpSecret = add_otpSecret)
+
+                
+                '''2. update the enabled column, checking if its already True, if not then update'''
+
+                true_query = "UPDATE users SET enabled = %s WHERE username = %s AND enabled = %s"
+                current_state = False
+                new_state = True
+
+                result = await self.manipulate_users_table("update_twoFa",true_query, username = username ,
+                                                        current_state = current_state,
+                                                        new_state = new_state)
+                if result == 1:
+                    return {"stat": "Ok", "Result": f"twoFA enabled successfully for {username}"}
+                
+                elif result == None:
+                    logging.error("Error from database: result returned None")
+                    raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal server error") 
+                
+                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="twoFA already enabled")
+            
+        except Exception as er:
+            if not isinstance(er, HTTPException):
+                logging.error(f"Error occured : {str(er)}")
+                raise  HTTPException(500, detail="Internal Server Error")    
             else:
                 raise 

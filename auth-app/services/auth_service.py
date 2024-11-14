@@ -1,6 +1,7 @@
 from repositories import UserRepository
 from fastapi import HTTPException, Request
-from auth import PasswordManager, UserManager
+from managers import PasswordManager
+from managers import UserManager
 import logging
 import aiomysql
 from fastapi import Depends, status
@@ -46,10 +47,10 @@ class AuthService:
         
 
 
-    async def login(self, username:str, password:str):
+    async def login(self, backgroudtasks, username:str, password:str):
 
         try:
-            result = await self.user_repo.login_user(username=username, password=password)
+            result = await self.user_repo.login_user(username=username, password=password, backgroudtasks=backgroudtasks)
             return result
         except Exception as er:
             if not isinstance(er, HTTPException):
@@ -82,5 +83,18 @@ class AuthService:
             if not isinstance(er, HTTPException):
                 logging.error(f"Error occured: {str(er)}")
                 raise  HTTPException(500, detail="Internal Server Error")
-            raise 
+            raise
+
+
+
+    async def update_twoFa(self, 
+                      username:str,twoFA_enabled):
+        try:
+            user = await self.user_repo.update_twoFa(username, twoFA_enabled)
+            return user 
+        except Exception as er:
+            if not isinstance(er, HTTPException):
+                logging.error(f"Error occured: {str(er)}")
+                raise  HTTPException(500, detail="Internal Server Error")
+            raise  
         

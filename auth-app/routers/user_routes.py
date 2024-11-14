@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Request, Form
-from auth import DatabaseManager, UserManager, RoleManager
+from managers import UserManager, RoleManager
 import logging
 from typing import Union
 from schemas import User, ClientResponse
-from utils import TokenManager, TokenFactory
+from utils import TokenManager, TokenFactory, DatabaseManager
 
 
 router = APIRouter()

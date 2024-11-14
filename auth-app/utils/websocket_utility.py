@@ -3,15 +3,7 @@ from .token_helper import TokenFactory
 from .exception_utility import WebSocketConnectionError, CUSTOM_CLOSE_CODES
 from jose import JWTError, jwt
 import logging
-from core import config
-import asyncio
-from core import websocket_manager
-
-
-async def get_event_data():
-    # Simulating a data source that fetches new data
-    return {"activity": "User logged in", "timestamp": "2024-11-10T12:34:56"}
-
+from core import config, websocket_manager
 
 
 async def utility_websocketAuth(websocket:WebSocket):

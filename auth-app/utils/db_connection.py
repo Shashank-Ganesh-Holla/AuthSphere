@@ -3,7 +3,7 @@ from fastapi import HTTPException, status
 from database import create_connection, execute_read_query, execute_write_query
 import logging
 import aiomysql
-from contextlib import asynccontextmanager
+
 
 # ! Context manager pattern !
 class DatabaseManager:

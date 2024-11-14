@@ -1589,3 +1589,201 @@
 2024-11-13 22:10:26,341 - INFO - main.py:29 - Details: AuthSphere started successfully! 
 
 2024-11-13 22:37:05,553 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 13:28:59,599 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 14:18:33,146 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 14:20:44,913 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-14 14:28:23,724 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-14 14:29:19,985 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-14 14:31:32,945 - INFO - main.py:32 - Details: AuthSphere started successfully! 
+
+2024-11-14 14:33:29,598 - INFO - main.py:57 - Details: AuthSphere started successfully! 
+
+2024-11-14 14:43:20,085 - INFO - main.py:57 - Details: AuthSphere started successfully! 
+
+2024-11-14 14:44:17,971 - INFO - main.py:57 - Details: AuthSphere started successfully! 
+
+2024-11-14 14:53:30,966 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 14:53:43,957 - ERROR - token_helper.py:166 - Details: User already logged out. Please re-login 
+
+2024-11-14 16:11:18,334 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 16:15:24,715 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 16:15:54,780 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 16:18:51,344 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 16:26:53,269 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 16:27:22,439 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-14 16:29:59,523 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-14 16:30:07,813 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-14 16:30:27,739 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-14 16:30:55,608 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-14 16:31:06,439 - ERROR - auth_routes.py:232 - Details: 'DatabaseManager' object does not support the context manager protocol 
+
+2024-11-14 16:48:35,684 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 16:48:39,390 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-14 16:50:04,772 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 16:50:28,664 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 17:53:35,337 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 17:54:02,890 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 17:54:11,500 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-14 17:54:35,492 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-14 17:54:44,206 - ERROR - db_connection.py:85 - Details: Error in database connection context: [TypeError("'coroutine' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')] 
+
+2024-11-14 17:56:11,200 - ERROR - db_connection.py:85 - Details: Error in database connection context: [TypeError("'coroutine' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')] 
+
+2024-11-14 17:57:17,246 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 17:57:50,628 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 17:58:38,688 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 18:08:36,416 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-14 18:10:38,260 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 18:15:14,135 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 18:18:07,593 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 18:19:41,388 - ERROR - user_repository.py:275 - Details: Error from database: result returned None 
+
+2024-11-14 18:37:40,713 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 18:37:50,681 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-14 18:41:05,206 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 18:43:54,110 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 18:52:33,909 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 18:52:37,279 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-14 18:55:36,064 - ERROR - user_repository.py:222 - Details: Invalid OTP 
+
+2024-11-14 18:55:44,587 - ERROR - user_repository.py:222 - Details: Invalid OTP 
+
+2024-11-14 18:57:01,300 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 19:01:50,275 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-14 19:40:20,765 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 19:41:32,286 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 19:42:05,550 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 19:42:07,684 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 19:42:16,867 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 19:42:39,082 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 19:42:40,820 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 19:42:41,668 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 19:42:48,802 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 19:45:32,330 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 19:45:45,291 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 19:46:00,636 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 19:46:02,084 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 19:46:25,251 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 19:46:34,570 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 19:46:42,995 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 19:46:58,346 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 19:47:13,406 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 19:47:48,692 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 19:48:03,796 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 19:48:13,146 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 19:52:01,297 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 19:52:14,853 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 19:53:38,651 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 19:53:53,288 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 20:15:45,930 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 20:16:11,914 - ERROR - user_repository.py:191 - Details: Error occured : login_user_twoFA() missing 1 required positional argument: 'background_tasks' 
+
+2024-11-14 20:16:35,406 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 20:16:40,065 - ERROR - auth_manager.py:91 - Details: Error occured : 'NoneType' object has no attribute 'add_task' 
+
+2024-11-14 20:17:24,109 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 20:17:28,139 - ERROR - auth_manager.py:91 - Details: Error occured : 'Depends' object has no attribute 'add_task' 
+
+2024-11-14 20:25:57,387 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 20:26:59,121 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 20:27:04,557 - ERROR - auth_service.py:57 - Details: Error occured: UserRepository.login_user() got multiple values for argument 'username' 
+
+2024-11-14 20:29:04,434 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 20:29:07,919 - ERROR - user_repository.py:191 - Details: Error occured : login_user_twoFA() got an unexpected keyword argument 'backgroudtasks' 
+
+2024-11-14 20:32:55,511 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 20:33:13,313 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 20:33:29,327 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 20:33:47,171 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 20:34:28,105 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 20:36:56,959 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 20:37:09,200 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 20:38:06,319 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 20:38:14,831 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 20:38:26,662 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 20:38:35,260 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 20:38:48,794 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 20:38:56,853 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 

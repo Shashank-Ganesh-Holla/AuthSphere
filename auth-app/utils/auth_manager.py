@@ -1,8 +1,9 @@
 from .db_connection import DatabaseManager
-from fastapi import HTTPException
+from fastapi import HTTPException, BackgroundTasks, Depends
 import aiomysql
 import logging
 import pyotp
+from .email_helper import send_otp_email
 
 
 
@@ -69,7 +70,7 @@ async def create_user_standalone(username:str, email:str, hashed_password:str,
             raise 
 
     
-async def login_user_twoFA(secret):
+async def login_user_twoFA(username,secret, backgroudtasks:BackgroundTasks):
 
     try:
         otp_gen = pyotp.TOTP(secret)
@@ -79,6 +80,9 @@ async def login_user_twoFA(secret):
         '''Send this otp  to the user chosen medium of communication(otp sent as email or sms or both)
         but now, will include otp within the login reponse for testing purpose
         will change it later when notification feature is added.'''
+
+        # backgroudtasks.add_task(send_otp_email, username, otp)
+        await send_otp_email(recepient=username, otp=otp)
 
         return {'stat': 'Ok', 'otp': otp,"Result": "OTP sent to the registered mobile number/email"}
     

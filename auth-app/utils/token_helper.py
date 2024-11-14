@@ -6,7 +6,9 @@ import jwt as jt
 from jose import jwt, JWTError
 from typing import Optional, Dict
 from .db_connection import DatabaseManager
+from core import config
 
+# oauth2_scheme=OAuth2PasswordBearer(tokenUrl="/login")
 
 # ! Factory pattern implemented !
 
@@ -152,7 +154,7 @@ class TokenFactory:
             else:
                 raise
         
-    # lets try dependecy TokenManager.is_token_blacklisted injected into validate_token afterwards
+
     @staticmethod
     async def validate_token(token:str = Depends(config.oauth2_scheme))->Optional[tuple[str, str]]:
 

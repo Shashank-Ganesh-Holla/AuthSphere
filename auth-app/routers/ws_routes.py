@@ -1,4 +1,4 @@
-from fastapi import APIRouter, WebSocket, HTTPException, status, WebSocketDisconnect, WebSocketException
+from fastapi import APIRouter, WebSocket, HTTPException, status, WebSocketDisconnect
 from utils import utility_websocketAuth, WebSocketConnectionError
 from starlette.websockets import WebSocketState
 import logging
