@@ -4,6 +4,7 @@ import logging
 from typing import Union
 from schemas import User, ClientResponse
 from utils import TokenManager, TokenFactory, DatabaseManager
+from services import get_user_service, UserService
 
 
 router = APIRouter()
@@ -11,7 +12,8 @@ router = APIRouter()
 
 @router.get('/get-user-details/')
 async def get_user_details(username:str, 
-                     current_user:None = Depends(TokenFactory.validate_token)):
+                     current_user:None = Depends(TokenFactory.validate_token),
+                     user_service : UserService = Depends(get_user_service)):
 
     try:
         async with DatabaseManager() as db:

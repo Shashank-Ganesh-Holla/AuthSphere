@@ -2,7 +2,6 @@ from repositories import UserRepository
 from utils import get_db_connection
 from fastapi import Depends, HTTPException, status
 import logging
-from managers import PasswordManager
 
 
 
