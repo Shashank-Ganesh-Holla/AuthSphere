@@ -55,7 +55,7 @@ async def create_user_standalone(username:str, email:str, hashed_password:str,
         query_Users = "INSERT INTO users (username, email, password, twofa_status) VALUES (%s, %s, %s, %s)"
         params_Users = (username, email, hashed_password, two_fa)
 
-        result = db.execute_manipulation(query_Users, params_Users)
+        result = await db.execute_manipulation(query_Users, params_Users)
 
         if result == 1:
             return {"stat": 'Ok', "Result": "User created successfully"}

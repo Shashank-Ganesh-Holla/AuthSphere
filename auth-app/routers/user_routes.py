@@ -14,35 +14,10 @@ router = APIRouter()
 async def get_user_details(username:str, 
                      current_user:None = Depends(TokenFactory.validate_token),
                      user_service : UserService = Depends(get_user_service)):
-
+    
     try:
-        async with DatabaseManager() as db:
-            user_query = "SELECT * FROM users WHERE username = %s"
-            user_param = (username,)
-
-            is_user = await db.execute_read(user_query, user_param)
-
-        if not is_user:
-            raise HTTPException(status.HTTP_404_NOT_FOUND, detail="User not found")
-
-        async with DatabaseManager() as db:
-            details_query = '''
-            SELECT u.username, u.email, r.role_name 
-            FROM users u
-            INNER JOIN roles r
-            ON u.role_id = r.role_id
-            WHERE u.username = %s
-            '''
-
-            details_params = (username,)
-
-            result = await db.execute_read(details_query, details_params)
-
-        if not result:
-            raise HTTPException(status.HTTP_404_NOT_FOUND, detail="User not found or role not assigned")
-        
-        return {'stat': 'Ok',
-                'Result': result}
+        result = await user_service.get_user_details(username=username)
+        return result
     
     except Exception as err:
         if not isinstance(err, HTTPException):
@@ -125,9 +100,13 @@ async def assign_role(request:Request, username:str = Form(...),
 
 @router.post('/delete/user', response_model=Union[ClientResponse])
 async def delete_user_me(request: Request, username:str = Form(...),
-                   current_user:None = Depends(TokenFactory.validate_token)):    
+                   current_user:str = Depends(TokenFactory.validate_token),
+                   user_service : UserService = Depends(get_user_service)):    
     try:
-        user = await UserManager.delete_user(username, request)
+        if current_user[0] != username and current_user[1] == 2:
+            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="You dont have privilige to delete other users")
+
+        user = await user_service.delete_user_me(request=request, username=username)
         return user
     
     except Exception as err:

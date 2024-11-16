@@ -1820,81 +1820,7 @@
 
 2024-11-15 05:40:45,862 - INFO - main.py:29 - Details: AuthSphere started successfully! 
 
-2024-11-15 05:44:04,520 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=Q78N32UNyu9wQVHEqQBxY96kSAJfBc12cNxcr1_IoZU 
-
-2024-11-15 05:47:40,854 - INFO - main.py:29 - Details: AuthSphere started successfully! 
-
-2024-11-15 05:47:57,973 - INFO - auth_routes.py:137 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=9BGSMMpN0era_aEF99a1LU3r-fV4Av8xrq7ZtoqslYM 
-
-2024-11-15 05:48:17,844 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=9BGSMMpN0era_aEF99a1LU3r-fV4Av8xrq7ZtoqslYM 
-
-2024-11-15 05:49:06,038 - INFO - main.py:29 - Details: AuthSphere started successfully! 
-
-2024-11-15 05:50:05,646 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=bSDcLUM9LRkefw1nMGk_f7wpb9LpwSKtqnPF2AoJ5sY 
-
-2024-11-15 05:50:21,232 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=Cmx54dJkUUzWjzhEzSLPtRqElMrINntmd62t-fqtaT0 
-
-2024-11-15 05:51:16,024 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=TGnRm-t3jxNKewholJAf3Mjdahvcry_LwBQQGOtRe-0 
-
-2024-11-15 05:55:42,505 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=AtQgfTOzxSdTTXGwHsgQeP9c0AQIyXZuZmXQBSgqt5Y 
-
-2024-11-15 05:58:27,278 - INFO - main.py:29 - Details: AuthSphere started successfully! 
-
-2024-11-15 05:58:51,599 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=nj8t_YAQcGwgkLrOO3N0t5KhetAGIeHHcCCGmapOtRQ 
-
-2024-11-15 06:36:33,261 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 06:38:24,935 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 06:45:52,507 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 06:47:11,059 - INFO - reset_password.py:39 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=FdmS7TEzxvaZcUrSNIoX3-ppuKp7UrT8huNNK6swcNk 
-
-2024-11-15 06:49:40,955 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 06:51:17,726 - INFO - reset_password.py:39 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=W7D1ALnEEy8Gb6b78RlhprNODouFCgFSoWI_wX6MZJc 
-
-2024-11-15 06:57:15,739 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 06:57:54,141 - INFO - reset_password.py:39 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=nzA56vIVizwrMKhoaznQZ51sTXNofJ_4bIWHStqLwWg 
-
 2024-11-15 07:22:24,678 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 07:23:08,700 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=oWMTFFl8VTvUezdfo9wwWfS4nKAh4t3eA0xPVuLFBVo 
-
-2024-11-15 07:24:42,237 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 07:25:05,283 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=JU9bHzcWiX0C-arRCHQAfg2CEzBzqNkkBt1ePHjNgm0 
-
-2024-11-15 07:26:20,418 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 07:27:12,164 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=GVAXPhCUXy2xy-XtQ5MY8vV3lMTkOvkRTaFty58Iu8I 
-
-2024-11-15 07:28:25,191 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 07:28:46,451 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=KGgo5hUvi9s_NHlIvZ0P9LiXzya5nDZhiK1IBrMg1vo 
-
-2024-11-15 07:29:41,192 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 07:30:07,010 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=WffrFK7mTUBmUCl4pnxOZR3qQKkY19eIG6fF3xJHw6I 
-
-2024-11-15 07:31:47,517 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 07:32:18,111 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=-UAixrN06sgmeOpW37cM-9HR4iaKQcUbFRn390kOHm4 
-
-2024-11-15 07:34:13,090 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 07:34:46,939 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=aLMpu09GBRSP5q9SgXNhn38mQF6wT8z87o3swXRGVH8 
-
-2024-11-15 07:37:50,015 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 07:39:16,013 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 07:39:39,602 - INFO - reset_password.py:20 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=UwG2BukKXubY62ccfwJG-Wj6BjRDQpFmi3wFHSpxA3Y 
-
-2024-11-15 07:40:40,822 - INFO - main.py:30 - Details: AuthSphere started successfully! 
-
-2024-11-15 07:41:08,130 - INFO - reset_password.py:20 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=GvF1RewhDg0eUwrN5Jp8f5E_OKKwoiXYz3ChK5n9C3U 
 
 2024-11-15 13:47:54,740 - INFO - main.py:30 - Details: AuthSphere started successfully! 
 
@@ -2117,3 +2043,41 @@
 2024-11-16 16:34:47,228 - INFO - main.py:30 - Details: AuthSphere started successfully! 
 
 2024-11-16 16:35:41,149 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 20:44:41,854 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 20:45:33,084 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-16 20:47:53,637 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 21:52:52,171 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-16 21:56:41,545 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 21:57:00,918 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-16 22:01:04,514 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 22:02:06,471 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 22:02:35,805 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 22:03:35,150 - ERROR - token_helper.py:194 - Details: Error occured : 'str' object has no attribute 'headers' 
+
+2024-11-16 22:03:35,152 - ERROR - user_service.py:47 - Details: 500 
+
+2024-11-16 22:06:14,251 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 22:06:23,546 - ERROR - token_helper.py:194 - Details: Error occured : 'str' object has no attribute 'headers' 
+
+2024-11-16 22:11:31,517 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 22:11:35,271 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-16 22:12:23,952 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 22:12:48,054 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-16 22:20:40,050 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 22:21:16,984 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 

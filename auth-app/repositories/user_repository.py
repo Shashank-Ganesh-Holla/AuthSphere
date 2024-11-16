@@ -441,8 +441,6 @@ class UserRepository:
             else:
                 raise
 
-        
-
 
     async def submit_password(self, token, new_password):
 
@@ -491,5 +489,44 @@ class UserRepository:
                 raise
 
         
+    async def get_user_details(self, username):
+        try:
+            is_user = await self.__get_user_users_table(username=username)
 
-       
+            if not is_user:
+                raise HTTPException(status.HTTP_404_NOT_FOUND, detail="User not found")
+            
+
+            details_query = '''
+            SELECT u.username, u.email, r.role_name 
+            FROM users u
+            INNER JOIN roles r
+            ON u.role_id = r.role_id
+            WHERE u.username = %s
+            '''
+
+            details_params = (username,)
+
+            result = await self.db.execute_read(details_query, details_params)
+
+            if not result:
+                val = {'stat':'Ok'}
+                val['username'] = username
+                val['email']  = is_user.get('email')
+                val['role_name'] = "No role assigned"
+
+                return {'stat': 'Ok','Result': val}
+            
+            return {'stat': 'Ok','Result': result}
+
+            
+        except Exception as er:
+            if not isinstance(er, HTTPException):
+                logging.error(f"Error occured : {str(er)}")
+                raise  HTTPException(500, detail="Internal Server Error")    
+            else:
+                raise
+
+
+    async def assign_role(self):
+        pass
