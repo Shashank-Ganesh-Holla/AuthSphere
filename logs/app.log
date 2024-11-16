@@ -2113,3 +2113,7 @@
 2024-11-16 15:56:37,294 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
 
 2024-11-16 15:57:49,644 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 16:34:47,228 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 16:35:41,149 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
