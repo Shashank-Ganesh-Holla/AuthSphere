@@ -166,7 +166,7 @@ class TokenFactory:
 
             if result and token == result.get('token'):
                 logging.error("User already logged out. Please re-login")
-                raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="User already logged out. Please re-login")
+                raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="User logged out. Please re-login")
             
             # verify the token
             payload = TokenFactory.verify_token(token)

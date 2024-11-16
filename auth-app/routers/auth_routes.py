@@ -8,14 +8,15 @@ import secrets
 from datetime import timedelta, timezone, datetime
 from typing import Union
 from aiosmtplib import send
-from email.message import EmailMessage
 from services import AuthService
-from utils import get_db_connection_batch_process, DatabaseManager, validate_token
+from utils import get_db_connection_batch_process, validate_token, send_password_reset_email
 from core import websocket_manager
 from services import get_auth_service
+from fastapi.responses import HTMLResponse
+from jinja2 import Template
 
 router = APIRouter()
-fake_db = {}
+
 
 # Email client for development stage ✅
 
@@ -49,8 +50,9 @@ async def register(user:UserCreate,
             '''we will create user when this condition satisfies'''
 
             try:
-                result = await auth_service.register_user(username=user.username, email=user.email,password=user.password,
-                                                        db=db,role_id=user.role_id, two_fa=user.twoFA_enabled)
+                result = await auth_service.register_user(username=user.username, email=user.email,
+                                                          password=user.password,db=db, two_fa=user.twoFA_enabled)
+                                                        
                 return result
             
             except Exception as err:
@@ -111,27 +113,6 @@ async def login(backgroudtasks : BackgroundTasks,form_data:OAuth2PasswordRequest
         await websocket_manager.broadcast(f"{datetime.now()} : User: {form_data.username}, Result: {err.detail}")
 
         raise 
-
-
-
-
-@router.post('/request-password-reset/')
-def request_password_reset(user:User, background_task:BackgroundTasks):
-
-    try:
-        token = secrets.token_urlsafe(32)
-        email = 'testuser@example.com'
-        expiration = datetime.now(timezone.utc) + timedelta(minutes=10)
-        
-        fake_db[email] = {"reset_token": token, "expires_at": expiration}
-
-    except Exception as er:
-        if not isinstance(er, HTTPException):
-            logging.error(f"Error occured : {str(er)}")
-            raise  HTTPException(500, detail="Internal Server Error")   
-        else:
-            raise 
-
 
 
 @router.post('/verify_otp/')

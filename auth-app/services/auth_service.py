@@ -26,15 +26,13 @@ class AuthService:
         self.user_repo = user_repo
 
     async def register_user(self, username:str, email:str, password: str, 
-                            db:aiomysql.Connection,
-                            role_id:int = 2,
-                            two_fa:bool = False):
+                            db:aiomysql.Connection,two_fa:bool = False):
+                            
         try:
             hashed_Password = PasswordManager.hash_password(password)
 
             result = await self.user_repo.create_user(username=username,email=email,
-                                                      password=hashed_Password, database = db,
-                                                      role_id=role_id, two_fa=two_fa)
+                                                      password=hashed_Password, database = db, two_fa=two_fa)
             
             return result
         
@@ -88,7 +86,7 @@ class AuthService:
 
 
     async def update_twoFa(self, 
-                      username:str,twoFA_enabled):
+                      username:str,twoFA_enabled:str):
         try:
             user = await self.user_repo.update_twoFa(username, twoFA_enabled)
             return user 

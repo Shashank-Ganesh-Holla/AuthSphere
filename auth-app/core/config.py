@@ -4,6 +4,7 @@ from fastapi.security import OAuth2PasswordBearer
 from typing import ClassVar, List
 import logging
 from fastapi import WebSocket
+from fastapi.templating import Jinja2Templates
 
 class Logger:
 
@@ -30,6 +31,7 @@ class Config(BaseSettings):
     # Set up password hashing context
     context: ClassVar[CryptContext] =CryptContext(schemes=['sha256_crypt'], deprecated="auto")
     
+    templates: Jinja2Templates = Jinja2Templates(directory="auth-app/templates")
 
     oauth2_scheme : ClassVar[OAuth2PasswordBearer] = OAuth2PasswordBearer(tokenUrl="/login")
 

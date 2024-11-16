@@ -1787,3 +1787,329 @@
 2024-11-14 20:38:48,794 - INFO - main.py:29 - Details: AuthSphere started successfully! 
 
 2024-11-14 20:38:56,853 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 21:31:05,867 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 21:32:08,936 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 21:32:38,803 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 21:32:47,660 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 21:33:02,072 - ERROR - user_repository.py:221 - Details: Invalid OTP 
+
+2024-11-14 21:33:10,679 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 21:33:42,164 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 21:34:08,510 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-14 21:34:26,323 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-14 21:34:56,875 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-14 21:35:06,681 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-14 21:36:21,691 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-14 21:36:29,254 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-14 21:36:53,030 - INFO - email_helper.py:41 - Details: OTP email sent successfully! 
+
+2024-11-14 21:37:49,463 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-15 05:40:45,862 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-15 05:44:04,520 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=Q78N32UNyu9wQVHEqQBxY96kSAJfBc12cNxcr1_IoZU 
+
+2024-11-15 05:47:40,854 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-15 05:47:57,973 - INFO - auth_routes.py:137 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=9BGSMMpN0era_aEF99a1LU3r-fV4Av8xrq7ZtoqslYM 
+
+2024-11-15 05:48:17,844 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=9BGSMMpN0era_aEF99a1LU3r-fV4Av8xrq7ZtoqslYM 
+
+2024-11-15 05:49:06,038 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-15 05:50:05,646 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=bSDcLUM9LRkefw1nMGk_f7wpb9LpwSKtqnPF2AoJ5sY 
+
+2024-11-15 05:50:21,232 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=Cmx54dJkUUzWjzhEzSLPtRqElMrINntmd62t-fqtaT0 
+
+2024-11-15 05:51:16,024 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=TGnRm-t3jxNKewholJAf3Mjdahvcry_LwBQQGOtRe-0 
+
+2024-11-15 05:55:42,505 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=AtQgfTOzxSdTTXGwHsgQeP9c0AQIyXZuZmXQBSgqt5Y 
+
+2024-11-15 05:58:27,278 - INFO - main.py:29 - Details: AuthSphere started successfully! 
+
+2024-11-15 05:58:51,599 - INFO - auth_routes.py:120 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=nj8t_YAQcGwgkLrOO3N0t5KhetAGIeHHcCCGmapOtRQ 
+
+2024-11-15 06:36:33,261 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 06:38:24,935 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 06:45:52,507 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 06:47:11,059 - INFO - reset_password.py:39 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=FdmS7TEzxvaZcUrSNIoX3-ppuKp7UrT8huNNK6swcNk 
+
+2024-11-15 06:49:40,955 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 06:51:17,726 - INFO - reset_password.py:39 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=W7D1ALnEEy8Gb6b78RlhprNODouFCgFSoWI_wX6MZJc 
+
+2024-11-15 06:57:15,739 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 06:57:54,141 - INFO - reset_password.py:39 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=nzA56vIVizwrMKhoaznQZ51sTXNofJ_4bIWHStqLwWg 
+
+2024-11-15 07:22:24,678 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 07:23:08,700 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=oWMTFFl8VTvUezdfo9wwWfS4nKAh4t3eA0xPVuLFBVo 
+
+2024-11-15 07:24:42,237 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 07:25:05,283 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=JU9bHzcWiX0C-arRCHQAfg2CEzBzqNkkBt1ePHjNgm0 
+
+2024-11-15 07:26:20,418 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 07:27:12,164 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=GVAXPhCUXy2xy-XtQ5MY8vV3lMTkOvkRTaFty58Iu8I 
+
+2024-11-15 07:28:25,191 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 07:28:46,451 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=KGgo5hUvi9s_NHlIvZ0P9LiXzya5nDZhiK1IBrMg1vo 
+
+2024-11-15 07:29:41,192 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 07:30:07,010 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=WffrFK7mTUBmUCl4pnxOZR3qQKkY19eIG6fF3xJHw6I 
+
+2024-11-15 07:31:47,517 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 07:32:18,111 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=-UAixrN06sgmeOpW37cM-9HR4iaKQcUbFRn390kOHm4 
+
+2024-11-15 07:34:13,090 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 07:34:46,939 - INFO - reset_password.py:21 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=aLMpu09GBRSP5q9SgXNhn38mQF6wT8z87o3swXRGVH8 
+
+2024-11-15 07:37:50,015 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 07:39:16,013 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 07:39:39,602 - INFO - reset_password.py:20 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=UwG2BukKXubY62ccfwJG-Wj6BjRDQpFmi3wFHSpxA3Y 
+
+2024-11-15 07:40:40,822 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 07:41:08,130 - INFO - reset_password.py:20 - Details: Password reset link for suyogshashank@gmail.com: http://localhost:8000/reset-password?token=GvF1RewhDg0eUwrN5Jp8f5E_OKKwoiXYz3ChK5n9C3U 
+
+2024-11-15 13:47:54,740 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 13:52:34,682 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 13:54:58,743 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 13:57:13,413 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 14:22:42,546 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 14:23:43,839 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 14:37:00,774 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 14:37:51,411 - ERROR - database.py:58 - Details:  Error occured: 'DictCursor' object has no attribute 'affected_rows' 
+
+2024-11-15 14:38:42,726 - ERROR - database.py:58 - Details:  Error occured: 'DictCursor' object has no attribute 'affected_rows' 
+
+2024-11-15 14:41:42,744 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 14:42:16,831 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 15:00:02,645 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 15:00:28,111 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 15:01:25,731 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 18:05:55,388 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 18:06:34,861 - ERROR - reset_password_routes.py:44 - Details: Error occured : 'PasswordResetService' object has no attribute '__request_password_reset' 
+
+2024-11-15 18:07:52,353 - ERROR - reset_password_routes.py:44 - Details: Error occured : 'PasswordResetService' object has no attribute '__request_password_reset' 
+
+2024-11-15 18:08:13,404 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 18:08:35,489 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 18:15:03,013 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 18:15:49,962 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 19:06:28,260 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 19:07:06,890 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 21:59:10,604 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:00:28,907 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 22:01:55,417 - ERROR - reset_password_service.py:47 - Details: Error occured: '<' not supported between instances of 'str' and 'dict' 
+
+2024-11-15 22:02:19,162 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:02:51,324 - ERROR - reset_password_service.py:47 - Details: Error occured: '<' not supported between instances of 'str' and 'datetime.datetime' 
+
+2024-11-15 22:04:38,016 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:05:07,279 - ERROR - reset_password_service.py:47 - Details: Error occured: can't compare offset-naive and offset-aware datetimes 
+
+2024-11-15 22:05:35,104 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:06:00,877 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 22:07:32,370 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:08:50,907 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:09:37,428 - ERROR - reset_password_service.py:47 - Details: Error occured: can't compare offset-naive and offset-aware datetimes 
+
+2024-11-15 22:10:21,921 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:10:47,542 - ERROR - reset_password_service.py:47 - Details: Error occured: can't compare offset-naive and offset-aware datetimes 
+
+2024-11-15 22:14:06,588 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:14:24,224 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 22:15:19,566 - ERROR - reset_password_service.py:47 - Details: Error occured: can't compare offset-naive and offset-aware datetimes 
+
+2024-11-15 22:15:51,422 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:15:59,576 - ERROR - reset_password_service.py:47 - Details: Error occured: can't compare offset-naive and offset-aware datetimes 
+
+2024-11-15 22:18:18,606 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:18:44,512 - ERROR - reset_password_service.py:47 - Details: Error occured: 'NoneType' object has no attribute 'get' 
+
+2024-11-15 22:19:58,824 - ERROR - reset_password_service.py:47 - Details: Error occured: 'NoneType' object has no attribute 'get' 
+
+2024-11-15 22:20:44,193 - ERROR - reset_password_service.py:47 - Details: Error occured: 'NoneType' object has no attribute 'get' 
+
+2024-11-15 22:20:58,723 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:31:22,845 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:31:53,372 - ERROR - reset_password_service.py:47 - Details: Error occured: 'NoneType' object has no attribute 'get' 
+
+2024-11-15 22:32:30,860 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-15 22:33:30,526 - ERROR - reset_password_service.py:47 - Details: Error occured: '<' not supported between instances of 'str' and 'datetime.datetime' 
+
+2024-11-15 22:34:32,235 - ERROR - reset_password_service.py:47 - Details: Error occured: '<' not supported between instances of 'str' and 'datetime.datetime' 
+
+2024-11-15 22:35:07,992 - ERROR - reset_password_service.py:47 - Details: Error occured: '<' not supported between instances of 'str' and 'datetime.datetime' 
+
+2024-11-15 22:36:22,231 - ERROR - reset_password_service.py:47 - Details: Error occured: '<' not supported between instances of 'str' and 'datetime.datetime' 
+
+2024-11-15 22:37:10,482 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:42:47,791 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:43:32,373 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-15 22:43:57,117 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 12:56:11,382 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 12:57:02,319 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 12:57:19,066 - ERROR - user_repository.py:445 - Details: Error occured : cannot access local variable 'table' where it is not associated with a value 
+
+2024-11-16 12:58:39,073 - ERROR - user_repository.py:445 - Details: Error occured : cannot access local variable 'table' where it is not associated with a value 
+
+2024-11-16 12:59:57,094 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 13:00:23,353 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 13:02:29,586 - ERROR - database.py:50 - Details:  Error occured: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE username = 'testuser'' at line 3") 
+
+2024-11-16 13:09:35,296 - ERROR - database.py:50 - Details:  Error occured: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE username = 'testuser'' at line 3") 
+
+2024-11-16 13:14:26,739 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 13:15:43,143 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 13:17:43,773 - INFO - email_helper.py:31 - Details: OTP email sent successfully! 
+
+2024-11-16 13:39:32,402 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 13:45:48,386 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 13:46:32,521 - INFO - email_helper.py:31 - Details: OTP email sent successfully! 
+
+2024-11-16 13:47:02,163 - ERROR - user_repository.py:301 - Details: Invalid OTP 
+
+2024-11-16 13:47:34,376 - ERROR - user_repository.py:301 - Details: Invalid OTP 
+
+2024-11-16 13:47:46,145 - INFO - email_helper.py:31 - Details: OTP email sent successfully! 
+
+2024-11-16 13:49:07,919 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-16 13:49:50,023 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-16 13:51:25,748 - ERROR - auth_manager.py:43 - Details: Error occured : (1452, 'Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`))') 
+
+2024-11-16 13:51:25,748 - ERROR - db_connection.py:101 - Details: Transaction rolled back 
+
+2024-11-16 14:03:50,551 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 14:04:46,928 - ERROR - auth_routes.py:43 - Details: Username already registered! 
+
+2024-11-16 14:04:46,929 - ERROR - db_connection.py:101 - Details: Transaction rolled back 
+
+2024-11-16 14:27:44,981 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 14:28:50,754 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 14:30:25,057 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 14:32:00,871 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 14:34:08,757 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 14:35:20,409 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 14:36:34,403 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 14:37:52,611 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 14:58:16,869 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 14:59:08,907 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 15:00:00,580 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 15:01:13,405 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 15:26:32,080 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 15:26:54,520 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 15:28:26,879 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 15:28:45,500 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 15:29:16,177 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 15:36:58,564 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 15:37:36,790 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 15:39:50,817 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 15:42:30,885 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 15:45:15,937 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 15:52:46,320 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 15:55:22,239 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 15:56:24,482 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-16 15:56:37,294 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
+
+2024-11-16 15:57:49,644 - INFO - email_helper.py:53 - Details: Password reset email sent successfully! 
