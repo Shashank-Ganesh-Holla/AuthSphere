@@ -98,7 +98,7 @@ async def get_db_connection_batch_process()-> AsyncGenerator[aiomysql.Connection
 
     except Exception as ex:
         await db.rollback() # Rollback in case of an error
-        logging.error("Transaction rolled back")
+        logging.warning("Transaction rolled back")
 
         if not isinstance(ex, HTTPException):  # incase of error other than HTTPException
             logging.error(f"Error occured : {str(ex)}")

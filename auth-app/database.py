@@ -25,7 +25,7 @@ async def create_connection() -> Connection:
         return connection
     
     except Error as err:
-        logging.error(str(err))
+        logging.warning(str(err))
         raise ConnectionError(f"Failed to connect to the database: {str(err)}")  # Raise custom exception 
 
     except Exception as error:
@@ -47,7 +47,7 @@ async def execute_write_query(connection:Connection, query, params=None):
         
     except Error as er:
         if not isinstance(er, HTTPException):
-            logging.error(f" Error occured: {str(er)}")
+            logging.warning(f" Error occured: {str(er)}")
             raise  HTTPException(500, detail="Internal Server Error")
         else:
             raise

@@ -14,7 +14,7 @@ async def utility_websocketAuth(websocket:WebSocket):
 
     if not token:
         await websocket.send_text("No token provided, connection refuesd.")
-        logging.error("No token provided, connection refused.")
+        logging.warning("No token provided, connection refused.")
         raise WebSocketConnectionError("No token provided, connection refused.", code=CUSTOM_CLOSE_CODES.get('NO_TOKEN_RECEIVED'))
         
 
@@ -27,7 +27,7 @@ async def utility_websocketAuth(websocket:WebSocket):
        
     
     except JWTError as e:
-        logging.error(str(e))
+        logging.warning(str(e))
         await websocket.send_text(f"{str(e)}, connection refuesd.")
         raise WebSocketConnectionError(f"{str(e)}, connection refuesd.",code=CUSTOM_CLOSE_CODES.get('TOKEN_ERROR'))
     

@@ -28,11 +28,11 @@ def upload_file_to_s3(filepath:str, bucket, object_name:str):
         return True
 
     except ClientError as e:
-        logging.error(f"Error uploading file: {e}")
+        logging.warning(f"Error uploading file: {e}")
         return False
 
     except NoCredentialsError as e:
-        logging.error("Credentials not available")
+        logging.warning("Credentials not available")
         return False
     
     except Exception as e:
@@ -52,7 +52,7 @@ async def download_from_s3(filename:str, bucket):
         return file_url
 
     except ClientError as e:
-        logging.error(f"Error downloading file: {e}")
+        logging.warning(f"Error downloading file: {e}")
         raise HTTPException(500, f"Client error: {str(e)}")
 
 
