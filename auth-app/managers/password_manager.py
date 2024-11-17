@@ -29,9 +29,17 @@ class PasswordManager:
 
         try:
             """Verifies a plain password against its hashed counterpart."""
-            return config.context.verify(plain_password, hashed_password)
+            result =  config.context.verify(plain_password, hashed_password)
+
+            return result
+        
+        except ValueError:
+            # Handle the specific ValueError exception (invalid password) and return None
+            logging.warning("Invalid password.")
+            return None
         
         except Exception as er:
+            
             if not isinstance(er, HTTPException):
                 logging.error(f"Error occured : {str(er)}")
                 raise  HTTPException(500, detail="Internal Server Error")   

@@ -133,23 +133,23 @@ class TokenFactory:
             return payload
         
         except jt.ExpiredSignatureError:
-            logging.error('Token has expired')
+            logging.warning('Token has expired')
             raise HTTPException(status_code=401, detail="Token has expired", 
                                 headers={"WWW-Authenticate":"Bearer"})
         
         except jt.InvalidTokenError:
-            logging.error('Invalid token')
+            logging.warning('Invalid token')
             raise HTTPException(status_code=401, detail="Invalid token",
                                  headers={"WWW-Authenticate":"Bearer"})
         
         except JWTError as e:
-            logging.error(str(e))
+            logging.warning(str(e))
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=f"{str(e)}",
                                 headers={"WWW-Authenticate":"Bearer"})
     
         except Exception as err:
             if not isinstance(err, HTTPException):
-                logging.error(str(err))
+                logging.error(f"Error occured: {str(err)}")
                 raise HTTPException(status_code=401, detail=f"{str(err)}", headers={"WWW-Authenticate":"Bearer"})
             else:
                 raise
@@ -165,7 +165,7 @@ class TokenFactory:
             result = await TokenManager.is_token_blacklisted(token)
 
             if result and token == result.get('token'):
-                logging.error("User already logged out. Please re-login")
+                logging.warning("User already logged out. Please re-login")
                 raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="User logged out. Please re-login")
             
             # verify the token

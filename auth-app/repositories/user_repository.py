@@ -90,7 +90,10 @@ class UserRepository:
                 raise
     
     
-    async def __manipulate_users_table(self, operation:str, query, *args, **kwargs):
+    async def __manipulate_users_table(self, operation:str,query,/,**kwargs): # '/' in paramters means the params before / should strictly
+                                                                                 # be a positional argument for example here operation in this case
+                                                                                 # should always be assigned as argument while calling this function
+                                                                                
 
         """Args:
             operation (str): The type of operation (e.g., 'insert', 'update').
@@ -259,6 +262,7 @@ class UserRepository:
 
 
             else:
+                logging.warning("Invalid username or Password")
                 raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="Invalid username or Password")
 
         except Exception as er:
@@ -293,10 +297,10 @@ class UserRepository:
                     return {"access_token": access_token, "refresh_token": refresh_token ,"token_type":"bearer"}
                 
                 else:
-                    logging.error("Invalid OTP")
+                    logging.warning("Invalid OTP")
                     raise HTTPException(status.HTTP_401_UNAUTHORIZED,detail="Invalid OTP")
 
-            logging.error("Invalid user details")    
+            logging.warning("Invalid user details")    
             raise HTTPException(status.HTTP_400_BAD_REQUEST,detail="Invalid user details")
             
         except Exception as er:
@@ -351,7 +355,7 @@ class UserRepository:
                     return {"stat": "Ok", "Result": f"twoFA enabled successfully for {username}"}
                 
                 elif result == None:
-                    logging.error("Error from database: result returned None")
+                    logging.warning("Error from database: result returned None")
                     raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal server error") 
                 
                 raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="twoFA already enabled")
@@ -381,9 +385,9 @@ class UserRepository:
 
 
         if not is_reset_user:
-            query = ''' INSERT INTO password_reset_tokens (username, token, expiration) VALUES (%s,%s,%s)'''
+            reset_query = ''' INSERT INTO password_reset_tokens (username, token, expiration) VALUES (%s,%s,%s)'''
 
-            resp = await self.__manipulate_users_table("create_from_reqPaswdReset",query, username = username, token= token, expiration = expiration)
+            resp = await self.__manipulate_users_table("create_from_reqPaswdReset",reset_query, username = username, token= token, expiration = expiration)
             
         else:
 
@@ -465,6 +469,7 @@ class UserRepository:
                         "Result": "The new password cannot be the same as your previous password. Please choose a different password."}
 
 
+            hash_newPassword = PasswordManager.hash_password(new_password)
 
             query = '''UPDATE users 
                     SET password = %s
@@ -473,7 +478,7 @@ class UserRepository:
             
 
 
-            result = await self.__manipulate_users_table("submit_password",query, username = user ,password = new_password)
+            result = await self.__manipulate_users_table("submit_password",query, username = user ,password = hash_newPassword)
 
             if result == 1:
                 return {"stat": "Ok", "Result": "Password reset successful."}

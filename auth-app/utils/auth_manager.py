@@ -81,10 +81,10 @@ async def login_user_twoFA(username,secret, backgroudtasks:BackgroundTasks):
         but now, will include otp within the login reponse for testing purpose
         will change it later when notification feature is added.'''
 
-        # backgroudtasks.add_task(send_otp_email, username, otp)
-        await send_otp_email(recepient=username, otp=otp)
+        backgroudtasks.add_task(send_otp_email, username, otp)
+        # await send_otp_email(recepient=username, otp=otp)
 
-        return {'stat': 'Ok', 'otp': otp,"Result": "OTP sent to the registered mobile number/email"}
+        return {'stat': 'Ok',"Result": "OTP sent to the registered mobile number/email"}  #, 'otp': otp
     
     except Exception as er:
         if not isinstance(er, HTTPException):

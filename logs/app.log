@@ -2099,3 +2099,109 @@
 2024-11-17 14:56:21,455 - INFO - main.py:30 - Details: AuthSphere started successfully! 
 
 2024-11-17 14:56:50,116 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-17 15:40:38,948 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 15:41:32,262 - INFO - email_helper.py:61 - Details: Failed to send reset email! 
+
+2024-11-17 15:41:32,262 - ERROR - email_helper.py:62 - Details: Error occured at send_password_reset_email : send() got some positional-only arguments passed as keyword arguments: 'message' 
+
+2024-11-17 15:58:13,061 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 15:58:22,306 - ERROR - password_reset_service.py:33 - Details: Error occured: UserRepository.__manipulate_users_table() takes 2 positional arguments but 3 were given 
+
+2024-11-17 16:02:49,176 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:02:55,240 - INFO - email_helper.py:68 - Details: Failed to send OTP email! 
+
+2024-11-17 16:02:55,241 - ERROR - email_helper.py:69 - Details: Error occured: send() got some positional-only arguments passed as keyword arguments: 'message' 
+
+2024-11-17 16:05:17,959 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:05:22,663 - INFO - email_helper.py:68 - Details: Failed to send OTP email! 
+
+2024-11-17 16:05:22,664 - ERROR - email_helper.py:69 - Details: Error occured: send() got some positional-only arguments passed as keyword arguments: 'message' 
+
+2024-11-17 16:06:52,967 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:07:12,238 - INFO - email_helper.py:68 - Details: Failed to send OTP email! 
+
+2024-11-17 16:07:12,238 - ERROR - email_helper.py:69 - Details: Error occured: send() got some positional-only arguments passed as keyword arguments: 'message' 
+
+2024-11-17 16:07:25,972 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:09:25,809 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:09:45,558 - ERROR - password_reset_service.py:33 - Details: Error occured: UserRepository.__manipulate_users_table() missing 1 required positional argument: 'query' 
+
+2024-11-17 16:12:27,563 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:12:49,404 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:13:37,987 - INFO - email_helper.py:64 - Details: Password reset email sent successfully! 
+
+2024-11-17 16:14:04,132 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:15:09,193 - INFO - email_helper.py:64 - Details: Password reset email sent successfully! 
+
+2024-11-17 16:17:42,682 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:18:15,541 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-17 16:18:35,622 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-17 16:18:57,706 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-17 16:22:35,381 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:22:48,344 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-17 16:23:11,525 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-17 16:23:14,688 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-17 16:23:50,811 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:24:02,913 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-17 16:24:32,331 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-17 16:24:47,728 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-17 16:27:07,863 - INFO - email_helper.py:69 - Details: Password reset email sent successfully! 
+
+2024-11-17 16:27:51,990 - INFO - email_helper.py:69 - Details: Password reset email sent successfully! 
+
+2024-11-17 16:28:43,353 - ERROR - password_manager.py:36 - Details: Error occured : hash could not be identified 
+
+2024-11-17 16:29:12,499 - ERROR - password_manager.py:36 - Details: Error occured : hash could not be identified 
+
+2024-11-17 16:34:12,146 - ERROR - password_manager.py:36 - Details: Error occured : hash could not be identified 
+
+2024-11-17 16:37:14,725 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:45:07,556 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:45:25,239 - WARNING - password_manager.py:38 - Details: Invalid password. 
+
+2024-11-17 16:47:52,943 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:49:13,750 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 16:51:17,677 - INFO - email_helper.py:69 - Details: Password reset email sent successfully! 
+
+2024-11-17 16:51:37,825 - WARNING - password_manager.py:38 - Details: Invalid password. 
+
+2024-11-17 16:52:44,680 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-17 17:09:40,524 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 17:11:24,187 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 17:11:28,334 - WARNING - user_repository.py:265 - Details: Invalid username or Password 
+
+2024-11-17 17:11:43,705 - WARNING - user_repository.py:265 - Details: Invalid username or Password 
+
+2024-11-17 17:11:57,435 - WARNING - user_repository.py:265 - Details: Invalid username or Password 
+
+2024-11-17 17:12:10,038 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
