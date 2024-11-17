@@ -2081,3 +2081,21 @@
 2024-11-16 22:20:40,050 - INFO - main.py:30 - Details: AuthSphere started successfully! 
 
 2024-11-16 22:21:16,984 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-17 14:48:14,939 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 14:48:22,249 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-17 14:48:24,526 - ERROR - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-17 14:50:41,646 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-17 14:50:50,314 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-17 14:53:47,494 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 14:54:12,766 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-17 14:56:21,455 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-17 14:56:50,116 - ERROR - token_helper.py:168 - Details: User already logged out. Please re-login 

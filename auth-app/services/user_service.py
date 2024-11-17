@@ -53,10 +53,10 @@ class UserService:
             else:
                 raise
 
-    async def assign_role(self):
+    async def assign_role(self, username, role_name):
 
         try:
-            result = await self.user_repo.assign_role()
+            result = await self.user_repo.assign_role(username=username, role_name = role_name)
             return result
 
 
