@@ -528,5 +528,48 @@ class UserRepository:
                 raise
 
 
-    async def assign_role(self):
-        pass
+    async def assign_role(self, username, role_name):
+
+        try:
+
+            # first check if the user exists
+            is_user = await self.__get_user_users_table(username=username)
+
+            # if user not found
+            if not is_user:
+                raise HTTPException(status.HTTP_404_NOT_FOUND, detail="User not found")
+            
+            column = 'role_id'
+            table = 'roles'
+            condition = 'role_name'
+            condition_value = role_name
+
+
+            # now check if the role_name is in roles table and get the role_id
+            role_id_map : dict = await self.__get_column_any_table(table=table, column=column,
+                                                        condition=condition, condition_value=condition_value)
+            
+            if not role_id_map:
+                raise HTTPException(status.HTTP_404_NOT_FOUND, detail="role_name not found")
+            
+            role_id = role_id_map.get('role_id')
+
+            # now update the role id to the users table role_id column
+
+            update_query_role = "UPDATE users SET role_id = %s WHERE username = %s"
+            update_params_role = (role_id, username)
+
+            update_result = await self.db.execute_manipulation(update_query_role, update_params_role)
+
+            if update_result == 1:
+                return True
+            else:
+                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"'{role_name}' role already assigned!")
+            
+
+        except Exception as er:
+            if not isinstance(er, HTTPException):
+                logging.error(f"Error occured : {str(er)}")
+                raise  HTTPException(500, detail="Internal Server Error")    
+            else:
+                raise
