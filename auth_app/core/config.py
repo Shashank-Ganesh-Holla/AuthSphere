@@ -30,8 +30,8 @@ class Config(BaseSettings):
 
     SECRET_KEY: str
     ALGORITHM: str
-    ACCESS_TOKEN_EXPIRE: int
-    REFRESH_TOKEN_EXPIRE: int
+    ACCESS_TOKEN_EXPIRE: int = 10
+    REFRESH_TOKEN_EXPIRE: int = 1
 
 
     
