@@ -2517,3 +2517,17 @@
 2024-11-21 12:02:55,529 - WARNING - token_helper.py:167 - Details: User already logged out. Please re-login 
 
 2024-11-21 12:25:25,245 - WARNING - token_helper.py:167 - Details: User already logged out. Please re-login 
+
+2024-11-21 13:52:49,484 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 13:58:37,175 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 13:58:49,388 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 13:59:36,612 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 13:59:40,568 - WARNING - token_helper.py:145 - Details: Signature has expired. 
+
+2024-11-21 14:00:09,280 - WARNING - token_helper.py:145 - Details: Invalid crypto padding 
+
+2024-11-21 14:00:41,132 - WARNING - token_helper.py:145 - Details: Invalid crypto padding 

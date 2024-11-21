@@ -1,3 +1,4 @@
+from pydantic import field_validator
 from pydantic_settings import BaseSettings
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordBearer
@@ -42,10 +43,15 @@ class Config(BaseSettings):
     oauth2_scheme : ClassVar[OAuth2PasswordBearer] = OAuth2PasswordBearer(tokenUrl="/login")
 
     # Inner `Config` class to configure how settings are loaded (e.g., from a `.env` file)
-    # class Config:
-    env_file : ClassVar[str] = ".env"  # Specify the location of your environment file
-    extra : ClassVar[str] = "allow"  # This will allow extra fields in the environment
-    env_file_encoding: ClassVar[str] = 'utf-8' 
+    class Config:
+        env_file: ClassVar[str] = ".env"
+        extra: ClassVar[str] = "allow"
+        env_file_encoding: ClassVar[str] = 'utf-8'
+
+
+    @field_validator('ACCESS_TOKEN_EXPIRE', 'REFRESH_TOKEN_EXPIRE')
+    def check_integers(cls, value):
+        return int(value)
 
 
 class WebsocketManager:
