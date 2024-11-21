@@ -42,6 +42,10 @@ jobs:
           ACCESS_TOKEN_EXPIRE: ${{ secrets.ACCESS_TOKEN_EXPIRE }}
           REFRESH_TOKEN_EXPIRE: ${{ secrets.REFRESH_TOKEN_EXPIRE }}
         run: |
+          echo "SECRET_KEY=$SECRET_KEY"
+          echo "ALGORITHM=$ALGORITHM"
+          echo "ACCESS_TOKEN_EXPIRE=$ACCESS_TOKEN_EXPIRE"
+          echo "REFRESH_TOKEN_EXPIRE=$REFRESH_TOKEN_EXPIRE"
           echo "Environment variables set"
           pytest tests/
 

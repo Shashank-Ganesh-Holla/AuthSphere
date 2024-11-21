@@ -51,7 +51,10 @@ class Config(BaseSettings):
 
     @field_validator('ACCESS_TOKEN_EXPIRE', 'REFRESH_TOKEN_EXPIRE')
     def check_integers(cls, value):
+        if value == '':
+            return 3600  # Default to 3600 if empty
         return int(value)
+
 
 
 class WebsocketManager:
