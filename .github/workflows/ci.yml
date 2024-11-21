@@ -32,6 +32,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest  # Ensure pytest is installed for running tests
+          pip install python-dotenv  # Install python-dotenv if needed
+
+      - name: Set environment variables from secrets
+
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          ALGORITHM: ${{ secrets.ALGORITHM }}
+          ACCESS_TOKEN_EXPIRE: ${{ secrets.ACCESS_TOKEN_EXPIRE }}
+          REFRESH_TOKEN_EXPIRE: ${{ secrets.REFRESH_TOKEN_EXPIRE }}
+        run: |
+          echo "Environment variables set"
+          pytest tests/
 
       # Run tests
       - name: Run tests
