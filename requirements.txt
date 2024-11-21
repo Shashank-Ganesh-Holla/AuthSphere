@@ -33,3 +33,6 @@ uvicorn
 aiosmtplib
 pydantic-settings
 aiomysql
+pytest
+pytest-asyncio
+boto3

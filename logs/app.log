@@ -2205,3 +2205,315 @@
 2024-11-17 17:11:57,435 - WARNING - user_repository.py:265 - Details: Invalid username or Password 
 
 2024-11-17 17:12:10,038 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-19 14:02:48,397 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 14:05:58,666 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 14:06:32,743 - WARNING - websocket_utility.py:30 - Details: Signature has expired. 
+
+2024-11-19 14:06:48,381 - WARNING - config.py:71 - Details: Removing closed connection due to error: Cannot call "send" once a close message has been sent. 
+
+2024-11-19 14:06:52,245 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-19 14:07:16,116 - WARNING - config.py:71 - Details: Removing closed connection due to error: Cannot call "send" once a close message has been sent. 
+
+2024-11-19 14:07:34,949 - WARNING - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-19 14:07:46,311 - WARNING - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-19 14:12:31,378 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 14:13:04,506 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 14:18:00,680 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 14:19:18,896 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 14:28:49,832 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 14:29:05,208 - WARNING - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-19 14:47:28,248 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 14:47:33,673 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 14:47:55,490 - WARNING - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-19 14:48:58,997 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 14:49:04,877 - WARNING - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-19 14:51:04,766 - WARNING - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-19 14:51:12,828 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-19 14:51:37,579 - WARNING - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-19 14:54:30,958 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 14:57:08,095 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 15:05:18,574 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 15:05:24,014 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 15:05:27,946 - WARNING - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-19 15:06:02,768 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-19 15:14:43,351 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 15:19:12,646 - WARNING - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-19 15:19:28,507 - WARNING - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-19 15:19:59,172 - WARNING - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-19 16:05:19,566 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 16:05:39,646 - WARNING - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-19 16:16:34,688 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 16:16:45,430 - WARNING - user_repository.py:265 - Details: Invalid username or Password 
+
+2024-11-19 16:16:55,942 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-19 16:19:05,009 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 16:20:44,727 - WARNING - user_repository.py:265 - Details: Invalid username or Password 
+
+2024-11-19 16:42:25,491 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 16:43:34,630 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-19 16:48:11,242 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 16:50:40,457 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 16:55:22,629 - ERROR - auth_routes.py:167 - Details: 'bool' object has no attribute 'user' 
+
+2024-11-19 16:55:22,631 - ERROR - db_connection.py:85 - Details: Error in database connection context: 'bool' object has no attribute 'user' 
+
+2024-11-19 16:55:22,641 - WARNING - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-19 16:55:29,224 - WARNING - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-19 16:55:42,333 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2024-11-19 17:01:05,273 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 17:01:14,707 - ERROR - db_connection.py:85 - Details: Error in database connection context: [{'type': 'string_type', 'loc': ('body',), 'msg': 'Input should be a valid string', 'input': {'user_to_logout': 'testuser'}, 'url': 'https://errors.pydantic.dev/2.9/v/string_type'}] 
+
+2024-11-19 17:02:14,911 - ERROR - db_connection.py:85 - Details: Error in database connection context: [{'type': 'string_type', 'loc': ('body',), 'msg': 'Input should be a valid string', 'input': {'user_to_logout': 'testuser'}, 'url': 'https://errors.pydantic.dev/2.9/v/string_type'}] 
+
+2024-11-19 17:05:27,895 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 17:06:53,947 - ERROR - auth_routes.py:167 - Details: 'bool' object has no attribute 'user' 
+
+2024-11-19 17:09:02,732 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 17:09:09,891 - WARNING - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-19 17:10:15,863 - ERROR - auth_routes.py:167 - Details: 'bool' object has no attribute 'user' 
+
+2024-11-19 17:13:14,976 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 17:14:16,882 - WARNING - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-19 17:17:51,121 - WARNING - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-19 17:36:21,963 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-19 17:36:53,420 - WARNING - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-19 17:37:02,486 - WARNING - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-19 17:39:02,371 - WARNING - token_helper.py:168 - Details: User already logged out. Please re-login 
+
+2024-11-19 17:40:00,015 - WARNING - token_helper.py:146 - Details: Signature has expired. 
+
+2024-11-20 15:34:26,796 - INFO - main.py:30 - Details: AuthSphere started successfully! 
+
+2024-11-20 16:20:44,053 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 16:22:00,107 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 16:52:12,857 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 17:17:39,027 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 17:17:58,673 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 20:00:57,404 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 20:02:24,460 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 20:13:43,964 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 20:14:13,568 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 20:15:59,312 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 20:16:39,591 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 20:19:36,668 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 23:50:44,190 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-20 23:50:44,190 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-20 23:50:44,190 - ERROR - user_repository.py:73 - Details: Error occured: 'bool' object has no attribute 'execute_read' 
+
+2024-11-20 23:54:42,843 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-20 23:54:46,495 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-20 23:54:46,495 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-20 23:54:46,495 - ERROR - user_repository.py:73 - Details: Error occured: 'bool' object has no attribute 'execute_read' 
+
+2024-11-21 00:00:46,106 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 00:00:50,711 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:00:50,711 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:00:50,711 - ERROR - user_repository.py:73 - Details: Error occured: 'bool' object has no attribute 'execute_read' 
+
+2024-11-21 00:08:58,913 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:08:58,913 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:08:58,913 - ERROR - user_repository.py:73 - Details: Error occured: 'bool' object has no attribute 'execute_read' 
+
+2024-11-21 00:10:04,383 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:10:04,383 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:10:04,383 - ERROR - user_repository.py:73 - Details: Error occured: 'bool' object has no attribute 'execute_read' 
+
+2024-11-21 00:11:04,220 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:11:04,220 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:11:04,220 - ERROR - user_repository.py:73 - Details: Error occured: 'bool' object has no attribute 'execute_read' 
+
+2024-11-21 00:12:51,405 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 00:12:56,550 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:12:56,550 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:12:56,550 - ERROR - user_repository.py:73 - Details: Error occured: 'bool' object has no attribute 'execute_read' 
+
+2024-11-21 00:14:07,519 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:14:07,519 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:14:07,519 - ERROR - user_repository.py:73 - Details: Error occured: 'bool' object has no attribute 'execute_read' 
+
+2024-11-21 00:18:54,047 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 00:18:59,017 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:18:59,017 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:18:59,017 - ERROR - user_repository.py:73 - Details: Error occured: 'bool' object has no attribute 'execute_read' 
+
+2024-11-21 00:19:54,779 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 00:21:15,023 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 00:36:45,757 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 00:37:16,258 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 00:38:05,842 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 00:39:36,493 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 00:40:08,449 - WARNING - user_repository.py:300 - Details: Invalid OTP 
+
+2024-11-21 00:40:46,649 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 00:40:50,604 - WARNING - user_repository.py:300 - Details: Invalid OTP 
+
+2024-11-21 00:47:12,732 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 00:47:20,901 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:47:20,901 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:47:20,901 - ERROR - user_repository.py:73 - Details: Error occured: 'bool' object has no attribute 'execute_read' 
+
+2024-11-21 00:48:01,426 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:48:01,426 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:48:01,426 - ERROR - token_helper.py:61 - Details: Error occured : 'bool' object has no attribute 'execute_read' 
+
+2024-11-21 00:48:32,371 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:48:32,371 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:48:32,373 - WARNING - database.py:28 - Details: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:48:32,373 - ERROR - db_connection.py:29 - Details: Failed to establish a database connection: Failed to connect to the database: (2059, "Authentication plugin 'b'auth_gssapi_client'' not configured") 
+
+2024-11-21 00:48:32,373 - ERROR - token_helper.py:61 - Details: Error occured : 'bool' object has no attribute 'execute_read' 
+
+2024-11-21 01:03:08,681 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 01:03:51,971 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 01:31:04,531 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 01:31:57,446 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 10:14:01,404 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 10:14:08,901 - WARNING - token_helper.py:145 - Details: Signature has expired. 
+
+2024-11-21 10:15:05,359 - INFO - user_routes.py:34 - Details: {'id': 1140, 'username': 'shashank', 'email': 'suyogshashank@gmail.com', 'password': '$5$rounds=535000$iWD3Ffq1n2jUYqy8$3hgDyKlB8wLOKqhzZp2kz/GfXwMahovlIq0ygDOPdxD', 'role_id': 1, 'twofa_status': 0} 
+
+2024-11-21 10:22:04,730 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 10:22:22,104 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 10:22:25,429 - INFO - user_routes.py:34 - Details: {'id': 1140, 'username': 'shashank', 'email': 'suyogshashank@gmail.com', 'password': '$5$rounds=535000$iWD3Ffq1n2jUYqy8$3hgDyKlB8wLOKqhzZp2kz/GfXwMahovlIq0ygDOPdxD', 'role_id': 1, 'twofa_status': 0} 
+
+2024-11-21 10:30:50,150 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 10:30:55,146 - WARNING - token_helper.py:145 - Details: Signature has expired. 
+
+2024-11-21 10:31:11,484 - INFO - user_routes.py:34 - Details: <class 'dict'> 
+
+2024-11-21 10:33:36,179 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 10:33:42,068 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 10:33:51,779 - INFO - user_routes.py:34 - Details: <class 'dict'> 
+
+2024-11-21 11:08:17,169 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 11:11:21,850 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 11:12:05,005 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 11:36:04,363 - WARNING - token_helper.py:145 - Details: Signature has expired. 
+
+2024-11-21 11:41:36,284 - WARNING - token_helper.py:167 - Details: User already logged out. Please re-login 
+
+2024-11-21 11:55:43,938 - WARNING - token_helper.py:167 - Details: User already logged out. Please re-login 
+
+2024-11-21 12:00:48,820 - WARNING - token_helper.py:145 - Details: Signature has expired. 
+
+2024-11-21 12:01:01,012 - WARNING - token_helper.py:145 - Details: Signature has expired. 
+
+2024-11-21 12:01:45,338 - WARNING - token_helper.py:145 - Details: Signature has expired. 
+
+2024-11-21 12:02:55,529 - WARNING - token_helper.py:167 - Details: User already logged out. Please re-login 
+
+2024-11-21 12:25:25,245 - WARNING - token_helper.py:167 - Details: User already logged out. Please re-login 
