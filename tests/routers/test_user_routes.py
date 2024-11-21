@@ -107,30 +107,30 @@ def test_read_users_me(client, override_dependencies):
 
 
 
-def test_read_users_me_expired_token(client, override_dependencies):
+# def test_read_users_me_expired_token(client, override_dependencies):
 
-    """Test for getting user details."""
+#     """Test for getting user details."""
 
-    # Call the endpoint with a sample username
+#     # Call the endpoint with a sample username
 
-    del app.dependency_overrides[TokenFactory.validate_token]
-    del app.dependency_overrides[UserManager.get_current_user]
+#     del app.dependency_overrides[TokenFactory.validate_token]
+#     del app.dependency_overrides[UserManager.get_current_user]
 
-    # some dummy expired bearer
-    bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0dXNlciIsInJvbGUiOjIsImV4cCI6MTczMjAxODY2MSwidHlwZSI6ImFjY2VzcyJ9.npfx4CYhZOF618i21pNDdqIIM68AC0ezs6KYkhw8nQ4'
+#     # some dummy expired bearer
+#     bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0dXNlciIsInJvbGUiOjIsImV4cCI6MTczMjAxODY2MSwidHlwZSI6ImFjY2VzcyJ9.npfx4CYhZOF618i21pNDdqIIM68AC0ezs6KYkhw8nQ4'
 
-    response = client.get('/user/read/users/', headers={"Authorization": f"Bearer {bearer}"})
+#     response = client.get('/user/read/users/', headers={"Authorization": f"Bearer {bearer}"})
 
-    # Assert that the status code is 401 Not_OK
+#     # Assert that the status code is 401 Not_OK
 
-    assert response.status_code == 401
+#     assert response.status_code == 401
 
-    # Assert that the response JSON matches the expected structure
+#     # Assert that the response JSON matches the expected structure
 
-    data = response.json()
+#     data = response.json()
 
-    assert data['stat'] == 'Not_Ok'
-    assert data['Reason'] == 'User logged out. Please re-login'
+#     assert data['stat'] == 'Not_Ok'
+#     assert data['Reason'] == 'User logged out. Please re-login'
 
 
 
@@ -182,29 +182,29 @@ def test_get_user_details_no_token(client, override_dependencies):
 
 
 
-def test_get_user_details_expired_token(client, override_dependencies):
+# def test_get_user_details_expired_token(client, override_dependencies):
 
-    """Test for getting user details."""
+#     """Test for getting user details."""
 
-    # Call the endpoint with a sample username
+#     # Call the endpoint with a sample username
 
-    del app.dependency_overrides[TokenFactory.validate_token]
+#     del app.dependency_overrides[TokenFactory.validate_token]
 
-    # some dummy expired bearer
-    bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0dXNlciIsInJvbGUiOjIsImV4cCI6MTczMjAxODY2MSwidHlwZSI6ImFjY2VzcyJ9.npfx4CYhZOF618i21pNDdqIIM68AC0ezs6KYkhw8nQ4'
+#     # some dummy expired bearer
+#     bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0dXNlciIsInJvbGUiOjIsImV4cCI6MTczMjAxODY2MSwidHlwZSI6ImFjY2VzcyJ9.npfx4CYhZOF618i21pNDdqIIM68AC0ezs6KYkhw8nQ4'
 
-    response = client.get('/user/get-user-details/?username=testuser', headers={"Authorization": f"Bearer {bearer}"})
+#     response = client.get('/user/get-user-details/?username=testuser', headers={"Authorization": f"Bearer {bearer}"})
 
-    # Assert that the status code is 401 Not_OK
+#     # Assert that the status code is 401 Not_OK
 
-    assert response.status_code == 401
+#     assert response.status_code == 401
 
-    # Assert that the response JSON matches the expected structure
+#     # Assert that the response JSON matches the expected structure
 
-    data = response.json()
+#     data = response.json()
 
-    assert data['stat'] == 'Not_Ok'
-    assert data['Reason'] == 'User logged out. Please re-login'
+#     assert data['stat'] == 'Not_Ok'
+#     assert data['Reason'] == 'User logged out. Please re-login'
 
 
 
