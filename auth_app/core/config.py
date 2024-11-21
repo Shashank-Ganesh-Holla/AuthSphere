@@ -1,16 +1,16 @@
-from pydantic import field_validator
-from pydantic_settings import BaseSettings
+# from pydantic import field_validator
+# from pydantic_settings import BaseSettings
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordBearer
 from typing import ClassVar, List
 import logging
 from fastapi import WebSocket
 from fastapi.templating import Jinja2Templates
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 
 # Load environment variables from the .env file
-load_dotenv()  # This loads the .env file manually
+# load_dotenv()  # This loads the .env file manually
 
 class Logger:
 
@@ -24,36 +24,54 @@ class Logger:
         )
 
 
+class Config:
+    """Custom Configuration class for managing application settings."""
 
-class Config(BaseSettings):
-    """Configuration class that loads environment variables automatically."""
+    # Environment variables with default fallbacks
+    SECRET_KEY: str = os.getenv("SECRET_KEY", "your_default_secret")
+    ALGORITHM: str = os.getenv("ALGORITHM", "HS256")
+    ACCESS_TOKEN_EXPIRE: int = int(os.getenv("ACCESS_TOKEN_EXPIRE", 10))
+    REFRESH_TOKEN_EXPIRE: int = int(os.getenv("REFRESH_TOKEN_EXPIRE", 1))
 
-    SECRET_KEY: str
-    ALGORITHM: str
-    ACCESS_TOKEN_EXPIRE: int = 10
-    REFRESH_TOKEN_EXPIRE: int = 1
-
-
-    
     # Set up password hashing context
-    context: ClassVar[CryptContext] =CryptContext(schemes=['sha256_crypt'], deprecated="auto")
+    context = CryptContext(schemes=["sha256_crypt"], deprecated="auto")
+
+    # Jinja2 Templates
+    templates = Jinja2Templates(directory="auth-app/templates")
+
+    # OAuth2 Scheme
+    oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
+
+
+# class Config(BaseSettings):
+#     """Configuration class that loads environment variables automatically."""
+
+#     SECRET_KEY: str
+#     ALGORITHM: str
+#     ACCESS_TOKEN_EXPIRE: int = 10
+#     REFRESH_TOKEN_EXPIRE: int = 1
+
+
     
-    templates: Jinja2Templates = Jinja2Templates(directory="auth-app/templates")
+#     # Set up password hashing context
+#     context: ClassVar[CryptContext] =CryptContext(schemes=['sha256_crypt'], deprecated="auto")
+    
+#     templates: Jinja2Templates = Jinja2Templates(directory="auth-app/templates")
 
-    oauth2_scheme : ClassVar[OAuth2PasswordBearer] = OAuth2PasswordBearer(tokenUrl="/login")
+#     oauth2_scheme : ClassVar[OAuth2PasswordBearer] = OAuth2PasswordBearer(tokenUrl="/login")
 
-    # Inner `Config` class to configure how settings are loaded (e.g., from a `.env` file)
-    class Config:
-        env_file: ClassVar[str] = ".env"
-        extra: ClassVar[str] = "allow"
-        env_file_encoding: ClassVar[str] = 'utf-8'
+#     # Inner `Config` class to configure how settings are loaded (e.g., from a `.env` file)
+#     class Config:
+#         env_file: ClassVar[str] = ".env"
+#         extra: ClassVar[str] = "allow"
+#         env_file_encoding: ClassVar[str] = 'utf-8'
 
 
-    @field_validator('ACCESS_TOKEN_EXPIRE', 'REFRESH_TOKEN_EXPIRE')
-    def check_integers(cls, value):
-        if value == '':
-            return 3600  # Default to 3600 if empty
-        return int(value)
+#     @field_validator('ACCESS_TOKEN_EXPIRE', 'REFRESH_TOKEN_EXPIRE')
+#     def check_integers(cls, value):
+#         if value == '':
+#             return 3600  # Default to 3600 if empty
+#         return int(value)
 
 
 

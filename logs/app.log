@@ -2535,3 +2535,11 @@
 2024-11-21 14:08:14,492 - INFO - main.py:31 - Details: AuthSphere started successfully! 
 
 2024-11-21 14:17:44,193 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 16:10:07,416 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 17:30:17,509 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-21 17:31:43,755 - WARNING - token_helper.py:145 - Details: Signature verification failed. 
+
+2024-11-21 17:32:05,892 - WARNING - token_helper.py:145 - Details: Signature verification failed. 
