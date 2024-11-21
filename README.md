@@ -93,13 +93,21 @@ AuthSphere is designed with scalability in mind, ensuring that it can grow along
 5. **Install dependencies**:
   `pip install -r requirements.txt`
 6. **Configure environment variables**:
-   - Create a .env file and insert following:
+   - You should hardcode the following values directly within your application or manage them through
+
+     another secure method (such as environment variables set via your hosting or CI/CD process).
      
      `SECRET_KEY=your_secret_key`,
      
       `ALGORITHM=<any encryption algorithm of your choice ex: HS256>`,
      
       `ACCESS_TOKEN_EXPIRE_MINUTES=<time duration in minutes ex: 30>`
+     <br>
+
+       **SECRET_KEY: A secure, randomly generated string to sign your JWTs.**
+     
+       **ALGORITHM: The cryptographic algorithm used for token signing (e.g., HS256).**
+     
 7. **Set up the database**:
    Run the provided SQL scripts to create the necessary tables.
    - Navigate into the `auth_app` directory:
