@@ -37,3 +37,4 @@ pytest
 pytest-asyncio
 boto3
 httpx
+jinja2
