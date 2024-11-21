@@ -7,6 +7,25 @@ Welcome to **AuthSphere!** This backend application offers a comprehensive solut
 
 Designed with **Role-Based Access Control (RBAC)**, AuthSphere is perfect for small to medium-scale applications that require secure login, role-specific permissions, and efficient token management. The application also supports **multi-factor authentication (MFA)**, enhancing security by requiring additional verification steps for user access.
 
+## 🚀 New Updates
+
+**🛠️ Continuous Integration (CI) Pipeline**
+
+AuthSphere now features an integrated CI pipeline powered by GitHub Actions to streamline testing and deployment processes:
+
+Automated Testing: Every commit and pull request triggers the pipeline to ensure all tests pass, maintaining high-quality code.
+Code Coverage: The pipeline ensures that the codebase is robust across various test scenarios.
+Seamless Development: Contributors get real-time feedback on their changes, enhancing productivity.
+
+🌟 Benefits of CI Integration:
+
+- Improved Reliability: Each change undergoes rigorous testing before merging to reduce bugs in production.
+
+- Efficient Collaboration: Developers receive automated feedback on commits, fostering a faster and collaborative workflow.
+
+- Faster Releases: Automation reduces manual testing time, speeding up deployment cycles.
+<br>
+
 **🔐 Role-Based Access Control (RBAC)**
 Our API supports Role-Based Access Control (RBAC) to manage permissions effectively and restrict access based on user roles. This functionality allows us to define various levels of access for different user types, such as admin, user, and other custom roles. ⚙️
 
