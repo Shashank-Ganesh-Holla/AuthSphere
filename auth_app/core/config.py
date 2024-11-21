@@ -1,6 +1,6 @@
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordBearer
-from typing import ClassVar, List
+from typing import List
 import logging
 from fastapi import WebSocket
 from fastapi.templating import Jinja2Templates
