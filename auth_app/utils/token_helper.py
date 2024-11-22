@@ -2,7 +2,6 @@ from datetime import datetime, timedelta, timezone
 import logging
 from auth_app.core import config
 from fastapi import HTTPException, status, Depends, Request
-import jwt as jt
 from jose import jwt, JWTError
 from typing import Optional, Dict
 from .db_connection import DatabaseManager
@@ -124,6 +123,7 @@ class TokenFactory:
 
     @staticmethod
     def verify_token(token:str):
+        import jwt as jt
 
         """Verifies and decodes a given JWT token."""
 
