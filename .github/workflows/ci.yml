@@ -47,7 +47,7 @@ jobs:
           echo "ALGORITHM=$ALGORITHM"
           echo "ACCESS_TOKEN_EXPIRE=$ACCESS_TOKEN_EXPIRE"
           echo "REFRESH_TOKEN_EXPIRE=$REFRESH_TOKEN_EXPIRE"
-          # echo "Length of EXPIRED_TOKEN: ${#EXPIRED_TOKEN}"
+          echo "EXPIRED_TOKEN=$EXPIRED_TOKEN"
           echo "Environment variables set"
           pytest tests/
 
