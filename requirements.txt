@@ -39,3 +39,4 @@ boto3
 httpx
 jinja2
 jwt
+pyjwt

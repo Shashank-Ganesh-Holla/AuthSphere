@@ -1,6 +1,7 @@
 import pytest
 from auth_app.services import UserService
-
+import os
+import logging
 
 
 @pytest.fixture
@@ -11,8 +12,7 @@ def override_token_factory():
 
 
 # some dummy expired bearer
-BEARER_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0dXNlciIsInJvbGUiOjIsImV4cCI6MTczMjAxODY2MSwidHlwZSI6ImFjY2VzcyJ9.npfx4CYhZOF618i21pNDdqIIM68AC0ezs6KYkhw8nQ4'
-
+BEARER_TOKEN = os.getenv("EXPIRED_TOKEN")
 
 @pytest.fixture
 def override_get_current_user():
