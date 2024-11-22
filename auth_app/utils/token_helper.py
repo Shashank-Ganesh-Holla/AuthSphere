@@ -123,7 +123,7 @@ class TokenFactory:
 
     @staticmethod
     def verify_token(token:str):
-        import jwt as jt
+        
 
         """Verifies and decodes a given JWT token."""
 
@@ -131,15 +131,15 @@ class TokenFactory:
             payload = jwt.decode(token, config.SECRET_KEY, config.ALGORITHM)
             return payload
         
-        except jt.exceptions.ExpiredSignatureError:
-            logging.warning('Token has expired')
-            raise HTTPException(status_code=401, detail="Token has expired", 
-                                headers={"WWW-Authenticate":"Bearer"})
+        # except jt.exceptions.ExpiredSignatureError:
+        #     logging.warning('Token has expired')
+        #     raise HTTPException(status_code=401, detail="Token has expired", 
+        #                         headers={"WWW-Authenticate":"Bearer"})
         
-        except jt.exceptions.InvalidTokenError:
-            logging.warning('Invalid token')
-            raise HTTPException(status_code=401, detail="Invalid token",
-                                 headers={"WWW-Authenticate":"Bearer"})
+        # except jt.exceptions.InvalidTokenError:
+        #     logging.warning('Invalid token')
+        #     raise HTTPException(status_code=401, detail="Invalid token",
+        #                          headers={"WWW-Authenticate":"Bearer"})
         
         except JWTError as e:
             logging.warning(str(e))
