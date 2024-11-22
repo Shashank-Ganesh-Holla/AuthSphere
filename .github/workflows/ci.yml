@@ -30,6 +30,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          pip install pyjwt 
           pip install -r requirements.txt
           pip install pytest  # Ensure pytest is installed for running tests
           pip install python-dotenv  # Install python-dotenv if needed
@@ -41,7 +42,7 @@ jobs:
           ALGORITHM: ${{ secrets.ALGORITHM }}
           ACCESS_TOKEN_EXPIRE: ${{ secrets.ACCESS_TOKEN_EXPIRE }}
           REFRESH_TOKEN_EXPIRE: ${{ secrets.REFRESH_TOKEN_EXPIRE }}
-          # EXPIRED_TOKEN: ${{ secrets.EXPIRED_TOKEN }}
+          EXPIRED_TOKEN: ${{ secrets.EXPIRED_TOKEN }}
 
         run: |
           echo "SECRET_KEY=$SECRET_KEY"
