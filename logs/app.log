@@ -2549,3 +2549,5 @@
 2024-11-22 20:16:26,108 - WARNING - token_helper.py:145 - Details: Signature has expired. 
 
 2024-11-22 20:16:49,488 - INFO - main.py:31 - Details: AuthSphere started successfully! 
+
+2024-11-22 20:19:59,848 - INFO - main.py:31 - Details: AuthSphere started successfully! 
