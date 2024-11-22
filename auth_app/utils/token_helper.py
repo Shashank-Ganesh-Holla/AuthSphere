@@ -131,12 +131,12 @@ class TokenFactory:
             payload = jwt.decode(token, config.SECRET_KEY, config.ALGORITHM)
             return payload
         
-        except jt.ExpiredSignatureError:
+        except jt.exceptions.ExpiredSignatureError:
             logging.warning('Token has expired')
             raise HTTPException(status_code=401, detail="Token has expired", 
                                 headers={"WWW-Authenticate":"Bearer"})
         
-        except jt.InvalidTokenError:
+        except jt.exceptions.InvalidTokenError:
             logging.warning('Invalid token')
             raise HTTPException(status_code=401, detail="Invalid token",
                                  headers={"WWW-Authenticate":"Bearer"})
