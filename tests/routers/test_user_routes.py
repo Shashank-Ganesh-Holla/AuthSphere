@@ -11,6 +11,7 @@ from tests import BEARER_TOKEN, override_token_factory, override_get_user_servic
 from tests.routers import override_allowed_action
 from fastapi import HTTPException, status
 import os
+from auth_app.core import config
 
 
 @pytest.fixture
@@ -75,6 +76,8 @@ class TestAssignRole:
 
         expired_token = os.getenv('EXPIRED_TOKEN')
         assert expired_token is not None
+
+        assert config.ACCESS_TOKEN_EXPIRE is not None
 
         del app.dependency_overrides[TokenFactory.validate_token] 
 
