@@ -10,6 +10,13 @@ on:
     branches:
       - main
 
+env:
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  ALGORITHM: ${{ secrets.ALGORITHM }}
+  ACCESS_TOKEN_EXPIRE: ${{ secrets.ACCESS_TOKEN_EXPIRE }}
+  REFRESH_TOKEN_EXPIRE: ${{ secrets.REFRESH_TOKEN_EXPIRE }}
+  EXPIRED_TOKEN: ${{ secrets.EXPIRED_TOKEN }}
+
 jobs:
   test:
     name: Run Tests
@@ -34,15 +41,7 @@ jobs:
           pip install pytest  # Ensure pytest is installed for running tests
           pip install python-dotenv  # Install python-dotenv if needed
 
-      - name: Set environment variables from secrets
-
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          ALGORITHM: ${{ secrets.ALGORITHM }}
-          ACCESS_TOKEN_EXPIRE: ${{ secrets.ACCESS_TOKEN_EXPIRE }}
-          REFRESH_TOKEN_EXPIRE: ${{ secrets.REFRESH_TOKEN_EXPIRE }}
-          EXPIRED_TOKEN: ${{ secrets.EXPIRED_TOKEN }}
-
+      - name: show environment variables
         run: |
           echo "SECRET_KEY=$SECRET_KEY"
           echo "ALGORITHM=$ALGORITHM"

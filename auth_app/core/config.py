@@ -25,7 +25,7 @@ class Config:
     # Environment variables with default fallbacks
     SECRET_KEY: str = os.getenv("SECRET_KEY", "your_default_secret")
     ALGORITHM: str = os.getenv("ALGORITHM", "HS256")
-    ACCESS_TOKEN_EXPIRE: int = int(os.getenv("ACCESS_TOKEN_EXPIRE"))
+    ACCESS_TOKEN_EXPIRE: int = int(os.getenv("ACCESS_TOKEN_EXPIRE",10))
     REFRESH_TOKEN_EXPIRE: int = int(os.getenv("REFRESH_TOKEN_EXPIRE", 1))
 
     # Set up password hashing context

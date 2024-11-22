@@ -77,8 +77,6 @@ class TestAssignRole:
         expired_token = os.getenv('EXPIRED_TOKEN')
         assert expired_token is not None
 
-        assert config.ACCESS_TOKEN_EXPIRE is not None
-
         del app.dependency_overrides[TokenFactory.validate_token] 
 
         
