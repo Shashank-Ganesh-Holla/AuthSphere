@@ -9,10 +9,24 @@ import os
 
 class Logger:
 
+
     @staticmethod
     def setup_logging():
+        # set the script folder to the 'script_folder'
+        script_folder = os.path.dirname(os.path.abspath(__file__))
+        # set the log folder to the 'logs_folder'
+        logs_folder = os.path.join(script_folder, '../../logs')
+
+        # ensure the logs folder exists in the desired location
+        if not os.path.exists(logs_folder):
+            os.makedirs(logs_folder)
+
+        # store log file location as log_file
+        log_file = os.path.join(logs_folder, 'app.log')
+        
+        # Configure logging as needed
         logging.basicConfig(
-            filename='../logs/app.log',
+            filename= log_file,
             filemode='a',
             level=logging.INFO,
             format='\n%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - Details: %(message)s ',
