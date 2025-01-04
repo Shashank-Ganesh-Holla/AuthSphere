@@ -33,8 +33,6 @@ class UserRepository:
         self.db = db
  
 
-
-
     async def __get_column_any_table(self, table:str, column:str, condition:str, condition_value:str):
         try:
             query = f"SELECT {column} FROM {table} WHERE {condition} = %s"
@@ -525,6 +523,70 @@ class UserRepository:
             return {'stat': 'Ok','Result': result}
 
             
+        except Exception as er:
+            if not isinstance(er, HTTPException):
+                logging.error(f"Error occured : {str(er)}")
+                raise  HTTPException(500, detail="Internal Server Error")    
+            else:
+                raise
+
+
+    async def update_user(self, user_id, email, first_name, last_name,
+                          password, request_user, request_user_role):
+        try:
+
+            column = 'username, email, password, role_id'
+            table = 'users'
+            condition = 'id'
+            condition_value = user_id
+
+            is_user : dict = await self.__get_column_any_table(table=table, column=column,
+                                                               condition=condition, condition_value=condition_value)
+
+            if not is_user:
+                raise HTTPException(status.HTTP_404_NOT_FOUND, detail="User not found")
+            
+            change_user = is_user.get('username')
+
+            # Check if the request_user is authorized to update this user's details
+            if change_user != request_user and request_user_role != 1:
+                # raise 403 status if the requesting user is not an admin
+                raise HTTPException(status.HTTP_403_FORBIDDEN, detail = "You don't have permission to access this resource")
+
+            # Collect the fields to update
+            update_fields = {}
+
+            if email:
+                update_fields['email'] = email
+            
+            if password:
+                hash_newPassword = PasswordManager.hash_password(password)
+                update_fields['password'] = hash_newPassword  # Hashed before storing
+
+            if first_name:
+                update_fields['first_name'] = first_name
+
+            if last_name:
+                update_fields['last_name'] = last_name
+
+
+
+            if not update_fields:
+                raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No fields to update")
+            
+            # Build the dynamic update query
+            set_clause = ", ".join([f"{key} = %s" for key in update_fields.keys()])
+            params = list(update_fields.values())
+            query = f"UPDATE {table} SET {set_clause} WHERE {condition} = {condition_value}"
+
+            update_result = await self.db.execute_manipulation(query, params)
+
+            if update_result == 1:
+                return {"stat":"Ok","Result": "User updated successfully"}
+            else:
+                return {"stat":"Ok", "Result": "No changes were made; the values are already up-to-date"}
+            
+
         except Exception as er:
             if not isinstance(er, HTTPException):
                 logging.error(f"Error occured : {str(er)}")

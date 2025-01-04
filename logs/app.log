@@ -26,3 +26,35 @@
 2025-01-01 08:18:12,674 - INFO - main.py:26 - Details: AuthSphere started successfully! 
 
 2025-01-01 08:18:30,765 - INFO - main.py:31 - Details: AuthSphere shutting down... 
+
+2025-01-01 16:24:45,678 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-01-01 16:27:52,708 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-01-02 00:05:53,308 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-01-02 00:06:47,805 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-01-02 00:07:50,731 - WARNING - token_helper.py:135 - Details: Signature verification failed. 
+
+2025-01-02 00:10:00,029 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-01-02 00:14:43,721 - WARNING - database.py:50 - Details:  Error occured: (1366, "Incorrect integer value: 'user' for column `auth_app`.`users`.`role_id` at row 1") 
+
+2025-01-02 00:18:34,958 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-01-02 00:18:42,872 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-01-03 00:20:18,589 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-01-03 00:20:28,319 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-01-03 00:20:33,167 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-01-03 00:23:24,816 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-01-03 00:26:09,124 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-01-03 00:40:55,809 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-01-03 00:41:25,850 - WARNING - token_helper.py:135 - Details: Signature has expired. 

@@ -37,6 +37,27 @@ class UserService:
                 raise  HTTPException(500, detail="Internal Server Error")    
             else:
                 raise
+
+        
+    async def update_user(self,user_id, email, password, 
+                          request_user, request_user_role,
+                          first_name, last_name):
+        
+        try:
+            result = await self.user_repo.update_user(user_id = user_id, email = email, 
+                                                      password = password,
+                                                      request_user = request_user,
+                                                      request_user_role = request_user_role,
+                                                      first_name=first_name, last_name=last_name)
+            
+            return result
+            
+        except Exception as err:
+            if not isinstance(err, HTTPException):
+                logging.error(f"Error occured : {str(err)}")
+                raise  HTTPException(500, detail="Internal Server Error")    
+            else:
+                raise    
         
 
     async def delete_user_me(self, request, username):
@@ -66,3 +87,5 @@ class UserService:
                 raise  HTTPException(500, detail="Internal Server Error")    
             else:
                 raise
+
+        

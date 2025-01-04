@@ -58,7 +58,8 @@ class UserManager:
                 logging.error(f"Error occured : {str(er)}")
                 raise  HTTPException(500, detail="Internal Server Error")   
             else:
-                raise 
+                raise
+
     
     @staticmethod
     async def logout_user(username, request:Request):

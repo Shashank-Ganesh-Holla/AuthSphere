@@ -61,6 +61,33 @@ async def assign_role(request:Request, username:str = Form(...),
         else:
             raise
 
+@router.patch('/update-user/{user_id}')
+async def update_user(user_id:int, email:str = Form(None), 
+                      password:str = Form(None),
+                      first_name:str = Form(None),
+                      last_name:str = Form(None),
+                      request_user_details:str = Depends(TokenFactory.validate_token),
+                      user_service:UserService = Depends(get_user_service)):
+    
+    try:
+        request_user, request_user_role = request_user_details
+
+        result = await user_service.update_user(user_id=user_id, email=email, 
+                                       password=password, first_name=first_name, last_name=last_name,
+                                       request_user = request_user, request_user_role = request_user_role)
+        
+        return result
+
+    
+    except Exception as err:
+        if not isinstance(err, HTTPException):
+            logging.error(str(err))
+            raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, detail='Internal server error')
+        else:
+            raise
+
+
+
 
 @router.post('/delete/user', response_model=Union[ClientResponse])
 async def delete_user_me(request: Request, username:str = Form(...),
