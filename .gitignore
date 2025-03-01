@@ -3,3 +3,8 @@
 *__pycache__/
 *.bak
 authsphere-s3-access_accessKeys*
+.secrets
+**.sql
+**.ipynb
+**trials/*
+

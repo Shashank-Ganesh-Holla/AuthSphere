@@ -5,6 +5,13 @@ on:
     branches:
       - main # Runs only when changes are pushed to main branch
 
+env:
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  ALGORITHM: ${{ secrets.ALGORITHM }}
+  ACCESS_TOKEN_EXPIRE: ${{ secrets.ACCESS_TOKEN_EXPIRE }}
+  REFRESH_TOKEN_EXPIRE: ${{ secrets.REFRESH_TOKEN_EXPIRE }}
+  EXPIRED_TOKEN: ${{ secrets.EXPIRED_TOKEN }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,7 +23,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: "3.10"
+          python-version: "3.11.4"
 
       - name: Install Dependencies
         run: |
