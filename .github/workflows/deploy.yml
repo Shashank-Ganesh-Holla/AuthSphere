@@ -1,0 +1,50 @@
+name: Deploy AuthSphere to AWS EC2
+
+on:
+  push:
+    branches:
+      - main # Runs only when changes are pushed to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          pytest  # Run tests
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push Docker Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/authsphere:latest .
+          docker push ${{ secrets.DOCKER_USERNAME }}/authsphere:latest
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/authsphere:latest
+            sudo docker stop authsphere || true
+            sudo docker rm authsphere || true
+            sudo docker run -d -p 8000:8000 --name authsphere ${{ secrets.DOCKER_USERNAME }}/authsphere:latest
