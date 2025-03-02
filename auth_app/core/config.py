@@ -5,7 +5,9 @@ import logging
 from fastapi import WebSocket
 from fastapi.templating import Jinja2Templates
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 class Logger:
 
