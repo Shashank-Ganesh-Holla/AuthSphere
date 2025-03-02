@@ -60,5 +60,5 @@ jobs:
             sudo docker rm authsphere || true
             sudo docker run -d \
             --env-file /home/ubuntu/authsphere/.env \
-            -p 8000:8000 \
+            -p 80:8000 \
             --name authsphere $DOCKER_USERNAME/authsphere:latest
