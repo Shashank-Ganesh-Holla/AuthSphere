@@ -62,5 +62,5 @@ jobs:
             --env-file /home/ubuntu/authsphere/.env \
             -p 80:8000 \
             --name authsphere \
-            -v /home/authsphere/app_logs:/app/logs \
+            -v /home/ubuntu/authsphere/app_logs:/app/logs \
             $DOCKER_USERNAME/authsphere:latest
