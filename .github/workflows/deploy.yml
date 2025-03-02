@@ -61,5 +61,6 @@ jobs:
             sudo docker run -d \
             --env-file /home/ubuntu/authsphere/.env \
             -p 80:8000 \
-            --name authsphere $DOCKER_USERNAME/authsphere:latest
-            -v /home/authsphere/app_logs:/app/logs authsphere
+            --name authsphere \
+            -v /home/authsphere/app_logs:/app/logs \
+            $DOCKER_USERNAME/authsphere:latest
