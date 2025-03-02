@@ -50,7 +50,7 @@ app.add_exception_handler(HTTPException, CustomExceptionHandler.http_exception_h
 
 @app.get('/')
 def read_root():
-    return {"message":"Welcome to the Authentication App"}
+    return {"message":"Welcome to the AuthSphere App"}
 
 
 
