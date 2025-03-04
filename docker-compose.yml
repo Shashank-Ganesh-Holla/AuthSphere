@@ -1,14 +1,11 @@
-version: "3.8"
-
 services:
   app:
-    image: DOCKER_USERNAME/authsphere:latest
+    image: ${DOCKER_USERNAME}/authsphere:latest
 
     ports:
       - "80:8000"
 
-    env_file:
-      - .env
+    env_file: .env
 
     volumes:
       - ./app_logs:/app/logs
@@ -22,14 +19,14 @@ services:
   mariadb:
     image: mariadb:latest
     environment:
-      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: auth_app
 
     volumes:
       #bind mount below, one to persisit the database data across
       # docker restart and another to mount and initiate the database table creation
       - ./mariadb_data:/var/lib/mysql
-      - ./db:/docker-entrypoint-initdb.d
+      - ./db_init:/docker-entrypoint-initdb.d
 
     networks:
       - authsphere-net
