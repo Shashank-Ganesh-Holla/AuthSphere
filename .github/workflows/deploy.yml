@@ -78,6 +78,10 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           envs: DOCKER_USERNAME,DOCKER_PASSWORD,MYSQL_ROOT_PASSWORD # Pass secrets as env variables
           script: |
+
+            # Install Docker Compose
+            sudo apt-get update && sudo apt-get install docker-compose-plugin
+
             printf "%s" "$DOCKER_PASSWORD" | sudo docker login -u "$DOCKER_USERNAME" --password-stdin
             sudo docker pull $DOCKER_USERNAME/authsphere:latest
 
