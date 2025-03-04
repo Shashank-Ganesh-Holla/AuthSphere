@@ -61,13 +61,14 @@ jobs:
 
       # Copy docker-compose.yml and db/ to EC2
       - name: docker-compose.yml and db/ to EC2
-        uses: appleboy/scp-action@v0.1.0
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           source: "docker-compose.yml,db/"
           target: "/home/ubuntu/authsphere/"
+          debug: true
 
       - name: Deploy to EC2 via SSH
         uses: appleboy/ssh-action@v0.1.7
