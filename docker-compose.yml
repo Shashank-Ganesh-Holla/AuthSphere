@@ -20,7 +20,7 @@ services:
     image: mariadb:latest
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: auth_app
+      MYSQL_DATABASE: ${DB_NAME}
 
     volumes:
       #bind mount below, one to persisit the database data across
