@@ -66,7 +66,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
-          source: "docker-compose.yml,db_init/"
+          source: "docker-compose.yml,db_init"
           target: "/home/ubuntu/authsphere/"
           debug: true
 
