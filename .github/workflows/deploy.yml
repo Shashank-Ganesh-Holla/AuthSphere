@@ -101,5 +101,11 @@ jobs:
             printf "%s" "$DOCKER_PASSWORD" | sudo docker login -u "$DOCKER_USERNAME" --password-stdin
             sudo docker pull $DOCKER_USERNAME/authsphere:latest
 
-            sudo docker compose -f /home/ubuntu/authsphere/docker-compose.yml down
-            sudo docker compose -f /home/ubuntu/authsphere/docker-compose.yml up -d
+            sudo -E docker compose -f /home/ubuntu/authsphere/docker-compose.yml down -v
+            sudo chmod +r /home/ubuntu/authsphere/db_init/init.sql
+
+
+            sudo -E docker compose -f /home/ubuntu/authsphere/docker-compose.yml up -d
+
+            sleep 10
+            sudo -E docker logs authsphere-mariadb-1
