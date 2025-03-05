@@ -97,6 +97,10 @@ jobs:
             sudo docker --version
             sudo docker compose version
 
+            # Clean up Docker resources to free space
+            sudo docker system prune -f
+            sudo docker volume prune -f
+
             printf "%s" "$DOCKER_PASSWORD" | sudo docker login -u "$DOCKER_USERNAME" --password-stdin
             sudo docker pull $DOCKER_USERNAME/authsphere:latest
 
