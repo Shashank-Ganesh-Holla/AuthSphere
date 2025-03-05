@@ -67,6 +67,22 @@ jobs:
           target: "/home/ubuntu/authsphere/"
           debug: true
 
+      - name: Verify SQL File on EC2
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          script: |
+            # Check for null bytes
+            if grep -qP '\x00' /home/ubuntu/authsphere/db_init/init.sql; then
+              echo "ERROR: Null bytes detected in init.sql"
+              exit 1
+            fi
+
+            # Verify line endings
+            file /home/ubuntu/authsphere/db_init/init.sql
+
+            # Show first 20 lines
+            head -n 20 /home/ubuntu/authsphere/db_init/init.sql
+
       - name: Deploy to EC2 via SSH
         uses: appleboy/ssh-action@v0.1.7
         with:
