@@ -54,9 +54,6 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            sudo mkdir -p /home/ubuntu/authsphere/app_logs
-            sudo mkdir -p /home/ubuntu/authsphere/mariadb_data
-            sudo mkdir -p /home/ubuntu/authsphere/db
             sudo chmod -R 777 /home/ubuntu/authsphere
 
       # Copy docker-compose.yml and db/ to EC2
