@@ -70,6 +70,10 @@ jobs:
       - name: Verify SQL File on EC2
         uses: appleboy/ssh-action@v0.1.7
         with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+
           script: |
             # Check for null bytes
             if grep -qP '\x00' /home/ubuntu/authsphere/db_init/init.sql; then
