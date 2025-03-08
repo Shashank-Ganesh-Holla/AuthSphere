@@ -142,3 +142,23 @@
 2025-03-08 18:19:22,832 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
 
 2025-03-08 18:20:00,103 - WARNING - user_repository.py:264 - Details: Invalid username or Password 
+
+2025-03-08 19:34:18,201 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 19:34:26,570 - WARNING - token_helper.py:157 - Details: User already logged out. Please re-login 
+
+2025-03-08 19:34:54,836 - WARNING - user_repository.py:264 - Details: Invalid username or Password 
+
+2025-03-08 19:35:20,855 - WARNING - token_helper.py:157 - Details: User already logged out. Please re-login 
+
+2025-03-08 21:11:27,180 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 21:11:35,139 - WARNING - token_helper.py:157 - Details: User already logged out. Please re-login 
+
+2025-03-08 21:12:35,236 - ERROR - auth_service.py:82 - Details: Error occured: No module named 'core' 
+
+2025-03-08 21:18:02,766 - ERROR - auth_service.py:82 - Details: Error occured: No module named 'core' 
+
+2025-03-08 21:18:02,965 - INFO - main.py:31 - Details: AuthSphere shutting down... 
+
+2025-03-08 21:18:04,382 - INFO - main.py:26 - Details: AuthSphere started successfully! 
