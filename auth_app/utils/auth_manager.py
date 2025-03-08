@@ -8,9 +8,19 @@ from .email_helper import send_otp_email
 
 
 async def create_user_table_batch(username:str, email:str, hashed_password:str, 
-                             database: aiomysql.Connection, two_fa:bool = False):
+                             database: aiomysql.Connection, 
+                             role_id: int = 2, two_fa:bool = False):
     
     try:
+   
+        async with database.cursor() as cursor:
+            query_Users = "INSERT INTO users (username, email, password, twofa_status, role_id) VALUES (%s, %s, %s, %s, %s)"
+            params_Users = (username, email, hashed_password, two_fa, role_id)
+
+            await cursor.execute(query_Users, params_Users)
+
+            await database.commit()
+
 
         async with database.cursor() as cursor:
 
@@ -29,14 +39,9 @@ async def create_user_table_batch(username:str, email:str, hashed_password:str,
             if row_count == 0 :
                 raise HTTPException(status_code=200, detail="Could not add username to the Reference table(otp_table)")
             
-            query_Users = "INSERT INTO users (username, email, password, twofa_status) VALUES (%s, %s, %s, %s)"
-            params_Users = (username, email, hashed_password, two_fa)
-
-            await cursor.execute(query_Users, params_Users)
-
             await database.commit()
 
-            return {"stat": 'Ok', "Result": "User created successfully"}
+        return {"stat": 'Ok', "Result": "User created successfully"}
 
     except Exception as er:
         if not isinstance(er, HTTPException):
@@ -47,13 +52,12 @@ async def create_user_table_batch(username:str, email:str, hashed_password:str,
     
 
 async def create_user_standalone(username:str, email:str, hashed_password:str, 
-                            db: DatabaseManager,
-                            two_fa:bool = False):
+                            db: DatabaseManager, role_id:int):
     
     try:
     
-        query_Users = "INSERT INTO users (username, email, password, twofa_status) VALUES (%s, %s, %s, %s)"
-        params_Users = (username, email, hashed_password, two_fa)
+        query_Users = "INSERT INTO users (username, email, password, role_id) VALUES (%s, %s, %s, %s)"
+        params_Users = (username, email, hashed_password, role_id)
 
         result = await db.execute_manipulation(query_Users, params_Users)
 

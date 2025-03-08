@@ -49,7 +49,8 @@ async def register(user:UserCreate,
 
             try:
                 result = await auth_service.register_user(username=user.username, email=user.email,
-                                                          password=user.password,db=db, two_fa=user.twoFA_enabled)
+                                                          password=user.password,db=db, 
+                                                          role_id = user.role_id,two_fa=user.twoFA_enabled)
                                                         
                 return result
             

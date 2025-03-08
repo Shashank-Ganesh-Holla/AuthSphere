@@ -32,3 +32,113 @@
 2025-03-02 15:20:47,225 - INFO - main.py:26 - Details: AuthSphere started successfully! 
 
 2025-03-02 18:58:04,100 - INFO - main.py:31 - Details: AuthSphere shutting down... 
+
+2025-03-07 23:18:53,908 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-07 23:21:08,725 - ERROR - auth_manager.py:43 - Details: Error occured : (1452, 'Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`))') 
+
+2025-03-07 23:21:08,726 - WARNING - db_connection.py:101 - Details: Transaction rolled back 
+
+2025-03-07 23:22:27,440 - ERROR - auth_manager.py:43 - Details: Error occured : (1452, 'Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`))') 
+
+2025-03-07 23:22:27,448 - WARNING - db_connection.py:101 - Details: Transaction rolled back 
+
+2025-03-07 23:23:28,175 - ERROR - auth_manager.py:43 - Details: Error occured : (1452, 'Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`))') 
+
+2025-03-07 23:23:28,182 - WARNING - db_connection.py:101 - Details: Transaction rolled back 
+
+2025-03-07 23:27:38,548 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-07 23:30:49,518 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-07 23:32:11,610 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-07 23:34:45,103 - ERROR - auth_manager.py:46 - Details: Error occured : (1452, 'Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`))') 
+
+2025-03-07 23:34:45,114 - WARNING - db_connection.py:101 - Details: Transaction rolled back 
+
+2025-03-07 23:35:26,639 - WARNING - database.py:50 - Details:  Error occured: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`))') 
+
+2025-03-07 23:35:48,358 - WARNING - db_connection.py:101 - Details: Transaction rolled back 
+
+2025-03-08 13:39:15,045 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 13:41:14,707 - WARNING - database.py:50 - Details:  Error occured: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`))') 
+
+2025-03-08 13:41:17,201 - WARNING - db_connection.py:101 - Details: Transaction rolled back 
+
+2025-03-08 14:51:10,763 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 14:54:00,141 - ERROR - auth_manager.py:46 - Details: Error occured : (1452, 'Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`otp_table`, CONSTRAINT `otp_table_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)') 
+
+2025-03-08 14:54:00,157 - WARNING - db_connection.py:101 - Details: Transaction rolled back 
+
+2025-03-08 15:19:13,773 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 15:19:33,198 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 15:23:35,742 - ERROR - auth_routes.py:41 - Details: Username already registered! 
+
+2025-03-08 15:24:11,919 - WARNING - db_connection.py:101 - Details: Transaction rolled back 
+
+2025-03-08 15:39:59,718 - WARNING - token_helper.py:135 - Details: Signature verification failed. 
+
+2025-03-08 15:45:31,646 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-03-08 15:46:23,015 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-03-08 15:47:17,052 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2025-03-08 15:52:53,426 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2025-03-08 15:54:19,546 - WARNING - user_repository.py:301 - Details: Invalid OTP 
+
+2025-03-08 16:24:00,565 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 16:24:19,202 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2025-03-08 16:24:49,635 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-03-08 16:25:16,849 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-03-08 16:25:28,437 - ERROR - user_routes.py:79 - Details: 'bool' object has no attribute 'user' 
+
+2025-03-08 16:27:18,736 - ERROR - user_routes.py:79 - Details: 'bool' object has no attribute 'user' 
+
+2025-03-08 16:30:09,343 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 16:32:13,927 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 17:31:13,805 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 17:33:19,743 - ERROR - auth_routes.py:41 - Details: Username already registered! 
+
+2025-03-08 17:33:21,196 - WARNING - db_connection.py:101 - Details: Transaction rolled back 
+
+2025-03-08 17:39:18,386 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-03-08 17:41:15,091 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 17:41:57,883 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 17:42:55,245 - WARNING - database.py:50 - Details:  Error occured: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`auth_app`.`otp_table`, CONSTRAINT `otp_table_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)') 
+
+2025-03-08 18:09:30,008 - WARNING - token_helper.py:135 - Details: Signature has expired. 
+
+2025-03-08 18:12:42,909 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 18:15:48,671 - ERROR - auth_routes.py:41 - Details: Username already registered! 
+
+2025-03-08 18:15:48,672 - WARNING - db_connection.py:101 - Details: Transaction rolled back 
+
+2025-03-08 18:15:58,318 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2025-03-08 18:18:08,783 - WARNING - token_helper.py:157 - Details: User already logged out. Please re-login 
+
+2025-03-08 18:18:15,340 - WARNING - token_helper.py:157 - Details: User already logged out. Please re-login 
+
+2025-03-08 18:18:52,556 - WARNING - user_repository.py:264 - Details: Invalid username or Password 
+
+2025-03-08 18:19:22,832 - INFO - email_helper.py:37 - Details: OTP email sent successfully! 
+
+2025-03-08 18:20:00,103 - WARNING - user_repository.py:264 - Details: Invalid username or Password 

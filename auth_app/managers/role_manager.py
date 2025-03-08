@@ -23,6 +23,9 @@ class RoleManager:
 
             elif role_id == 2:
                 role_name = 'user'
+
+            elif role_id == 3:
+                role_name = 'guest'
                 
             else:
                 role_name = ''
@@ -97,6 +100,9 @@ class RoleManager:
                     if required_action == 'delete_user_me' :
                         return user_role
 
+                
+                if required_action == 'delete_user_me' :
+                    return user_role
                 
                 return True
             

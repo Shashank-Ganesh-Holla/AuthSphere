@@ -120,8 +120,8 @@ class UserRepository:
                 
                 return result
                 
-            elif operation == 'update_otpTable_twoFa':
-                params = (kwargs.get('otpSecret'), kwargs.get('username', ''))
+            elif operation == 'create_otp_secret_user':
+                params = (kwargs.get('username', ''), kwargs.get('otpSecret'))
 
                 result = await self.db.execute_manipulation(query=query, params=params)
 
@@ -168,7 +168,8 @@ class UserRepository:
                 raise
 
 
-    async def create_user(self, username:str, email:str, password:str, two_fa:bool, database:aiomysql.Connection):
+    async def create_user(self, username:str, email:str, password:str,
+                          two_fa:bool, database:aiomysql.Connection, role_id: int ):
 
         '''the self.db instance is the instance of DataBaseManager context manager which has commit() within'''
 
@@ -177,14 +178,12 @@ class UserRepository:
 
         try:
 
-            user_in_otp_table = await self.__get_user_otp_table(username)
-
-            if user_in_otp_table:
+            if not two_fa:
 
                 '''Here, the databsae connection param is 'db' which is a DatabaseManager object (context manager)'''
 
                 result =  await create_user_standalone(username=username, email=email,
-                                        hashed_password=password,two_fa=two_fa,db=self.db)
+                                        hashed_password=password, db=self.db, role_id=role_id)
                                         
                 #Websocket broadcast
                 await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: {username} successfully created!")
@@ -201,8 +200,8 @@ class UserRepository:
                    .............'''
                 
                 result =  await create_user_table_batch(username=username, email=email,
-                                        hashed_password=password,two_fa=two_fa, database=database)
-
+                                    hashed_password=password,two_fa=two_fa, database=database, role_id=role_id)
+                
                 #Websocket broadcast
                 await websocket_manager.broadcast(f"{datetime.now()} : User: {username}, Result: {username} successfully created!")
                 return result 
@@ -314,9 +313,19 @@ class UserRepository:
     async def update_twoFa(self, username, twoFA_enabled):
 
         try:
+
+            user_has_otp = await self.__get_user_otp_table(username=username)
+
+
+
             if not twoFA_enabled:
                 '''when twofa_status param is False'''
                 # here we just need to update the twofa_status column of users table as False
+
+                # check if the otp_details exists for the username, if not then the possibility is the user not opted for twofa 
+                # so twofa field in users table should be false
+                if not user_has_otp:
+                    raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="twoFA already disabled")
 
                 false_query = "UPDATE users SET twofa_status = %s WHERE username = %s AND twofa_status = %s"
                 current_state = True
@@ -336,10 +345,15 @@ class UserRepository:
                     1. check if the otp_secret in otp_table for the username is not None,
                         if None then create a otpsecret and update, if not None then as is'''
                 
-                otp_scrt_query = "UPDATE otp_table SET otp_secret = %s WHERE username = %s AND otp_secret IS NULL"
-                add_otpSecret = pyotp.random_base32()
-        
-                result = await self.__manipulate_users_table("update_otpTable_twoFa",otp_scrt_query, username = username ,otpSecret = add_otpSecret)
+                if not user_has_otp:
+                    
+                    create_otp_secret = '''INSERT INTO otp_table (username, otp_secret) VALUES (%s, %s)
+                                        ON DUPLICATE KEY
+                                        UPDATE otp_secret = IF(otp_secret IS NULL, VALUES(otp_secret), otp_secret)
+                                        '''
+                    add_otpSecret = pyotp.random_base32()
+            
+                    result = await self.__manipulate_users_table("create_otp_secret_user",create_otp_secret, username = username ,otpSecret = add_otpSecret)
 
                 
                 '''2. update the twofa_status column, checking if its already True, if not then update'''

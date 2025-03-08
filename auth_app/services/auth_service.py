@@ -25,12 +25,13 @@ class AuthService:
         self.user_repo = user_repo
 
     async def register_user(self, username:str, email:str, password: str, 
-                            db:aiomysql.Connection,two_fa:bool = False):
+                            db:aiomysql.Connection,
+                            role_id :int,two_fa:bool = False):
                             
         try:
             hashed_Password = PasswordManager.hash_password(password)
 
-            result = await self.user_repo.create_user(username=username,email=email,
+            result = await self.user_repo.create_user(username=username,email=email, role_id=role_id,
                                                       password=hashed_Password, database = db, two_fa=two_fa)
             
             return result

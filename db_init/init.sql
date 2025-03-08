@@ -29,14 +29,15 @@ DROP TABLE IF EXISTS `roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `roles` (
-  `role_id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) NOT NULL,
   `role_name` varchar(255) NOT NULL,
   PRIMARY KEY (`role_id`),
-  UNIQUE KEY `role_name` (`role_name`),
-  KEY `idx_roles_role_id` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  UNIQUE KEY `role_name` (`role_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+TRUNCATE TABLE roles;
+INSERT INTO roles (role_id, role_name) VALUES (1, 'admin'), (2, 'user'), (3, 'guest');
 
 --
 -- Table structure for table `otp_table`
@@ -48,7 +49,8 @@ DROP TABLE IF EXISTS `otp_table`;
 CREATE TABLE `otp_table` (
   `username` varchar(50) NOT NULL,
   `otp_secret` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`username`)
+  PRIMARY KEY (`username`),
+  CONSTRAINT `otp_table_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -66,15 +68,14 @@ CREATE TABLE `users` (
   `password` varchar(250) NOT NULL,
   `role_id` int(11) DEFAULT 2,
   `twofa_status` tinyint(1) DEFAULT 0,
+  `first_name` varchar(250) DEFAULT NULL,
+  `last_name` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `email` (`email`),
-  KEY `idx_users_username` (`username`),
-  KEY `idx_users_role_id` (`role_id`),
-  CONSTRAINT `fk_username` FOREIGN KEY (`username`) REFERENCES `otp_table` (`username`),
-  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1141 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=1152 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 --
 -- Table structure for table `password_reset_tokens`
