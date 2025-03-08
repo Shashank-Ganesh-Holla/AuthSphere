@@ -164,3 +164,33 @@
 2025-03-08 21:18:04,382 - INFO - main.py:26 - Details: AuthSphere started successfully! 
 
 2025-03-08 21:31:13,892 - INFO - main.py:31 - Details: AuthSphere shutting down... 
+
+2025-03-08 22:10:12,872 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 22:12:35,982 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 22:16:52,772 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 22:17:26,959 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 22:18:11,617 - INFO - email_helper.py:69 - Details: Password reset email sent successfully! 
+
+2025-03-08 22:18:24,699 - ERROR - reset_password_routes.py:58 - Details: Error occured : password_reset.html 
+
+2025-03-08 22:18:57,198 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 22:21:38,360 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 22:23:15,156 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 22:24:00,156 - INFO - main.py:26 - Details: AuthSphere started successfully! 
+
+2025-03-08 22:35:34,775 - INFO - main.py:27 - Details: AuthSphere started successfully! 
+
+2025-03-08 22:37:17,338 - INFO - email_helper.py:69 - Details: Password reset email sent successfully! 
+
+2025-03-08 22:42:21,192 - INFO - main.py:27 - Details: AuthSphere started successfully! 
+
+2025-03-08 22:42:45,309 - INFO - main.py:27 - Details: AuthSphere started successfully! 
+
+2025-03-08 22:43:14,641 - INFO - email_helper.py:69 - Details: Password reset email sent successfully! 

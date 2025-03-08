@@ -48,7 +48,7 @@ class Config:
     context = CryptContext(schemes=["sha256_crypt"], deprecated="auto")
 
     # Jinja2 Templates
-    templates = Jinja2Templates(directory="auth-app/templates")
+    templates = Jinja2Templates(directory="templates")
 
     # OAuth2 Scheme
     oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")

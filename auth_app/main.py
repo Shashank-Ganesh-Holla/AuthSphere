@@ -1,10 +1,11 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 import logging
 # from core import setup_logging
-from auth_app.core import setup_logging
+from auth_app.core import setup_logging, config
 from auth_app.routers import auth_router, resetPassword_router, user_router, test_router, ws_router, s3_router
 from auth_app.utils import CustomExceptionHandler
 from contextlib import asynccontextmanager
+from fastapi.staticfiles import StaticFiles
 
 logging.getLogger("uvicorn").setLevel(logging.WARNING)
 
@@ -38,19 +39,21 @@ app.include_router(router=auth_router, prefix='/auth', tags=["auth"])
 app.include_router(router=resetPassword_router, prefix='/reset', tags=["reset"])
 app.include_router(router=user_router, prefix='/user', tags=["user"])
 app.include_router(router=test_router, prefix='/test', tags=["test"])
-app.include_router(router=ws_router, prefix="/ws", tags=["websocket"])
-app.include_router(router=s3_router, prefix="/s3", tags=["aws-s3"])
+# app.include_router(router=ws_router, prefix="/ws", tags=["websocket"])
+# app.include_router(router=s3_router, prefix="/s3", tags=["aws-s3"])
 
 
 
 # Include exception handler
 app.add_exception_handler(HTTPException, CustomExceptionHandler.http_exception_handler)
 
+# Mount the static folder
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 @app.get('/')
-def read_root():
-    return {"message":"Welcome to the AuthSphere App"}
+def read_root(request:Request):
+    return config.templates.TemplateResponse('home.html', {'request': request})
 
 
 
