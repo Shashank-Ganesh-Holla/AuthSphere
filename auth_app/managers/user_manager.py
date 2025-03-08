@@ -62,8 +62,9 @@ class UserManager:
     
     @staticmethod
     async def logout_user(username, request:Request):
-        from auth_app.core import websocket_manager
+        
         try:
+            from auth_app.core import websocket_manager
 
             """Logs out a user by blacklisting their current token."""
 
