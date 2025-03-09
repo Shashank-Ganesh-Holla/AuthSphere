@@ -23,6 +23,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Print Working Directory
+        run: pwd
+
+      - name: List repository files
+        run: ls -laR
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -34,8 +40,11 @@ jobs:
           pip install -r requirements.txt
           pip install python-dotenv
 
-      - name: Run tests
-        run: pytest tests/ # Run tests
+      - name: Collect tests for debugging
+        run: pytest --collect-only
+
+      - name: Run test with verbose output
+        run: pytest -vv tests/ # Run tests
 
   deploy:
     needs: test
