@@ -16,7 +16,7 @@ env:
   MYSQL_ROOT_PASSWORD: ${{secrets.MYSQL_ROOT_PASSWORD}}
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-22.04
 
     steps:
@@ -32,9 +32,31 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install python-dotenv
 
       - name: Run tests
         run: pytest tests/ # Run tests
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # - name: Set up Python
+      #   uses: actions/setup-python@v4
+      #   with:
+      #     python-version: 3.11
+
+      # - name: Install Dependencies
+      #   run: |
+      #     python -m pip install --upgrade pip
+      #     pip install -r requirements.txt
+
+      # - name: Run tests
+      #   run: pytest tests/ # Run tests
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
