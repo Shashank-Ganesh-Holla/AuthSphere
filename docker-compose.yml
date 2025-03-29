@@ -9,27 +9,26 @@ services:
 
     volumes:
       - ./app_logs:/app/logs
+# The below commands have been discontinued as this project uses the AWS RDS database
+#     depends_on:
+#       - mariadb
 
-    depends_on:
-      - mariadb
+#     networks:
+#       - authsphere-net
 
-    networks:
-      - authsphere-net
+#   mariadb:
+#     image: mariadb:10.11.7
+#     environment:
+#       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
-  mariadb:
-    image: mariadb:10.11.7
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${DB_NAME}
+#     volumes:
+#       #bind mount below, one to persisit the database data across
+#       # docker restart and another to mount and initiate the database table creation
+#       - ./mariadb_data:/var/lib/mysql
+#       - ./db_init:/docker-entrypoint-initdb.d
 
-    volumes:
-      #bind mount below, one to persisit the database data across
-      # docker restart and another to mount and initiate the database table creation
-      - ./mariadb_data:/var/lib/mysql
-      - ./db_init:/docker-entrypoint-initdb.d
+#     networks:
+#       - authsphere-net
 
-    networks:
-      - authsphere-net
-
-networks:
-  authsphere-net:
+# networks:
+#   authsphere-net:

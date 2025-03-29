@@ -147,6 +147,3 @@ jobs:
 
 
             sudo -E docker compose -f /home/ubuntu/authsphere/docker-compose.yml up -d
-
-            sleep 10
-            sudo -E docker logs authsphere-mariadb-1
