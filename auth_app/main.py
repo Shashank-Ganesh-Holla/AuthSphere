@@ -3,12 +3,16 @@ import logging
 # from core import setup_logging
 from auth_app.core import setup_logging, config
 from auth_app.routers import auth_router, resetPassword_router, user_router, test_router, ws_router, s3_router
-from auth_app.utils import CustomExceptionHandler
+from auth_app.utils import CustomExceptionHandler, TokenFactory, TokenBucket
 from contextlib import asynccontextmanager
 from fastapi.staticfiles import StaticFiles
+import time
+from collections import defaultdict
 
 logging.getLogger("uvicorn").setLevel(logging.WARNING)
 
+# In-memory bucket to store the token burst
+bucket = defaultdict(lambda: TokenBucket(rate=2, capacity=5))
 
 # this is an alternative method for "on_event" as on_event method have been deprecated
 @asynccontextmanager
@@ -42,6 +46,44 @@ app.include_router(router=test_router, prefix='/test', tags=["test"])
 # app.include_router(router=ws_router, prefix="/ws", tags=["websocket"])
 # app.include_router(router=s3_router, prefix="/s3", tags=["aws-s3"])
 
+
+# add a rate limiting middleware
+@app.middleware('http')
+async def rate_limiter(request:Request, call_next):
+
+    try:
+
+        jwt_token = request.headers.get('Authorization')
+
+        ip = request.client.host
+
+        if jwt_token and jwt_token.startswith("Bearer "):
+
+            bearer_token = jwt_token.split(" ")[1]
+            try:
+                id = TokenFactory.verify_token(bearer_token)
+            except Exception:
+                # fallback option, if the API is pre-login
+                id = ip
+        else:
+            id = ip
+
+        # add the id into the bucket dictionary, if it already present then no additional effect if not there then it creates
+        # the key with the default values    
+        token_bucket = bucket[id]
+
+        # 'bucket' object which is an instance of TokenBucket class has a __call__ method so you can call the token_bucket()
+        if not token_bucket():
+            raise HTTPException(status_code=429, detail="Too many requests")
+        
+        response = await call_next(request)
+
+        return response
+    
+    except Exception as err:
+        if not isinstance(err, HTTPException):
+            raise HTTPException(500, detail="Internal Server Error")
+        raise
 
 
 # Include exception handler

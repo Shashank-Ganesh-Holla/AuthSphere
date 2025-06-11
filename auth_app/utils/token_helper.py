@@ -5,6 +5,8 @@ from fastapi import HTTPException, status, Depends, Request
 from jose import jwt, JWTError
 from typing import Optional, Dict
 from .db_connection import DatabaseManager
+import time
+from math import ceil
 
 # oauth2_scheme=OAuth2PasswordBearer(tokenUrl="/login")
 
@@ -185,4 +187,28 @@ class TokenFactory:
             else:
                 raise
 
+# in-memory bucket object to hold the burst limit (rate limiting)
+class TokenBucket:
+    def __init__(self, rate, capacity):
+        self.rate = rate
+        self.capacity = capacity
+        self.tokens = capacity
+        self.last_updated_time = time.monotonic()
+
+    def __call__(self, token_needed = 1):
+
+        now = time.monotonic()
+        elapsed = ceil(now - self.last_updated_time)
+
+        self.last_updated_time = now
+
+        refill = self.rate * elapsed
+
+        self.tokens = min(self.capacity, self.tokens+ refill)
+
+        if self.tokens >= token_needed:
+            self.tokens -= token_needed
+            return True
+        
+        return False
  
